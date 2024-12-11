@@ -2,11 +2,14 @@ package globalview_test;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import baselibrary.BaseLibrary;
-import globalview_page.Homepage;
+
 import globalview_page.SignIn_page;
+import propertyutility.Propertyutility;
+
 
 public class SignIn_test extends BaseLibrary	
 
@@ -14,10 +17,13 @@ public class SignIn_test extends BaseLibrary
 
 	SignIn_page ob;
 	@BeforeTest
+	@Parameters("browser")
+	//public void getLaunchurl_globalview(String browser)
 	public void getLaunchurl_globalview()
 	{
-		getLaunchUrl("https://dev.globalviews.com/");
-		ob = new SignIn_page();
+		getLaunchUrl("https://globalviews.com/");
+		//initializedriver(browser, "https://uat.globalviews.com/");
+	ob = new SignIn_page();
 	}
 	
 	@Test(priority = 0)
@@ -67,18 +73,16 @@ public class SignIn_test extends BaseLibrary
 	{
 		ob.uname2();
 	}
+	
 	@Test(priority = 9)
-	public void pass2()
-	{
-		ob.pass2();
-	}
-	@Test(priority = 10)
-	public void login3()
+	public void login3() 
 	{
 		ob.login3();
 	}
-	public void logout()
+	@Test(priority = 10)
+	public void logout() throws InterruptedException
 	{
+		
 		ob.logout();
 	}
 	

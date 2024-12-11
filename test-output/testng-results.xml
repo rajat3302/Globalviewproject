@@ -1,65 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-26T11:44:27 IST" name="GlobalView_dev" finished-at="2024-11-26T11:45:33 IST" duration-ms="65969">
+  <suite started-at="2024-12-11T11:09:24 IST" name="Default suite" finished-at="2024-12-11T11:10:06 IST" duration-ms="41641">
     <groups>
     </groups>
-    <test started-at="2024-11-26T11:44:27 IST" name="SignIN Test" finished-at="2024-11-26T11:45:33 IST" duration-ms="65969">
-      <class name="globalview_test.SignIn_test">
-        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:44:27 IST" name="getLaunchurl_globalview" finished-at="2024-11-26T11:44:59 IST" duration-ms="31579" status="PASS">
+    <test started-at="2024-12-11T11:09:24 IST" name="Default test" finished-at="2024-12-11T11:10:06 IST" duration-ms="41641">
+      <class name="globalview_test.Register_Test">
+        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:24 IST" name="getLaunchurl_globalview" finished-at="2024-12-11T11:09:43 IST" duration-ms="18599" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getLaunchurl_globalview -->
-        <test-method signature="ClickonMyaccount()[pri:0, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:44:59 IST" name="ClickonMyaccount" finished-at="2024-11-26T11:45:01 IST" duration-ms="2211" status="PASS">
+        <test-method signature="clickonMyacount()[pri:1, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:43 IST" name="clickonMyacount" finished-at="2024-12-11T11:09:43 IST" duration-ms="389" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ClickonMyaccount -->
-        <test-method signature="clickonSignIn()[pri:1, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:01 IST" name="clickonSignIn" finished-at="2024-11-26T11:45:02 IST" duration-ms="1169" status="PASS">
+        </test-method> <!-- clickonMyacount -->
+        <test-method signature="clickonregister()[pri:2, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:43 IST" name="clickonregister" finished-at="2024-12-11T11:09:47 IST" duration-ms="3571" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickonSignIn -->
-        <test-method signature="username()[pri:2, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:02 IST" name="username" finished-at="2024-11-26T11:45:03 IST" duration-ms="406" status="PASS">
+        </test-method> <!-- clickonregister -->
+        <test-method signature="companydetails()[pri:3, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:47 IST" name="companydetails" finished-at="2024-12-11T11:09:59 IST" duration-ms="12450" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- username -->
-        <test-method signature="password()[pri:3, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:03 IST" name="password" finished-at="2024-11-26T11:45:03 IST" duration-ms="157" status="PASS">
+        </test-method> <!-- companydetails -->
+        <test-method signature="primarydetails()[pri:4, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:59 IST" name="primarydetails" finished-at="2024-12-11T11:10:03 IST" duration-ms="3539" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- password -->
-        <test-method signature="login()[pri:4, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:03 IST" name="login" finished-at="2024-11-26T11:45:13 IST" duration-ms="10057" status="PASS">
+        </test-method> <!-- primarydetails -->
+        <test-method signature="businessoverview()[pri:5, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:10:03 IST" name="businessoverview" finished-at="2024-12-11T11:10:06 IST" duration-ms="2936" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="uname()[pri:5, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:13 IST" name="uname" finished-at="2024-11-26T11:45:13 IST" duration-ms="279" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uname -->
-        <test-method signature="pass1()[pri:6, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:13 IST" name="pass1" finished-at="2024-11-26T11:45:14 IST" duration-ms="151" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- pass1 -->
-        <test-method signature="login2()[pri:7, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:14 IST" name="login2" finished-at="2024-11-26T11:45:22 IST" duration-ms="8478" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login2 -->
-        <test-method signature="uname2()[pri:8, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:22 IST" name="uname2" finished-at="2024-11-26T11:45:22 IST" duration-ms="290" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uname2 -->
-        <test-method signature="pass2()[pri:9, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:22 IST" name="pass2" finished-at="2024-11-26T11:45:22 IST" duration-ms="62" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- pass2 -->
-        <test-method signature="login3()[pri:10, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:22 IST" name="login3" finished-at="2024-11-26T11:45:33 IST" duration-ms="10735" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login3 -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.SignIn_test@609e8838]" started-at="2024-11-26T11:45:33 IST" name="teardown" finished-at="2024-11-26T11:45:33 IST" duration-ms="234" status="PASS">
+        </test-method> <!-- businessoverview -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:10:06 IST" name="teardown" finished-at="2024-12-11T11:10:06 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- globalview_test.SignIn_test -->
-    </test> <!-- SignIN Test -->
-  </suite> <!-- GlobalView_dev -->
+      </class> <!-- globalview_test.Register_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

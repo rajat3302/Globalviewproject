@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="GlobalView_dev">
-  <test name="Home Test" enabled="false">
+  <test name="Home Test"  enabled="false">
     <classes>
-      <class name="globalview_test.Home_Test"/>
-      
+      <class name="globalview_test.Home_Test"/>   
     </classes>
   </test>  
-  <test name= "SignIN Test">
+  
+  <test name= "SignIN Test" enabled="false">
     <classes>
     	<class name="globalview_test.SignIn_test"/>
     </classes> 
   </test><!-- Test -->
-</suite> <!-- Suite -->
+ 
+ <test name= "Broken_links" enabled="false">
+    <classes>
+    	<class name="globalview_test.Brokenlinks_Test"/>
+    </classes> 
+  </test><!-- Test -->
+ 
+  <test name= "Registerpage Test" enabled="true">
+    <classes>
+    	<class name="globalview_test.Register_Test"/>
+    </classes> 
+  </test><!-- Test -->
+
+ </suite>
+ 
+
+  

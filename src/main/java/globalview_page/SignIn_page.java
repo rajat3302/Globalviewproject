@@ -1,12 +1,14 @@
 package globalview_page;
 
-import static org.testng.Assert.assertEquals;
 
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import baselibrary.BaseLibrary;
+import propertyutility.Propertyutility;
 
 
 public class SignIn_page extends BaseLibrary
@@ -14,7 +16,7 @@ public class SignIn_page extends BaseLibrary
 {
 	public SignIn_page() // constructor 
 	{
-		PageFactory.initElements(driver, this); // initelements is a method this refer global
+	PageFactory.initElements(driver, this); // initelements is a method this refer global
 	} 
 	
 	@FindBy(xpath = "//span[text()='My Account']")
@@ -25,13 +27,15 @@ public class SignIn_page extends BaseLibrary
 	private WebElement username;
 	@FindBy(xpath = "//input[@name='login[password]']")
 	private WebElement password;
-	@FindBy(xpath="(//div[@class='primary'])[1]/button")
+	@FindBy(xpath="//div[@class='login-popup-top']//button[@id='send2']")
 	private WebElement login;
+	@FindBy(xpath = "//*[@id=\"login-form\"]/fieldset/div[4]/div[1]")
+	private WebElement rememberme;
 	@FindBy(xpath = "//input[@placeholder='EMAIL ADDRESS*']")
 	private WebElement uname;
 	@FindBy(xpath = "//input[@placeholder='PASSWORD*']")
 	private WebElement pass1;
-	@FindBy(xpath = "(//*[text()='LOGIN'])[2]")
+	@FindBy(xpath = "//span[text()='LOGIN']")
 	private WebElement login2;
 	@FindBy(xpath= "//*[text()='Log Out']")
 	private WebElement logout;
@@ -48,25 +52,25 @@ public class SignIn_page extends BaseLibrary
 	}
 	public void enterusername()
 	{
-		username.sendKeys("rshrotriya3@gmail.com");
+		username.sendKeys(Propertyutility.getproperty("email1"));
 	}
 	public void enterpassword()
 	{
-		password.sendKeys("Rajat@123");
+		password.sendKeys(Propertyutility.getproperty("password1"));
 	}
 	public void clickonlogin()
-	{
+	{	
 		login.click();
 	}
 	public void uname()
 	{
 		uname.clear();
-		uname.sendKeys("Satsish@gmail.com");
+		uname.sendKeys(Propertyutility.getproperty("email2"));
 		
 	}
 	public void pass1()
 	{
-		pass1.sendKeys("1234");
+		pass1.sendKeys(Propertyutility.getproperty("password2"));
 	}
 	public void login2()
 	{
@@ -76,18 +80,17 @@ public class SignIn_page extends BaseLibrary
 	public void uname2()
 	{
 		uname.clear();
-		uname.sendKeys("naveen.k.sharma@innoage.in");
-	}
-	public void pass2()
-	{
-		pass1.sendKeys("Admin@1234");
+		uname.sendKeys(Propertyutility.getproperty("email3"));
+		pass1.sendKeys(Propertyutility.getproperty("password3"));
 	}
 	public void login3()
 	{
 		login2.click();
+		
 	}
-	public void logout()
+	public void logout() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		clickMyaccount.click();
 		logout.click();
 	}
