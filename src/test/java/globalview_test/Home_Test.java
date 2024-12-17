@@ -17,6 +17,7 @@ public class Home_Test extends BaseLibrary
 
 {
 	Homepage ob;
+	
 	@BeforeTest
 	@Parameters("browser") //fetch the browser type from testng.xml
 	public void getLaunchurl_globalview(String browser)
@@ -26,9 +27,9 @@ public class Home_Test extends BaseLibrary
 		initializedriver(browser, "https://uat.globalviews.com/");
 		ob = new Homepage();
 	}
+	
 	@Description("To verify the Home page of Globalview")
 	@Test
-	
 	public void toverifyTitle()
 	{
 		ob.gettitleGolbalView();

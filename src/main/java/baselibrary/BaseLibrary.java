@@ -3,6 +3,7 @@ package baselibrary;
 
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
@@ -12,8 +13,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.IReporter;
+import org.testng.ISuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.xml.XmlSuite;
 
 
 
@@ -75,6 +79,25 @@ public class BaseLibrary
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
+	
+	
+	public class CustomReporter implements IReporter 
+	{
+
+	    public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
+	        System.out.println("Generating custom report...");
+	        // Example: Extract details from test results and format a custom report.
+	        for (ISuite suite : suites) {
+	            suite.getResults().forEach((key, result) -> {
+	                System.out.println("Suite Name: " + suite.getName());
+	                System.out.println("Test Name: " + result.getTestContext().getName());
+	                System.out.println("Passed Tests: " + result.getTestContext().getPassedTests().size());
+	                System.out.println("Failed Tests: " + result.getTestContext().getFailedTests().size());
+	                System.out.println("Skipped Tests: " + result.getTestContext().getSkippedTests().size());
+	            });
+	        }
+	    }
+	}
 	
 
 	

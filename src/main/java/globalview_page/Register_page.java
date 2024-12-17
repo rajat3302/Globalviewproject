@@ -1,11 +1,17 @@
 package globalview_page;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import applicationutility.Applicationutility;
 import baselibrary.BaseLibrary;
@@ -16,7 +22,7 @@ public class Register_page extends BaseLibrary
 
 
 {
-	Applicationutility ob;
+//	Applicationutility ob;
 	public Register_page() {
 		PageFactory.initElements(driver, this);
 
@@ -24,6 +30,12 @@ public class Register_page extends BaseLibrary
 
 	@FindBy(xpath = "//*[text()='Register']")
 	private WebElement registerbutton;
+	@FindBy(xpath = "//*[text()='FAQ']")
+	private WebElement faq;
+	@FindBy(xpath="//*[text()='info@globalviews.com']")
+	private WebElement infoglobal;
+	@FindBy(xpath = "//*[text()='submit an inquiry']")
+	private WebElement inquiry;
 	@FindBy(xpath = "//input[@id='company_name']")
 	private WebElement companyname;
 	@FindBy(xpath = "//*[@id='business_type']")
@@ -40,9 +52,9 @@ public class Register_page extends BaseLibrary
 	private WebElement salesTaxno;
 	@FindBy(xpath = "//input[@id='customFile']")
 	private WebElement cerificatefile;
-	@FindBy(xpath = "//input[@id='federal_tax_id']")
+	@FindBy(xpath = "//label[@for='tax_federal_tax_id']/following-sibling::input")
 	private WebElement TaxId;
-	@FindBy(xpath = "//input[@id='business_license_number']")
+	@FindBy(xpath = "//label[@for='tax_bussiness_license_number']/following-sibling::input")
 	private WebElement blnumber;
 	@FindBy(xpath = "//input[@id='first_name']")
 	private WebElement firstname;
@@ -66,18 +78,77 @@ public class Register_page extends BaseLibrary
 	private WebElement submit;
 	@FindBy(xpath="(//input[@id='website'])[1]")
 	private WebElement website;
-	@FindBy(xpath = "//label[contains(text(),'How many designers work at your firm?*')]/following-sibling::div//input[@id=\"designers_work\"]")
-	private WebElement retaillocation;
-	@FindBy(xpath = "//label[contains(text(),'What type of office do you work out of?*')]/following-sibling::select")
-	private WebElement homedesignservice;
 	
-	@FindBy(xpath = "//label[contains(text(),'Do you have a librarian or staff*')]/following-sibling::select")
+	
+	// user select design in businesstype 
+	
+	@FindBy(xpath = "//label[@for='designers_work']/following-sibling::div/input")
+	private WebElement noofdesigner;
+	@FindBy(xpath = "//select[contains(@class,'type_of_office')]")
+	private WebElement typeofoffice;
+	@FindBy(xpath ="//select[@id='librarian_or_staff']")
 	private WebElement librarianorstaff;
+	@FindBy(xpath="//label[@for='avgProject']/following-sibling::div/input")
+	private WebElement onaverageproject;
+	@FindBy(xpath = "//*[@id='avgBudget']")
+	private WebElement totalbudget;
+	@FindBy(xpath ="//select[@id='segment']")
+	private WebElement segment;
+	@FindBy(xpath = "//select[@id='first_order']")
+	private WebElement urgencyfirstorder;
+	
+	
+	// user select retail in business type 
+	
+	@FindBy(xpath = "//input[@id='retail_locations']")
+	private WebElement retaillocation;
+	@FindBy(xpath="//select[@id='home_design_services']")
+	private WebElement homedesignservice;
+	@FindBy(xpath = "//select[@id='retail_value']")
+	private WebElement salesaccessories;
+	@FindBy(xpath = "//select[@id='lighting_at_retail_value']")
+	private WebElement saleslighting;
+	@FindBy(xpath = "//input[@id='sales_associates']")
+	private WebElement salesassociates;
+	@FindBy(xpath = "//input[@id='average_square_feet']")
+	private WebElement averagesquare;
+	@FindBy(xpath="//select[@id='retail_first_rder']")
+	private WebElement firstorder;
+	
+	
+	//user select e-commerce in business type 
+	
+	@FindBy(xpath="//div[contains(@class,'goliveDate')]")
+	private WebElement datepicker;
+	@FindBy(xpath = "//input[@id='Ecomhome_Decor']")
+	private WebElement homedecor;
+	@FindBy(xpath = "//select[@id='Ecom_retail_value']")
+	private WebElement ecomsalesassesories;
+	@FindBy(xpath = "//select[@id='EcomLighting_Retailvalue']")
+	private WebElement ecomsaleslighting;
+	
+	// user select Contract in buiseness type
+	
+	@FindBy(xpath = "//input[@id='contDesigners']")
+	private WebElement countdesigner;
+	@FindBy(xpath = "//select[@id='contlibrarian']")
+	private WebElement stafflibrariiancount;
+	@FindBy(xpath="//*[@id='cont_projects']")
+	private WebElement projectnumber;
+	@FindBy(xpath = "//input[@id='Cont_Budget']")
+	private WebElement countbudget;
+	@FindBy(xpath = "//label[@for='Cont_purchase']/following-sibling::select")
+	private WebElement purchase;
+	@FindBy(xpath  ="(//label[text()='Urgency of First Order* '])[1]/following-sibling::select/following::div[1]/a[1]")
+	private WebElement previous;
+	@FindBy(xpath = "//label[@for='Cont_purchase']//following::a/following::a[contains(@class,'business_overview_save_contract')]")
+	private WebElement save7continue;
 	
 	
 	
 	
-
+	
+	
 
 	public void ClickonRegister() 
 	{
@@ -88,6 +159,7 @@ public class Register_page extends BaseLibrary
 		try
 
 		{
+						
 			companyname.click();
 			companyname.sendKeys(Propertyutility.getproperty("Companyname"));
 			businesstype.click();
@@ -95,33 +167,23 @@ public class Register_page extends BaseLibrary
 //			ob = new Applicationutility();
 //			ob.dropdown(businesstype, "Design");
 			
-			Select sell = new Select(businesstype);
-			sell.selectByValue("Design");
+			Applicationutility.dropdown(businesstype, "Design");
 			
 			hearaboutus.click();
-			Thread.sleep(2000);
-			Select sell1 = new Select(hearaboutus);
-			sell1.selectByValue("Tradeshow");
+			Applicationutility.dropdown(hearaboutus, "Tradeshow");
 			
-		
 //			JavascriptExecutor js = (JavascriptExecutor) driver;
 //			js.executeScript("window.scrollBy(0, 500);", locationstate);
 			
-			
 			locationstate.click();
-			Thread.sleep(2000);
-			Select sell3 =  new Select(locationstate);
-			sell3.selectByValue("AL");
+			Applicationutility.dropdown(locationstate, "Alabama");
 			
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			salestax.click();
-			Select sell4 = new Select(salestax);
-			sell4.selectByValue("Non-Exempt");
+			Applicationutility.dropdown(salestax, "Non-Exempt");
 			
-
 			salestax.click();
-			Select sell5 = new Select(salestax);
-			sell4.selectByValue("Exempt");
+			Applicationutility.dropdown(salestax, "Exempt");
 			
 			representative.click();
 			representative.sendKeys(Propertyutility.getproperty("representative"));
@@ -130,11 +192,19 @@ public class Register_page extends BaseLibrary
 			salesTaxno.sendKeys(Propertyutility.getproperty("salestexno"));
 			
 		
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		        // Provide the full file path to upload
 		        String filePath = "C:\\Users\\rajat.shrotriya.INNOAGE\\Downloads\\Cart (1).pdf";
 		        cerificatefile.sendKeys(filePath);
-		
+		        
+		        locationstate.click();
+				Applicationutility.dropdown(locationstate, "Alaska");
+		     
+		        TaxId.click();
+		        TaxId.sendKeys(Propertyutility.getproperty("TaxId"));
+		         
+		        blnumber.click();
+		        blnumber.sendKeys(Propertyutility.getproperty("bnumber"));
 						
 		}
 		
@@ -154,7 +224,7 @@ public class Register_page extends BaseLibrary
 		lastname.click();
 		lastname.sendKeys(Propertyutility.getproperty("lastname"));
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		organisationaltitle.click();
 		Select sell3 =  new Select(organisationaltitle);
 		sell3.selectByValue("Owner");
@@ -164,19 +234,14 @@ public class Register_page extends BaseLibrary
 		
 		emailid.click();
 		emailid.sendKeys(Propertyutility.getproperty("email"));
-		
-		
+	
 		checkbox.click();
-//		policies.click();
-//		
-//		Applicationutility.chnagewindow(0, driver);
-//		privacystatement.click();	
-//		
-//		
-//		Applicationutility.chnagewindow(0, driver);
-//		
-	
-	
+		policies.click();
+		
+		Applicationutility.chnagewindow(0, driver);
+		privacystatement.click();	
+		
+		Applicationutility.chnagewindow(0, driver);
 		submit.click();
 		
 		
@@ -197,13 +262,88 @@ public class Register_page extends BaseLibrary
 		website.click();
 		website.sendKeys(Propertyutility.getproperty("website"));
 		
-		retaillocation.click();
-		retaillocation.sendKeys(Propertyutility.getproperty("retaillocations"));
+		noofdesigner.click();
+		noofdesigner.sendKeys(Propertyutility.getproperty("noofdesigner"));
 		
-		homedesignservice.click();
-		Applicationutility.dropdown(homedesignservice, "Home office");
+		typeofoffice.click();
+		
+		Select select = new Select(typeofoffice);
+		
+		if (select.isMultiple()) 
+		{
+		    select.deselectAll(); // Only valid for multi-select
+		} 
+		else
+		{
+		    System.out.println("This is a single-select dropdown. Deselect methods are not applicable.");
+		}
+		
+		select.selectByVisibleText("Home office");
 		
 		
+		librarianorstaff.click();
+        Select select1 = new Select(librarianorstaff);
+		
+		if (select1.isMultiple()) 
+		{
+		    select1.deselectAll(); // Only valid for multi-select
+		} 
+		else
+		{
+		    System.out.println("This is a single-select dropdown. Deselect methods are not applicable.");
+		}
+		
+		select1.selectByVisibleText("Yes");
+		
+	    Applicationutility.waitforclickible(driver, onaverageproject);
+		
+		onaverageproject.sendKeys(Propertyutility.getproperty("firmwork"));
+		
+		
+		Thread.sleep(1000);
+		Applicationutility.waitforclickible(driver, totalbudget);
+		totalbudget.click();
+		totalbudget.sendKeys(Propertyutility.getproperty("averagetotal"));
+		
+		Thread.sleep(1000);
+		segment.click();
+		Select select2 = new Select(segment);
+		
+		if (select2.isMultiple()) 
+		{
+		    select2.deselectAll(); // Only valid for multi-select
+		} 
+		else
+		{
+		    System.out.println("This is a single-select dropdown. Deselect methods are not applicable.");
+		}
+		
+		select2.selectByVisibleText("Interior Designer");
+		
+		
+		Thread.sleep(1000);
+		urgencyfirstorder.click();
+		Select select3 = new Select(urgencyfirstorder);
+		
+		if (select3.isMultiple()) 
+		{
+		    select3.deselectAll(); // Only valid for multi-select
+		} 
+		else
+		{
+		    System.out.println("This is a single-select dropdown. Deselect methods are not applicable.");
+		}
+		
+		select3.selectByVisibleText("Within Three Months");
+		
+		
+		previous.click();
+		
+		Thread.sleep(2000);
+		
+		
+		
+			
 		
 		}
 		catch (Exception e) 

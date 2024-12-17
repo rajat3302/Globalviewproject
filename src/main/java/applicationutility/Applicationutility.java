@@ -99,11 +99,11 @@ public class Applicationutility extends BaseLibrary
 	}
 	
 	
-	public static void dropdown(WebElement element, String value)
+	public static void dropdown(WebElement element, String visibleText)
 	{
 	
 		Select sell = new Select(element);
-		sell.deselectByValue("value");
+		sell.selectByVisibleText(visibleText);
 	}
 	
 

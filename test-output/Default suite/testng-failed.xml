@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="globalview_test.Register_Test">
+      <class name="globalview_test.Home_Test">
         <methods>
-          <include name="getLaunchurl_globalview"/>
           <include name="teardown"/>
-          <include name="businessoverview"/>
+          <include name="toverifyTitle"/>
+          <include name="getLaunchurl_globalview"/>
         </methods>
-      </class> <!-- globalview_test.Register_Test -->
+      </class> <!-- globalview_test.Home_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

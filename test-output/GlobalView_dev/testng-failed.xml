@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [GlobalView_dev]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="SignIN Test(failed)">
+  <test thread-count="5" name="Home Test(failed)">
     <classes>
-      <class name="globalview_test.SignIn_test">
+      <class name="globalview_test.Home_Test">
         <methods>
-          <include name="username"/>
-          <include name="pass1"/>
-          <include name="getLaunchurl_globalview"/>
-          <include name="clickonSignIn"/>
-          <include name="login2"/>
-          <include name="uname2"/>
-          <include name="password"/>
-          <include name="ClickonMyaccount"/>
-          <include name="initializedriver"/>
           <include name="teardown"/>
-          <include name="login"/>
-          <include name="logout"/>
-          <include name="login3"/>
-          <include name="uname"/>
+          <include name="toverifyTitle"/>
+          <include name="getLaunchurl_globalview"/>
         </methods>
-      </class> <!-- globalview_test.SignIn_test -->
+      </class> <!-- globalview_test.Home_Test -->
     </classes>
-  </test> <!-- SignIN Test(failed) -->
+  </test> <!-- Home Test(failed) -->
 </suite> <!-- Failed suite [GlobalView_dev] -->

@@ -21,7 +21,7 @@ public class Register_Test extends BaseLibrary
 	//public void getLaunchurl_globalview(String browser)
 	public void getLaunchurl_globalview()
 	{
-		getLaunchUrl("https://globalviews.com/");
+		getLaunchUrl("https://uat.globalviews.com/");
 		//initializedriver(browser, "https://uat.globalviews.com/");
 	ob = new Register_page();
 	ob1=  new SignIn_page();

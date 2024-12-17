@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="GlobalView_dev">
-  <test name="Home Test"  enabled="false">
+<suite name="GlobalView_UAT">
+
+  <test name="Home Test"  enabled="true">
     <classes>
       <class name="globalview_test.Home_Test"/>   
     </classes>
@@ -19,11 +20,18 @@
     </classes> 
   </test><!-- Test -->
  
-  <test name= "Registerpage Test" enabled="true">
+ <test name= "Registerpage Test" enabled="false">
     <classes>
     	<class name="globalview_test.Register_Test"/>
     </classes> 
+  </test>
+  
+ <test name= "Verifyimage test" enabled="false">
+    <classes>
+    	<class name="globalview_test.Verifyimagetest"/>
+    </classes> 
   </test><!-- Test -->
+
 
  </suite>
  

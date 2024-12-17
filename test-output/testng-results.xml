@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-11T11:09:24 IST" name="Default suite" finished-at="2024-12-11T11:10:06 IST" duration-ms="41641">
+  <suite started-at="2024-12-17T23:27:54 IST" name="Default suite" finished-at="2024-12-17T23:28:31 IST" duration-ms="36722">
     <groups>
     </groups>
-    <test started-at="2024-12-11T11:09:24 IST" name="Default test" finished-at="2024-12-11T11:10:06 IST" duration-ms="41641">
+    <test started-at="2024-12-17T23:27:54 IST" name="Default test" finished-at="2024-12-17T23:28:31 IST" duration-ms="36722">
       <class name="globalview_test.Register_Test">
-        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:24 IST" name="getLaunchurl_globalview" finished-at="2024-12-11T11:09:43 IST" duration-ms="18599" status="PASS">
+        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.Register_Test@6e535154]" started-at="2024-12-17T23:27:54 IST" name="getLaunchurl_globalview" finished-at="2024-12-17T23:28:06 IST" duration-ms="11743" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getLaunchurl_globalview -->
-        <test-method signature="clickonMyacount()[pri:1, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:43 IST" name="clickonMyacount" finished-at="2024-12-11T11:09:43 IST" duration-ms="389" status="PASS">
+        <test-method signature="clickonMyacount()[pri:1, instance:globalview_test.Register_Test@6e535154]" started-at="2024-12-17T23:28:06 IST" name="clickonMyacount" finished-at="2024-12-17T23:28:06 IST" duration-ms="247" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickonMyacount -->
-        <test-method signature="clickonregister()[pri:2, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:43 IST" name="clickonregister" finished-at="2024-12-11T11:09:47 IST" duration-ms="3571" status="PASS">
+        <test-method signature="clickonregister()[pri:2, instance:globalview_test.Register_Test@6e535154]" started-at="2024-12-17T23:28:06 IST" name="clickonregister" finished-at="2024-12-17T23:28:10 IST" duration-ms="3377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickonregister -->
-        <test-method signature="companydetails()[pri:3, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:47 IST" name="companydetails" finished-at="2024-12-11T11:09:59 IST" duration-ms="12450" status="PASS">
+        <test-method signature="companydetails()[pri:3, instance:globalview_test.Register_Test@6e535154]" started-at="2024-12-17T23:28:10 IST" name="companydetails" finished-at="2024-12-17T23:28:17 IST" duration-ms="7562" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- companydetails -->
-        <test-method signature="primarydetails()[pri:4, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:09:59 IST" name="primarydetails" finished-at="2024-12-11T11:10:03 IST" duration-ms="3539" status="PASS">
+        <test-method signature="primarydetails()[pri:4, instance:globalview_test.Register_Test@6e535154]" started-at="2024-12-17T23:28:17 IST" name="primarydetails" finished-at="2024-12-17T23:28:20 IST" duration-ms="3152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- primarydetails -->
-        <test-method signature="businessoverview()[pri:5, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:10:03 IST" name="businessoverview" finished-at="2024-12-11T11:10:06 IST" duration-ms="2936" status="PASS">
+        <test-method signature="businessoverview()[pri:5, instance:globalview_test.Register_Test@6e535154]" started-at="2024-12-17T23:28:20 IST" name="businessoverview" finished-at="2024-12-17T23:28:31 IST" duration-ms="10378" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- businessoverview -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.Register_Test@3ad83a66]" started-at="2024-12-11T11:10:06 IST" name="teardown" finished-at="2024-12-11T11:10:06 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.Register_Test@6e535154]" started-at="2024-12-17T23:28:31 IST" name="teardown" finished-at="2024-12-17T23:28:31 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

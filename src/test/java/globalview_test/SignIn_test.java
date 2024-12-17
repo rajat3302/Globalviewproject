@@ -18,11 +18,11 @@ public class SignIn_test extends BaseLibrary
 	SignIn_page ob;
 	@BeforeTest
 	@Parameters("browser")
-	//public void getLaunchurl_globalview(String browser)
-	public void getLaunchurl_globalview()
+	public void getLaunchurl_globalview(String browser)
+	//public void getLaunchurl_globalview()
 	{
-		getLaunchUrl("https://globalviews.com/");
-		//initializedriver(browser, "https://uat.globalviews.com/");
+		//getLaunchUrl("https://uat.globalviews.com/");
+		initializedriver(browser, "https://uat.globalviews.com/");
 	ob = new SignIn_page();
 	}
 	
