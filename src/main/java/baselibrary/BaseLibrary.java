@@ -16,6 +16,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.IReporter;
 import org.testng.ISuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.xml.XmlSuite;
 
@@ -27,7 +28,8 @@ public class BaseLibrary
 
 {
 	static public WebDriver driver;
-	
+
+   
 
 	public static void getLaunchUrl (String url)
 	{
@@ -38,9 +40,39 @@ public class BaseLibrary
 		driver= new ChromeDriver();
 		driver.get(url);
 		driver.manage().window().maximize();
+	
 	}
 
 	
+	
+	
+
+//	    @BeforeClass
+//	    public void setup() 
+//	    {
+//	        ExtentSparkReporter spark = new ExtentSparkReporter("extent-report.html");
+//	        extent = new ExtentReports();
+//	        extent.attachReporter(spark);
+//	    }
+//
+//	    @Test
+//	    public void testPass() {
+//	        test = extent.createTest("Test Passed");
+//	        test.pass("This test passed successfully.");
+//	    }
+//
+//	    @Test
+//	    public void testFail() {
+//	        test = extent.createTest("Test Failed");
+//	        test.fail("This test failed.");
+//	    }
+//
+//	    @AfterClass
+//	    public void teardown() {
+//	        extent.flush(); // Write the report to the file
+//	    }
+//	}
+//	
 	public void initializedriver(String browser, String url)
 	{
 		if(browser.equalsIgnoreCase("chrome"))

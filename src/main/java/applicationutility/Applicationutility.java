@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -57,6 +58,7 @@ public class Applicationutility extends BaseLibrary
 	
 	public static void waitforVisible (WebDriver driver, WebElement ele)
 	{
+		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(ele));
 		ele.click();
@@ -106,6 +108,14 @@ public class Applicationutility extends BaseLibrary
 		sell.selectByVisibleText(visibleText);
 	}
 	
+	
+	public static void selectDate() 
+	
+	{
+        WebElement dateField = driver.findElement(By.xpath("datePickerInput"));
+        dateField.clear(); // Clear existing value if needed
+        dateField.sendKeys("2024-12-31"); // Enter desired date in the required format
+    }
 
 	
 	

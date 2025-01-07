@@ -16,79 +16,63 @@ import baselibrary.BaseLibrary;
 
 public class Verifyimagetest extends BaseLibrary
 {
+    public static void main(String[] args)
+    {
+        // Set up WebDriver
+        System.setProperty("webdriver.chrome.driver", "C:\\GlobalViews\\Comglobalview\\driver\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
 
-	
-	    public static void main(String[] args) 
-	    {
-	    	 System.setProperty("webdriver.edge.driver", "C:\\GlobalViews\\Comglobalview\\driver\\msedgedriver.exe");
+        try
+        {
+            // Navigate to the webpage
+            driver.get("https://uat.globalviews.com/brand-partners/williamsburg");
 
-	         // Initialize WebDriver
-	         WebDriver driver = new ChromeDriver();
+            // Locate all images on the page
+            List<WebElement> images = driver.findElements(By.tagName("img"));
 
-	         // Base URL
-	         String baseUrl = "https://anirudh-bhati-store01.myshopify.com/collections/all?page=2"; 
+            // Iterate through each image and validate
+            for (WebElement image : images) {
+                // Get the image URL from the 'src' attribute
+                String imageURL = image.getAttribute("src");
 
-	        try {
-	            // Navigate to the webpage
-	            driver.get("https://anirudh-bhati-store01.myshopify.com/collections/all?page=4");
-	            driver.manage().window().maximize();
-	            
-	            driver.findElement(By.xpath("//input[@id='password']")).sendKeys("1");
-	            driver.findElement(By.xpath("//*[text()='Enter']")).click();
-	            
-	            
-	            
-	            
-	            
+                // Validate the image URL
+                if (imageURL != null && !imageURL.isEmpty()) {
+                    // Check if the image is accessible
+                    boolean isImageValid = validateImageURL(imageURL);
+                    if (isImageValid) {
+                        System.out.println("Image is valid: " + imageURL);
+                    } else {
+                        System.out.println("Image is broken: " + imageURL);
+                    }
+                } else {
+                    System.out.println("Image src is empty or null.");
+                }
+            }
+        } finally 
+        {
+            // Close the browser
+            //driver.quit();
+        }
+    }
 
-	            // Find all image elements
-	            List<WebElement> images = driver.findElements(By.tagName("img"));
-	            System.out.println("Total images found: " + images.size());
+    // Method to validate the image URL
+    public static boolean validateImageURL(String imageURL) {
+        try {
+            // Open a connection to the image URL
+            HttpURLConnection connection = (HttpURLConnection) new URL(imageURL).openConnection();
+            connection.setRequestMethod("HEAD");
+            connection.connect();
 
-	            for (WebElement img : images) {
-	                // Get the 'src' attribute of the image
-	                String imageUrl = img.getAttribute("src");
+            // Get the HTTP response code
+            int responseCode = connection.getResponseCode();
 
-	                // Check if the URL ends with .webp
-	                if (imageUrl != null && imageUrl.endsWith(".webp")) {
-	                    System.out.println("Image with .webp extension found: " + imageUrl);
-	                    
-	                    // Verify if the image is accessible
-	                    try {
-							if (isImageUrlValid(imageUrl)) {
-							    System.out.println("Image is valid and accessible.");
-							} else {
-							    System.out.println("Broken image: " + imageUrl);
-							}
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-	                } else {
-	                    System.out.println("Non-webp image found: " + imageUrl);
-	                }
-	            }
-	        } finally {
-	            // Close the driver
-	            driver.quit();
-	        }
-	    }
-
-	    // Function to verify if the image URL is valid
-	    public static boolean isImageUrlValid(String imageUrl) 
-	    {
-	        try {
-	            URL url = new URL(imageUrl);
-	            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	            connection.setRequestMethod("GET");
-	            connection.connect();
-	            int responseCode = connection.getResponseCode();
-	            return responseCode == 200;
-	        } catch (Exception e) {
-	            System.out.println("Error checking image URL: " + imageUrl);
-	            return false;
-	        }
-	    }
-	}
-	
+            // Check if the response code is 200 (OK)
+            return responseCode == HttpURLConnection.HTTP_OK;
+        } catch (Exception e) {
+            System.out.println("Error while validating image: " + e.getMessage());
+            return false;
+        }
+    }
+}
 

@@ -43,6 +43,7 @@ public class Register_Test extends BaseLibrary
 	@Test(priority = 3)
 	public void companydetails()
 	{
+		
 		ob.companydetails();
 	}
 	
@@ -58,7 +59,11 @@ public class Register_Test extends BaseLibrary
 		ob.businessoverview();
 	}
 	
-	
+	@Test(priority = 6)
+	public void finalreview()
+	{
+		ob.review();
+	}
 	
 	
 	
