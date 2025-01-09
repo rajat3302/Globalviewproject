@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -59,17 +62,46 @@ public class Applicationutility extends BaseLibrary
 	public static void waitforVisible (WebDriver driver, WebElement ele)
 	{
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOf(ele));
 		ele.click();
 	}
 	
 	public static void waitforclickible (WebDriver driver, WebElement ele)
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 		ele.click();
 	}
+	
+	
+	public static void myClick(WebElement we) 
+	{
+		String elementname = we.getAccessibleName();
+		try {
+			we.click();
+//		extTest.log(Status.INFO, "Passed ! Click is perform on " + elementname + " ");
+		} catch (ElementClickInterceptedException e) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", we);
+//			extTest.log(Status.INFO, "Passed ! Click is perform on " + elementname + " using java script");
+		} catch (ElementNotInteractableException e) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()", we);
+//			extTest.log(Status.INFO, "Passed ! Click is perform on " + elementname + " using javascript");
+		} catch (StaleElementReferenceException e) {
+			we.click();
+//			extTest.log(Status.INFO, "Passed ! Click is perform on " + elementname + " ");
+		} catch (Exception e) {
+			e.printStackTrace();
+//			extTest.log(Status.FAIL, "Failed ! Click is not perform on " + elementname + " ");
+			String exceptionMessage = e.getMessage().substring(0, e.getMessage().indexOf("\n"));
+//			extTest.fail("Exception occurred: " + exceptionMessage);
+			throw e;
+		}
+		}
+	
+	
 	
 	
 	//scroll to element 

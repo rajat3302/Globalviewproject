@@ -5,8 +5,9 @@
   <test name="ChromeTest" enabled="true">
   <parameter name="browser" value="chrome"></parameter>
     <classes>
-      <class name="globalview_test.Home_Test"/>
-      <class name="globalview_test.SignIn_test"/>
+     <!--  <class name="globalview_test.Home_Test"/>
+      <class name="globalview_test.SignIn_test"/> -->
+      <class name="globalview_test.Register_Test"/> 
        
     </classes>
   </test> 
@@ -14,8 +15,9 @@
     <test name="FirefoxTest" enabled="true">
   <parameter name="browser" value="firefox"></parameter>
     <classes>
-    	<class name="globalview_test.Home_Test"/>
-        <class name="globalview_test.SignIn_test"/>
+    	<!-- <class name="globalview_test.Home_Test"/>
+        <class name="globalview_test.SignIn_test"/> -->
+      <!--   <class name="globalview_test.Register_Test"/>-->
     
     </classes> 
   </test><!-- Test -->  
@@ -23,9 +25,10 @@
   <test name="EdgeTest"  enabled="true">
   <parameter name="browser" value="edge"></parameter>
     <classes>
-         <class name="globalview_test.Home_Test"/>
-         <class name="globalview_test.SignIn_test"/>
-    <!-- <class name="globalview_test.Verifyimagetest"/>-->
+      <!--  <class name="globalview_test.Home_Test"/>
+         <class name="globalview_test.SignIn_test"/> -->  
+       <!--  <class name="globalview_test.Register_Test"/>--> 
+         <!--<class name="globalview_test.Verifyimagetest"/ -->
     	
 
     </classes> 

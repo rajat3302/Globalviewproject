@@ -2,7 +2,9 @@ package globalview_page;
 
 import static org.testng.Assert.assertEquals;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 
 import org.openqa.selenium.By;
 
@@ -207,10 +209,15 @@ public class Register_page extends BaseLibrary
 	private WebElement billinginfoedit;
 	@FindBy(xpath = "//div[contains(@class,'review-check')]//input")
 	private WebElement checkboxconfirm;
-	@FindBy(xpath="//span[@aria-labelledby='recaptcha-anchor-label']/child::div[1]")
+	@FindBy(xpath="//*[@id='recaptcha-anchor']/div[1]")
 	private WebElement captchacode;
 	@FindBy(xpath = "//button[@id='review_submit']")
     private WebElement reviewsubmit;
+	@FindBy(xpath = "//span[text()='Thank you for registering']")
+	private WebElement verifymessage;
+	@FindBy(xpath = "//*[text()='homepage']")
+	private WebElement homepage;
+	
 	
 	
 	
@@ -303,7 +310,16 @@ public class Register_page extends BaseLibrary
 		phonenumber.sendKeys(Propertyutility.getproperty("phoneno"));
 		
 		emailid.click();
-		emailid.sendKeys(Propertyutility.getproperty("email"));
+		
+		   String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+           String dynamicEmail = "testuser" + timestamp + "@yopmail.com";
+
+           // enter email
+           emailid.clear();
+           emailid.sendKeys(dynamicEmail);
+
+           System.out.println("Entered Email ID: " + dynamicEmail);
+		   //emailid.sendKeys(Propertyutility.getproperty("email"));
 	
 		checkbox.click();
 		policies.click();
@@ -336,35 +352,14 @@ public class Register_page extends BaseLibrary
 		noofdesigner.sendKeys(Propertyutility.getproperty("noofdesigner"));
 		
 		typeofoffice.click();
+		Applicationutility.dropdown(typeofoffice, "Home office");
+	
 		
-		Select select = new Select(typeofoffice);
-		
-		if (select.isMultiple()) 
-		{
-		    select.deselectAll(); // Only valid for multi-select
-		} 
-		else
-		{
-		    System.out.println("This is a single-select dropdown. Deselect methods are not applicable.");
-		}
-		
-		select.selectByVisibleText("Home office");
-		
-		
+		Thread.sleep(1000);
 		librarianorstaff.click();
-        Select select1 = new Select(librarianorstaff);
+		Applicationutility.dropdown(librarianorstaff, "Yes");
 		
-		if (select1.isMultiple()) 
-		{
-		    select1.deselectAll(); // Only valid for multi-select
-		} 
-		else
-		{
-		    System.out.println("This is a single-select dropdown. Deselect methods are not applicable.");
-		}
-		
-		select1.selectByVisibleText("Yes");
-		
+
 	    Applicationutility.waitforclickible(driver, onaverageproject);
 		
 		onaverageproject.sendKeys(Propertyutility.getproperty("firmwork"));
@@ -377,36 +372,14 @@ public class Register_page extends BaseLibrary
 		
 		Thread.sleep(1000);
 		segment.click();
-		Select select2 = new Select(segment);
+		Applicationutility.dropdown(segment, "Interior Designer");
 		
-		if (select2.isMultiple()) 
-		{
-		    select2.deselectAll(); // Only valid for multi-select
-		} 
-		else
-		{
-		    System.out.println("This is a single-select dropdown. Deselect methods are not applicable.");
-		}
-		
-		select2.selectByVisibleText("Interior Designer");
-		
-		
+	
 		Thread.sleep(1000);
 		urgencyfirstorder.click();
-		Select select3 = new Select(urgencyfirstorder);
+		Applicationutility.dropdown(urgencyfirstorder, "Within Three Months");
 		
-		if (select3.isMultiple()) 
-		{
-		    select3.deselectAll(); // Only valid for multi-select
-		} 
-		else
-		{
-		    System.out.println("This is a single-select dropdown. Deselect methods are not applicable.");
-		}
-		
-		select3.selectByVisibleText("Within Three Months");
-		
-		
+
 		previous1.click();
 		
 		Thread.sleep(2000);
@@ -523,24 +496,30 @@ public class Register_page extends BaseLibrary
 		
 		Applicationutility.dropdown(addresstype, "Residential");
 		
+		Thread.sleep(1000);
 		sameasprimary.click();
 		
 		  // Assertion same as primary details 
+//		    Thread.sleep(2000);
+//		  
 //			String expectedtext1 = Propertyutility.getproperty("firstname");
+//			Applicationutility.waitforVisible(driver, fname);
 //		    String actualtext1  = fname.getText();
-//		    System.out.println("actualtext is :" +actualtext1);
+//		    System.out.println(actualtext1);
 //		    assertEquals(actualtext1, expectedtext1);
 //		    
 //		    String expectedtext2 = Propertyutility.getproperty("lastname");
+//		    Applicationutility.waitforVisible(driver, lname);
 //		    String actualtext2 =  lname.getText();
-//		    System.out.println("actualtext is" +actualtext2);
+//		    System.out.println(actualtext2);
 //		    assertEquals(actualtext2, expectedtext2);
 //		    
 //		    String expectedtext3 = Propertyutility.getproperty("email");
+//		    Applicationutility.waitforVisible(driver, email);
 //		    String actualtext3 = email.getText();
-//		    System.out.println("actual text is" +actualtext3);
+//		    System.out.println(actualtext3);
 //		    assertEquals(actualtext3, expectedtext3);
-		    
+//		    
 		    
 	    
 		Thread.sleep(1000);
@@ -559,8 +538,10 @@ public class Register_page extends BaseLibrary
 	{
 		try 
 		{
-			comapnyinfoedit.click();
+			Applicationutility.myClick(comapnyinfoedit);
+//			comapnyinfoedit.click();
 			hearaboutus.click();
+			Thread.sleep(1000);
 			Applicationutility.dropdown(hearaboutus, "Trade Association/Buying Group");
 			Thread.sleep(1000);
 			blnumber.click();
@@ -568,14 +549,21 @@ public class Register_page extends BaseLibrary
 			Thread.sleep(1000);
 			blnumber.sendKeys(Propertyutility.getproperty("bnumber2"));
 			submit.click();
+			
+			Thread.sleep(2000);
+			//Applicationutility.getscroll(savecontinue, driver);
 			savecontinue.click();
+			
+			Thread.sleep(2000);
+			//Applicationutility.getscroll(save, driver);
 			save.click();
 			
 			Thread.sleep(1000);
 			businessoveredit.click();
 			
-			
+			Thread.sleep(1000);
 			billinginfoedit.click();
+			Thread.sleep(1000);
 			street1.click();
 			street1.clear();
 			Thread.sleep(1000);
@@ -587,13 +575,28 @@ public class Register_page extends BaseLibrary
 			Thread.sleep(1000);
 			checkboxconfirm.click();
 			Thread.sleep(1000);
+			//Applicationutility.waitforclickible(driver, captchacode);
 //			captchacode.click();
 //			Thread.sleep(1000);
 			reviewsubmit.click();
 			
+			
 			Thread.sleep(2000);
 			
+			String expected = Propertyutility.getproperty("Thankyoumessage");
+			Thread.sleep(1000);
+			Applicationutility.waitforVisible(driver, verifymessage);
+			String actual = verifymessage.getText();
+			System.out.println(actual);
+			assertEquals(actual, expected);
 			
+			Thread.sleep(5000);
+			Applicationutility.waitforclickible(driver, homepage);
+			
+			//homepage.click();
+			
+			
+			Thread.sleep(1000);	
 			
 			
 		} 
