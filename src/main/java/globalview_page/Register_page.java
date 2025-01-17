@@ -583,6 +583,7 @@ public class Register_page extends BaseLibrary
 			
 			Thread.sleep(2000);
 			
+			//Assertion
 			String expected = Propertyutility.getproperty("Thankyoumessage");
 			Thread.sleep(1000);
 			Applicationutility.waitforVisible(driver, verifymessage);

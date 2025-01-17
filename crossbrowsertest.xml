@@ -17,7 +17,7 @@
     <classes>
     	<!-- <class name="globalview_test.Home_Test"/>
         <class name="globalview_test.SignIn_test"/> -->
-      <!--   <class name="globalview_test.Register_Test"/>-->
+         <class name="globalview_test.Register_Test"/>
     
     </classes> 
   </test><!-- Test -->  
@@ -27,7 +27,7 @@
     <classes>
       <!--  <class name="globalview_test.Home_Test"/>
          <class name="globalview_test.SignIn_test"/> -->  
-       <!--  <class name="globalview_test.Register_Test"/>--> 
+        <class name="globalview_test.Register_Test"/>
          <!--<class name="globalview_test.Verifyimagetest"/ -->
     	
 

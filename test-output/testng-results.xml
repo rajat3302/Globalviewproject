@@ -1,56 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-09T10:52:57 IST" name="CrossbrowserTest" finished-at="2025-01-09T10:54:47 IST" duration-ms="110322">
+  <suite started-at="2025-01-17T14:39:08 IST" name="Default suite" finished-at="2025-01-17T14:39:59 IST" duration-ms="51559">
     <groups>
     </groups>
-    <test started-at="2025-01-09T10:52:57 IST" name="ChromeTest" finished-at="2025-01-09T10:54:47 IST" duration-ms="110254">
-      <class name="globalview_test.Register_Test">
-        <test-method is-config="true" signature="getLaunchurl_globalview(java.lang.String)[pri:0, instance:globalview_test.Register_Test@d554c5f]" started-at="2025-01-09T10:52:57 IST" name="getLaunchurl_globalview" finished-at="2025-01-09T10:53:07 IST" duration-ms="10508" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2025-01-17T14:39:08 IST" name="Default test" finished-at="2025-01-17T14:39:59 IST" duration-ms="51559">
+      <class name="globalview_test.HomeLinks_Test">
+        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:08 IST" name="getLaunchurl_globalview" finished-at="2025-01-17T14:39:13 IST" duration-ms="5613" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getLaunchurl_globalview -->
-        <test-method signature="clickonMyacount()[pri:1, instance:globalview_test.Register_Test@d554c5f]" started-at="2025-01-09T10:53:07 IST" name="clickonMyacount" finished-at="2025-01-09T10:53:08 IST" duration-ms="223" status="PASS">
+        <test-method signature="gettitle()[pri:0, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:13 IST" name="gettitle" finished-at="2025-01-17T14:39:13 IST" duration-ms="55" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickonMyacount -->
-        <test-method signature="clickonregister()[pri:2, instance:globalview_test.Register_Test@d554c5f]" started-at="2025-01-09T10:53:08 IST" name="clickonregister" finished-at="2025-01-09T10:53:12 IST" duration-ms="4476" status="PASS">
+        </test-method> <!-- gettitle -->
+        <test-method signature="verifylogoofpage()[pri:1, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:13 IST" name="verifylogoofpage" finished-at="2025-01-17T14:39:15 IST" duration-ms="2024" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickonregister -->
-        <test-method signature="companydetails()[pri:3, instance:globalview_test.Register_Test@d554c5f]" started-at="2025-01-09T10:53:12 IST" name="companydetails" finished-at="2025-01-09T10:53:19 IST" duration-ms="7096" status="PASS">
+        </test-method> <!-- verifylogoofpage -->
+        <test-method signature="verifyheader()[pri:2, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:15 IST" name="verifyheader" finished-at="2025-01-17T14:39:35 IST" duration-ms="19373" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- companydetails -->
-        <test-method signature="primarydetails()[pri:4, instance:globalview_test.Register_Test@d554c5f]" started-at="2025-01-09T10:53:19 IST" name="primarydetails" finished-at="2025-01-09T10:53:22 IST" duration-ms="2882" status="PASS">
+        </test-method> <!-- verifyheader -->
+        <test-method signature="verifythepage()[pri:3, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:35 IST" name="verifythepage" finished-at="2025-01-17T14:39:47 IST" duration-ms="12322" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- primarydetails -->
-        <test-method signature="businessoverview()[pri:5, instance:globalview_test.Register_Test@d554c5f]" started-at="2025-01-09T10:53:22 IST" name="businessoverview" finished-at="2025-01-09T10:54:04 IST" duration-ms="41588" status="PASS">
+        </test-method> <!-- verifythepage -->
+        <test-method signature="verifynewintroimages()[pri:4, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:47 IST" name="verifynewintroimages" finished-at="2025-01-17T14:39:59 IST" duration-ms="12039" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- businessoverview -->
-        <test-method signature="finalreview()[pri:6, instance:globalview_test.Register_Test@d554c5f]" started-at="2025-01-09T10:54:04 IST" name="finalreview" finished-at="2025-01-09T10:54:47 IST" duration-ms="43311" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- finalreview -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.Register_Test@d554c5f]" started-at="2025-01-09T10:54:47 IST" name="teardown" finished-at="2025-01-09T10:54:47 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- verifynewintroimages -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:59 IST" name="teardown" finished-at="2025-01-17T14:39:59 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- globalview_test.Register_Test -->
-    </test> <!-- ChromeTest -->
-    <test started-at="2025-01-09T10:54:47 IST" name="FirefoxTest" finished-at="2025-01-09T10:54:47 IST" duration-ms="1">
-    </test> <!-- FirefoxTest -->
-    <test started-at="2025-01-09T10:54:47 IST" name="EdgeTest" finished-at="2025-01-09T10:54:47 IST" duration-ms="1">
-    </test> <!-- EdgeTest -->
-  </suite> <!-- CrossbrowserTest -->
+      </class> <!-- globalview_test.HomeLinks_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

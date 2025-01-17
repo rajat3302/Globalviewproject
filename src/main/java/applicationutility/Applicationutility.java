@@ -38,7 +38,7 @@ public class Applicationutility extends BaseLibrary
 	    act1.contextClick(ele);
 	}
 	
-	public static void mousehover(WebElement ele, WebDriver driver)
+	public void mousehover(WebElement ele, WebDriver driver)
 	{
 		Actions act2 = new Actions(driver);
 		act2.moveToElement(ele).perform();
