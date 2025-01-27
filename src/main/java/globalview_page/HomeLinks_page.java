@@ -3,6 +3,7 @@ package globalview_page;
 import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -24,6 +25,11 @@ public class HomeLinks_page extends BaseLibrary
 	
  
 //Headers xpath 
+		
+@FindBy(xpath="//div[contains(@class,'h-search-toggler')]")
+private WebElement search;
+@FindBy(xpath="//input[@placeholder='search global views']")
+private WebElement searchbar;
 
 @FindBy(xpath ="//img[contains(@src,'https://uat.globalviews.com/pub/media/wysiwyg/logo-header.png')]")
 private WebElement verifylogoglobalview;
@@ -71,13 +77,13 @@ private WebElement imageglobal;
 
 @FindBy(xpath="//*[text()='NEW INTRODUCTIONS']")
 private WebElement newindroductions;
-@FindBy(xpath="//button[@id='slick-slide-control00']")
+@FindBy(xpath="//div[contains(@class,'products-grid')]//ul/li[1]/button")
 private WebElement slider1;
-@FindBy(xpath = "//button[@id='slick-slide-control01']")
+@FindBy(xpath = "//div[contains(@class,'products-grid')]//ul/li[2]/button")
 private WebElement slider2;
-@FindBy(xpath = "//button[@id='slick-slide-control02']")
+@FindBy(xpath = "//div[contains(@class,'products-grid')]//ul/li[3]/button")
 private WebElement slider3;
-@FindBy(xpath="//button[@id='slick-slide-control03']")
+@FindBy(xpath="//div[contains(@class,'products-grid')]//ul/li[4]/button")
 private WebElement slider4;
 
 
@@ -121,22 +127,22 @@ private WebElement eighteenimage;
 private WebElement nineteenimage;
 @FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/88938.jpg')]")
 private WebElement twetyimage;
-@FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/88941.jpg')]")
+@FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/89428.jpg')]")
 private WebElement twetyoneimage;
-@FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/88941.jpg')]")
+@FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/88939.jpg')]")
 private WebElement twentytwoimage;
-@FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/88941.jpg')]")
+@FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/88937.jpg')]")
 private WebElement twentythtreeimage;
-@FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/88941.jpg')]")
+@FindBy(xpath = "//img[contains(@src,'https://gvimages.azureedge.net/images/88583.jpg')]")
 private WebElement twentyfourimage;
 
 @FindBy(xpath="//*[text()='More to explore']")
 private WebElement moretoexplore;
 @FindBy(xpath="//div[contains(@class,'homepage-brand-partners-slider')]/child::div/h2")
 private WebElement brandpartners;
-@FindBy(xpath ="//button[@id='slick-slide-control10']")
+@FindBy(xpath ="(//div[contains(@class,'slick-list draggable')])[2]/following-sibling::ul/li[1]/button")
 private WebElement bprslide1;
-@FindBy(xpath ="//button[@id='slick-slide-control11']")
+@FindBy(xpath ="(//div[contains(@class,'slick-list draggable')])[2]/following-sibling::ul/li[2]/button")
 private WebElement bprslide12;
 
 
@@ -153,24 +159,66 @@ private WebElement signatureimage;
 private WebElement studioalearnmore;
 @FindBy(xpath="//a[@href='https://signatureiii.com/about-us']")
 private WebElement signaturelearnmore;
-@FindBy(xpath="//a[@href='https://www.studioa-home.com/shop?store_family=3096']/button")
+@FindBy(xpath="(//div[contains(@class,'brand-copy')])[1]/a/button")
 private WebElement shopstudioshop;
-@FindBy(xpath = "//a[@href='https://www.signatureiii.com/shop?store_family=3824']/button")
+@FindBy(xpath = "(//div[contains(@class,'brand-copy')])[2]/a/button")
 private WebElement signatureshop;
 
 
-@FindBy(xpath= "//div[contains(@class,'subtemplate-inner')]/input")
+@FindBy(xpath="//div[text()='Sign up for Our Latest Updates']")
+private WebElement latestupdate;
+@FindBy(xpath= "//input[@placeholder='Email']")
 private WebElement emailsignup;
-@FindBy(xpath= "//span[contains(@class,'select2-selection__arrow')]")
+@FindBy(xpath= "//span[contains(@class,'select2 select2-container')]/span/span")
 private WebElement selectstore;
 @FindBy(xpath="//button[@title='Submit']")
 private WebElement signup;
+@FindBy(xpath="//span[text()='CLOSE']")
+private WebElement close;
 @FindBy(xpath="//*[@title='Back to the top']")
 private WebElement backtotop;
 @FindBy(xpath="//div[contains(@class,'footer-storefront-links-0')]/a")
 private WebElement studio;
 @FindBy(xpath = "//div[contains(@class,'footer-storefront-links-1')]/a")
 private WebElement signature;
+
+
+//validate shop category links 
+
+@FindBy(xpath = "(//a[contains(text(),'New Introductions')])[1]")
+private WebElement newintroductions;
+@FindBy(xpath="(//a[contains(text(),'Art Glasses')])[1]")
+private WebElement arete;
+@FindBy(xpath="(//a[contains(text(),'Barware')])[1]")
+private WebElement barware;
+@FindBy(xpath = "(//a[contains(text(),'Barware')])[1]/span")
+private WebElement barwaresubmenu;
+@FindBy(xpath="(//a[contains(text(),'Serveware')])[1]")
+private WebElement serveware;
+@FindBy(xpath="(//a[contains(text(),'Drinkware')])[1]")
+private WebElement drinware;
+@FindBy(xpath = "(//a[contains(text(),'Decanters')])[1]")
+private WebElement decanters;
+@FindBy(xpath="(//a[contains(text(),'Candleholders')])[1]")
+private WebElement candelholders;
+@FindBy(xpath="(//a[contains(text(),'Candleholders')])[1]/span")
+private WebElement candelholderssubmenu;
+@FindBy(xpath="(//a[contains(text(),'Acrylic')])[1]")
+private WebElement acrylic;
+@FindBy(xpath="(//a[contains(text(),'Marble')])[1]")
+private WebElement marble;
+@FindBy(xpath="(//a[contains(text(),'Porcelain')])[1]")
+private WebElement Porcelain;
+@FindBy(xpath="(//a[contains(text(),'Aluminium')])[1]")
+private WebElement Aluminium;
+@FindBy(xpath="(//a[contains(text(),'Wood')])[1]")
+private WebElement Wood;
+@FindBy(xpath="(//a[contains(text(),'Nickel')])[1]")
+private WebElement Nickel;
+@FindBy(xpath="(//a[contains(text(),'Iron')])[1]")
+private WebElement Iron;
+
+
 
 
 //Footer more
@@ -212,6 +260,7 @@ private WebElement credit;
 private WebElement contactus;
 @FindBy(xpath="//a[text()='Site Map']")
 private WebElement sitemap;
+
 
 
 @FindBy(xpath="//a[@title='Sign Me Up']")
@@ -274,6 +323,7 @@ public void validateheader() throws InterruptedException
 		ob.mousehover(shopmenu, driver);
 		Thread.sleep(1000);
 		Assert.assertTrue(shopmenu.isDisplayed(), "Dropdown or tooltip did not appear!");
+	
 		ob.mousehover(catalogsmenu, driver);
 		Thread.sleep(1000);
 		Assert.assertTrue(catalogsmenu.isDisplayed(), "Dropdown or tooltip did not appear!");
@@ -393,8 +443,7 @@ public void validatenewindrodcutions()
 			ob.mousehover(nineimage, driver);
 			ob.mousehover(sevenimage, driver);
 			
-			
-			Thread.sleep(1000);
+		
 			slider3.click();
 			Thread.sleep(1000);
 			ob.mousehover(eighteenimage, driver);
@@ -431,16 +480,152 @@ public void validatebrandpartner()
 {
 	try 
 	{
-		String expected = Propertyutility.getproperty("");
+		String expected = Propertyutility.getproperty("brandp");
+		String actual=  brandpartners.getText();
+		System.out.println(actual);
+		assertEquals(actual, expected);
+		
+		Thread.sleep(1000);
+		bprslide1.click();
+		Thread.sleep(1000);
+		bprslide12.click();
+		
+		Thread.sleep(1000);
+		bprslide1.click();
+		
+		
+		
+		String exp =  Propertyutility.getproperty("shop");
+		String act =  shop2.getText();
+		System.out.println(act);
+		assertEquals(act, exp);
+		
+		String exp2 = Propertyutility.getproperty("ourbrand");
+		String act2=  ourbrand.getText();
+		System.out.println(act2);
+		assertEquals(act2, exp2);
+		
+		 Assert.assertTrue(studioimage.isDisplayed(), "Logo is not displayed on the page!");
+		 System.out.println("studio image is displayed");
+		 
+		 Assert.assertTrue(signatureimage.isDisplayed(), "Logo is not displayed on the page!");
+		 System.out.println("signature is displayed");
+		 
+		 studioalearnmore.click();
+		 driver.navigate().back();
+		 
+		 signaturelearnmore.click();
+		 driver.navigate().back();
+		 
+		 Thread.sleep(1000);
+		 shopstudioshop.click();
+		 driver.navigate().back();
+		 
+		 
+		 signatureshop.click();
+		 driver.navigate().back();
+		 
+		 
+		 
 		
 	}
 	
 	catch (Exception e) 
 	
 	{
-		// TODO: handle exception
+		System.out.println("isuue in exception" +e);
+	}
+	
+}
+
+public void validatesearchbar()
+{
+	try 
+	{
+		//Applicationutility.waitforclickible(driver, search);
+		Applicationutility.myClick(search);
+		Thread.sleep(1000);
+		System.out.println("serchbarclick");
+		Applicationutility.myClick(searchbar);
+		searchbar.sendKeys(Propertyutility.getproperty("searchanngish"));
+		System.out.println("serchanngish");
+		searchbar.sendKeys(Keys.ENTER);
+		
+		Thread.sleep(2000);
+		driver.navigate().back();
+		
+		Thread.sleep(1000);
+//		Applicationutility.waitforclickible(driver, searchbar);
+		Applicationutility.myClick(searchbar);
+		searchbar.clear();
+		searchbar.sendKeys(Propertyutility.getproperty("serachcandle"));
+		Thread.sleep(1000);
+		searchbar.sendKeys(Keys.ENTER);
+		
+		Thread.sleep(1000);
+		driver.navigate().back();
+		
+	}
+	catch (Exception e)
+	{
+	  System.out.println("issue in expection" +e);
 	}
 }
+
+
+public void signuplatestupadtes() throws InterruptedException
+
+
+{
+	//Applicationutility.getscroll(latestupdate, driver);
+	String expected = Propertyutility.getproperty("latestnews");
+	String actual =  latestupdate.getText();
+	System.out.println(actual);
+	assertEquals(actual, expected);
+	System.out.println("Actual & expected match");
+	
+	Thread.sleep(1000);
+	Applicationutility.myClick(searchbar);
+	emailsignup.sendKeys(Propertyutility.getproperty("email"));
+	
+	//Applicationutility.waitforVisible(driver, selectstore);
+	Thread.sleep(1000);
+	selectstore.sendKeys(Propertyutility.getproperty("storeshop"));
+	Thread.sleep(1000);
+	emailsignup.sendKeys(Keys.ENTER);
+	Applicationutility.myClick(signup);
+	
+	
+	Applicationutility.myClick(close);
+	
+	
+	studio.click();
+	Thread.sleep(1000);
+	
+	driver.navigate().back();
+	signature.click();
+	Thread.sleep(1000);
+	driver.navigate().back();
+	
+	backtotop.click();
+	
+}
+
+
+public void Verifyshopcategorylinks()
+{
+	try 
+	{
+		Thread.sleep(1000);
+		shopmenu.click();
+		
+	} 
+	catch (Exception e) 
+	{
+		
+	}
+}
+
 }	
 	
 	

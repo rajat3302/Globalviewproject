@@ -1,37 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-17T14:39:08 IST" name="Default suite" finished-at="2025-01-17T14:39:59 IST" duration-ms="51559">
+  <suite started-at="2025-01-27T17:42:08 IST" name="Default suite" finished-at="2025-01-27T17:44:20 IST" duration-ms="132822">
     <groups>
+      <group name="regression">
+        <method signature="HomeLinks_Test.verifybrandpart()[pri:5, instance:globalview_test.HomeLinks_Test@68c9d179]" name="verifybrandpart" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifyheader()[pri:2, instance:globalview_test.HomeLinks_Test@68c9d179]" name="verifyheader" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifynewintroimages()[pri:4, instance:globalview_test.HomeLinks_Test@68c9d179]" name="verifynewintroimages" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifyserchbar()[pri:6, instance:globalview_test.HomeLinks_Test@68c9d179]" name="verifyserchbar" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifythepage()[pri:3, instance:globalview_test.HomeLinks_Test@68c9d179]" name="verifythepage" class="globalview_test.HomeLinks_Test"/>
+      </group> <!-- regression -->
+      <group name="sanity">
+        <method signature="HomeLinks_Test.gettitle()[pri:0, instance:globalview_test.HomeLinks_Test@68c9d179]" name="gettitle" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.validatesignup()[pri:7, instance:globalview_test.HomeLinks_Test@68c9d179]" name="validatesignup" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifylogoofpage()[pri:1, instance:globalview_test.HomeLinks_Test@68c9d179]" name="verifylogoofpage" class="globalview_test.HomeLinks_Test"/>
+      </group> <!-- sanity -->
     </groups>
-    <test started-at="2025-01-17T14:39:08 IST" name="Default test" finished-at="2025-01-17T14:39:59 IST" duration-ms="51559">
+    <test started-at="2025-01-27T17:42:08 IST" name="Default test" finished-at="2025-01-27T17:44:20 IST" duration-ms="132822">
       <class name="globalview_test.HomeLinks_Test">
-        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:08 IST" name="getLaunchurl_globalview" finished-at="2025-01-17T14:39:13 IST" duration-ms="5613" status="PASS">
+        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:42:08 IST" name="getLaunchurl_globalview" finished-at="2025-01-27T17:42:13 IST" duration-ms="5690" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getLaunchurl_globalview -->
-        <test-method signature="gettitle()[pri:0, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:13 IST" name="gettitle" finished-at="2025-01-17T14:39:13 IST" duration-ms="55" status="PASS">
+        <test-method signature="gettitle()[pri:0, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:42:13 IST" name="gettitle" finished-at="2025-01-27T17:42:14 IST" duration-ms="302" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- gettitle -->
-        <test-method signature="verifylogoofpage()[pri:1, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:13 IST" name="verifylogoofpage" finished-at="2025-01-17T14:39:15 IST" duration-ms="2024" status="PASS">
+        <test-method signature="verifylogoofpage()[pri:1, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:42:14 IST" name="verifylogoofpage" finished-at="2025-01-27T17:42:16 IST" duration-ms="2519" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifylogoofpage -->
-        <test-method signature="verifyheader()[pri:2, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:15 IST" name="verifyheader" finished-at="2025-01-17T14:39:35 IST" duration-ms="19373" status="PASS">
+        <test-method signature="verifyheader()[pri:2, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:42:16 IST" name="verifyheader" finished-at="2025-01-27T17:42:40 IST" duration-ms="24255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyheader -->
-        <test-method signature="verifythepage()[pri:3, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:35 IST" name="verifythepage" finished-at="2025-01-17T14:39:47 IST" duration-ms="12322" status="PASS">
+        <test-method signature="verifythepage()[pri:3, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:42:40 IST" name="verifythepage" finished-at="2025-01-27T17:42:56 IST" duration-ms="15175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifythepage -->
-        <test-method signature="verifynewintroimages()[pri:4, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:47 IST" name="verifynewintroimages" finished-at="2025-01-17T14:39:59 IST" duration-ms="12039" status="PASS">
+        <test-method signature="verifynewintroimages()[pri:4, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:42:56 IST" name="verifynewintroimages" finished-at="2025-01-27T17:43:09 IST" duration-ms="13189" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifynewintroimages -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.HomeLinks_Test@5fb759d6]" started-at="2025-01-17T14:39:59 IST" name="teardown" finished-at="2025-01-17T14:39:59 IST" duration-ms="1" status="PASS">
+        <test-method signature="verifybrandpart()[pri:5, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:43:09 IST" name="verifybrandpart" finished-at="2025-01-27T17:43:50 IST" duration-ms="41134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifybrandpart -->
+        <test-method signature="verifyserchbar()[pri:6, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:43:50 IST" name="verifyserchbar" finished-at="2025-01-27T17:44:06 IST" duration-ms="15526" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyserchbar -->
+        <test-method signature="validatesignup()[pri:7, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:44:06 IST" name="validatesignup" finished-at="2025-01-27T17:44:20 IST" duration-ms="14831" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatesignup -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.HomeLinks_Test@68c9d179]" started-at="2025-01-27T17:44:20 IST" name="teardown" finished-at="2025-01-27T17:44:20 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

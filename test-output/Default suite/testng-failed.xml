@@ -6,8 +6,8 @@
       <class name="globalview_test.HomeLinks_Test">
         <methods>
           <include name="teardown"/>
-          <include name="verifythepage"/>
           <include name="getLaunchurl_globalview"/>
+          <include name="validatesignup"/>
         </methods>
       </class> <!-- globalview_test.HomeLinks_Test -->
     </classes>
