@@ -2,6 +2,8 @@ package globalview_page;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -171,6 +173,8 @@ private WebElement latestupdate;
 private WebElement emailsignup;
 @FindBy(xpath= "//span[contains(@class,'select2 select2-container')]/span/span")
 private WebElement selectstore;
+@FindBy(xpath="//span[contains(@class,'select2-search--dropdown')]/input/following::span/ul/child::li[3]")
+private WebElement onlinestore;
 @FindBy(xpath="//button[@title='Submit']")
 private WebElement signup;
 @FindBy(xpath="//span[text()='CLOSE']")
@@ -185,12 +189,19 @@ private WebElement signature;
 
 //validate shop category links 
 
+
+@FindBy(xpath="(//span[text()='Shop'])[1]")
+private WebElement shopmenucategory;
+
 @FindBy(xpath = "(//a[contains(text(),'New Introductions')])[1]")
-private WebElement newintroductions;
+private WebElement newintroduction;
 @FindBy(xpath="(//a[contains(text(),'Art Glasses')])[1]")
 private WebElement arete;
+
+
 @FindBy(xpath="(//a[contains(text(),'Barware')])[1]")
 private WebElement barware;
+//barwaresubmenu
 @FindBy(xpath = "(//a[contains(text(),'Barware')])[1]/span")
 private WebElement barwaresubmenu;
 @FindBy(xpath="(//a[contains(text(),'Serveware')])[1]")
@@ -199,8 +210,11 @@ private WebElement serveware;
 private WebElement drinware;
 @FindBy(xpath = "(//a[contains(text(),'Decanters')])[1]")
 private WebElement decanters;
+
+
 @FindBy(xpath="(//a[contains(text(),'Candleholders')])[1]")
 private WebElement candelholders;
+//candleholdersubmenu
 @FindBy(xpath="(//a[contains(text(),'Candleholders')])[1]/span")
 private WebElement candelholderssubmenu;
 @FindBy(xpath="(//a[contains(text(),'Acrylic')])[1]")
@@ -217,6 +231,215 @@ private WebElement Wood;
 private WebElement Nickel;
 @FindBy(xpath="(//a[contains(text(),'Iron')])[1]")
 private WebElement Iron;
+@FindBy(xpath="(//a[contains(text(),'Hurricanes/Lanterns')])[1]")
+private WebElement HurricanesLanterns;
+@FindBy(xpath="(//a[contains(text(),'Glass')])[1]")
+private WebElement Glass;
+@FindBy(xpath="(//a[contains(text(),'Crystal')])[1]")
+private WebElement Crystal;
+@FindBy(xpath="(//a[contains(text(),'Ceramic')])[1]")
+private WebElement Ceramic;
+@FindBy(xpath="(//a[contains(text(),'Brass & Bronze')])[1]")
+private WebElement BrassBronze;
+
+
+@FindBy(xpath="((//a[contains(text(),'Candles')])[1]")
+private WebElement  Candles;
+@FindBy(xpath="(//a[contains(text(),'Clear Glass')])[1]")
+private WebElement ClearGlass;
+
+
+@FindBy(xpath="(//a[contains(text(),'Decorative Items')])[1]")
+private WebElement DecorativeItems;
+//submenu decorative items 
+@FindBy(xpath="(//a[contains(text(),'Accent Pieces')])[1]")
+private WebElement AccentPieces;
+@FindBy(xpath="(//a[contains(text(),'Plate Stands')])[1]")
+private WebElement PlateStands;
+@FindBy(xpath="(//a[contains(text(),'Picture Frames')])[1]")
+private WebElement PictureFrames;
+@FindBy(xpath="(//a[contains(text(),'Spheres')])[1]")
+private WebElement Spheres;
+@FindBy(xpath="(//a[contains(text(),'Risers')])[1]")
+private WebElement Risers;
+@FindBy(xpath="(//a[contains(text(),'Bookends')])[1]")
+private WebElement Bookends;
+@FindBy(xpath="(//a[contains(text(),'Vases & Urns')])[1]")
+private WebElement VasesUrns;
+@FindBy(xpath="(//a[contains(text(),'Chargers & Plates')])[1]")
+private WebElement ChargersPlates;
+@FindBy(xpath="(//a[contains(text(),'Compotes & Bowls')])[1]")
+private WebElement CompotesBowls;
+@FindBy(xpath="(//a[contains(text(),'Bottles & Jars')])[1]")
+private WebElement BottlesJars;
+@FindBy(xpath="(//a[contains(text(),'Animals')])[1]")
+private WebElement Animals;
+
+
+@FindBy(xpath="(//a[contains(text(),'Electrified Lighting')])[1]")
+private WebElement ElectrifiedLighting;
+//submenuelectified lighting 
+@FindBy(xpath = "(//a[contains(text(),'Electrified Lighting')])[1]/span")
+private WebElement submenuElectrifiedLighting;
+@FindBy(xpath="(//a[contains(text(),'Chandeliers')])[1]")
+private WebElement Chandeliers;
+@FindBy(xpath="(//a[contains(text(),'Buffet Lamps')])[1]")
+private WebElement BuffetLamps;
+@FindBy(xpath="(//a[contains(text(),'Table Lamps')])[1]")
+private WebElement TableLamps;
+@FindBy(xpath="(//a[contains(text(),'Sconces')])[1]")
+private WebElement Sconces;
+@FindBy(xpath="(//a[contains(text(),'Floor Lamps')])[1]")
+private WebElement FloorLamps;
+@FindBy(xpath="(//a[contains(text(),'Pendants')])[1]")
+private WebElement Pendants;
+@FindBy(xpath="(//a[contains(text(),'Accent Lamps')])[1]")
+private WebElement AccentLamps;
+
+
+@FindBy(xpath="(//a[contains(text(),'Furniture')])[1]")
+private WebElement Furniture;
+//submenu furniture 
+@FindBy(xpath = "(//a[contains(text(),'Furniture')])[1]/span")
+private WebElement furnituresubmenu;
+@FindBy(xpath="(//a[contains(text(),'Pedestals')])[1]")
+private WebElement Pedestals;
+@FindBy(xpath="(//a[contains(text(),'Media Cabinets')])[1]")
+private WebElement MediaCabinets;
+@FindBy(xpath="(//a[contains(text(),'Cabinets & Chests')])[1]")
+private WebElement CabinetsChests;
+@FindBy(xpath="(//a[contains(text(),'Bookcases & Shelves')])[1]")
+private WebElement BookcasesShelves;
+@FindBy(xpath="(//a[contains(text(),'Bedroom')])[1]")
+private WebElement Bedroom;
+
+@FindBy(xpath="(//a[contains(text(),'Mirrors')])[1]")
+private WebElement  Mirrors;
+@FindBy(xpath="(//a[contains(text(),'Office')])[1]")
+private WebElement Office;
+@FindBy(xpath="(//a[contains(text(),'Sculpture')])[1]")
+private WebElement Sculpture;
+
+@FindBy(xpath="(//a[contains(text(),'Seating')])[1]")
+private WebElement Seating;
+//submenu seating 
+@FindBy(xpath="(//a[contains(text(),'Seating')])[1]/span")
+private WebElement seatingsubmenu;
+@FindBy(xpath="(//a[contains(text(),'Stools')])[1]")
+private WebElement Stools;
+@FindBy(xpath="(//a[contains(text(),'Ottomans')])[1]")
+private WebElement Ottomans;
+@FindBy(xpath="(//a[contains(text(),'Sofas')])[1]")
+private WebElement Sofas;
+@FindBy(xpath="(//a[contains(text(),'Occasional Chairs')])[1]")
+private WebElement OccasionalChairs;
+@FindBy(xpath="(//a[contains(text(),'Dining Chairs')])[1]")
+private WebElement DiningChairs;
+@FindBy(xpath="(//a[contains(text(),'Benches')])[1]")
+private WebElement Benches;
+
+
+@FindBy(xpath="(//a[contains(text(),'Storage')])[1]")
+private WebElement Storage;
+//submenu storage 
+@FindBy(xpath="(//a[contains(text(),'Storage')])[1]/span")
+private WebElement submenuStorage;
+@FindBy(xpath="(//a[contains(text(),'Umbrella Stands')])[1]")
+private WebElement UmbrellaStands;
+@FindBy(xpath="(//a[contains(text(),'Magazine Caddies')])[1]")
+private WebElement MagazineCaddies;
+@FindBy(xpath="(//a[contains(text(),'Storage Boxes')])[1]")
+private WebElement StorageBoxes;
+@FindBy(xpath="(//a[contains(text(),'Jewelry Boxes')])[1]")
+private WebElement JewelryBoxes;
+
+@FindBy(xpath="(//a[contains(text(),'Tables')])[1]")
+private WebElement Tables;
+//submenutables
+@FindBy(xpath="(//a[contains(text(),'Tables')])[1]/span")
+private WebElement submenuTables;
+@FindBy(xpath="(//a[contains(text(),'Bar')])[1]")
+private WebElement Bar;
+@FindBy(xpath="(//a[contains(text(),'Occasional')])[1]")
+private WebElement Occasional;
+@FindBy(xpath="(//a[contains(text(),'End Table')])[1]")
+private WebElement EndTable;
+@FindBy(xpath="(//a[contains(text(),'Dining')])[1]")
+private WebElement Dining;
+@FindBy(xpath="(//a[contains(text(),'Desk')])[1]")
+private WebElement Desk;
+@FindBy(xpath="(//a[contains(text(),'Console')])[1]")
+private WebElement Console;
+@FindBy(xpath="(//a[contains(text(),'Cocktail')])[1]")
+private WebElement Cocktail;
+
+
+@FindBy(xpath="(//a[contains(text(),'Textiles')])[1]")
+private WebElement Textiles;
+//submenutextiles
+@FindBy(xpath="(//a[contains(text(),'Textiles')])[1]/span")
+private WebElement submenuTextiles;
+@FindBy(xpath="(//a[contains(text(),'Throws')])[1]")
+private WebElement Throws;
+@FindBy(xpath="(//a[contains(text(),'Pillows')])[1]")
+private WebElement Pillows;
+@FindBy(xpath="(//a[contains(text(),'Rugs')])[1]")
+private WebElement Rugs;
+
+
+@FindBy(xpath="(//a[contains(text(),'Trays')])[1]")
+private WebElement Trays;
+
+@FindBy(xpath="(//a[contains(text(),'Wall Decor')])[1]")
+private WebElement WallDecor;
+//submenu walldecor
+@FindBy(xpath="(//a[contains(text(),'Wall Art')])[1]")
+private WebElement WallArt;
+@FindBy(xpath="(//a[contains(text(),'Wall Objects')])[1]")
+private WebElement WallObjects;
+@FindBy(xpath="(//a[contains(text(),'Wall Shelves')])[1]")
+private WebElement WallShelves;
+@FindBy(xpath="(//a[contains(text(),'Wall Sconces')])[1]")
+private WebElement WallSconces;
+@FindBy(xpath="(//a[contains(text(),'Wall Panels')])[1]")
+private WebElement WallPanels;
+
+
+@FindBy(xpath="(//a[contains(text(),'Online Only')])[1]")
+private WebElement OnlineOnly;
+@FindBy(xpath="(//a[contains(text(),'Special Buys')])[1]")
+private WebElement SpecialBuys;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -590,6 +813,9 @@ public void signuplatestupadtes() throws InterruptedException
 	
 	//Applicationutility.waitforVisible(driver, selectstore);
 	Thread.sleep(1000);
+	Applicationutility.waitforVisible(driver, selectstore);
+	Applicationutility.myClick(selectstore);
+	Thread.sleep(1000);
 	selectstore.sendKeys(Propertyutility.getproperty("storeshop"));
 	Thread.sleep(1000);
 	emailsignup.sendKeys(Keys.ENTER);
@@ -617,19 +843,54 @@ public void Verifyshopcategorylinks()
 	try 
 	{
 		Thread.sleep(1000);
-		shopmenu.click();
+		ob=  new Applicationutility();
 		
-	} 
+		ob.mousehover(shopmenucategory, driver);
+		Applicationutility.waitforclickible(driver, newintroduction);
+		Thread.sleep(1000);
+		ob.mousehover(shopmenucategory, driver);
+		Applicationutility.waitforclickible(driver, arete);
+		Thread.sleep(1000);
+		ob.mousehover(shopmenucategory, driver);
+		Applicationutility.waitforclickible(driver, barware);
+		Thread.sleep(1000);
+		ob.mousehover(shopmenucategory, driver);
+		Applicationutility.waitforclickible(driver, barwaresubmenu);
+		Thread.sleep(1000);
+		
+		// Find all links within the submenu
+		//WebElement submenu = driver.findElement(By.xpath("//div[@id='submenu-barware']")); // Replace with the correct locator
+        
+        // Get all links within the submenu
+        List<WebElement> links = barwaresubmenu.findElements(By.tagName("a"));
+        
+        // Iterate through each link
+        for (int i = 0; i < links.size(); i++) {
+            // Re-fetch the list of links to avoid StaleElementReferenceException
+            links = barwaresubmenu.findElements(By.tagName("a"));
+            
+            // Click each link
+            WebElement link = links.get(i);
+            System.out.println("Clicking on link: " +link.getText());
+            link.click();
+            
+            // Perform any post-click validation if needed
+            System.out.println("Page Title: " +driver.getTitle());
+            
+            // Navigate back to the submenu to click the next link
+            driver.navigate().back();
+            
+            System.out.println("links are open in barware submenu ");
+            Thread.sleep(3000);
+	}}
 	catch (Exception e) 
 	{
-		
+		System.out.println("issue in exception" +e);
 	}
 }
 
-}	
-	
-	
-	
+		
+}
 
 
 

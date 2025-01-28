@@ -26,58 +26,61 @@ public class HomeLinks_Test extends BaseLibrary
 	
     }
 
-@Test(priority = 0 , groups = "sanity")
+//@Test(priority = 0 , groups = "sanity")
+//
+//	public void gettitle()
+//	{
+//		ob1.gettitleGolbalView();
+//	}
+//
+//@Test(priority = 1 , groups = "sanity")
+//
+//	public void verifylogoofpage() throws InterruptedException
+//	{
+//		ob.Validatelogo();
+//	}
+//
+//@Test(priority = 2 , groups = "regression")
+//	public void verifyheader() throws InterruptedException
+//   {
+//	  ob.validateheader();
+//   }
+//
+//@Test(priority = 3  ,  groups = "regression")
+//public void verifythepage() throws InterruptedException
+//{
+//	ob.verifypage();
+//}
+//
+//@Test(priority = 4  , groups = "regression")
+//public void verifynewintroimages()
+//{
+//	ob.validatenewindrodcutions();
+//}
+//
+//@Test(priority = 5  , groups = "regression")
+//public void verifybrandpart()
+//{
+//	ob.validatebrandpartner();
+//}
+//
+//@Test(priority = 6  , groups = "regression")
+//public void verifyserchbar()
+//{
+//	ob.validatesearchbar();
+//}
+//
+//@Test(priority = 7 , groups = "sanity")
+//public void validatesignup() throws InterruptedException
+//{
+//	ob.signuplatestupadtes();
+//}
 
-	public void gettitle()
-	{
-		ob1.gettitleGolbalView();
-	}
-
-@Test(priority = 1 , groups = "sanity")
-
-	public void verifylogoofpage() throws InterruptedException
-	{
-		ob.Validatelogo();
-	}
-
-@Test(priority = 2 , groups = "regression")
-	public void verifyheader() throws InterruptedException
-   {
-	  ob.validateheader();
-   }
-
-@Test(priority = 3  ,  groups = "regression")
-public void verifythepage() throws InterruptedException
+@Test(priority = 0 , groups = "regression")
+public void validatelinksshopcategory()
 {
-	ob.verifypage();
+	ob.Verifyshopcategorylinks();
 }
-
-@Test(priority = 4  , groups = "regression")
-public void verifynewintroimages()
-{
-	ob.validatenewindrodcutions();
-}
-
-@Test(priority = 5  , groups = "regression")
-public void verifybrandpart()
-{
-	ob.validatebrandpartner();
-}
-
-@Test(priority = 6  , groups = "regression")
-public void verifyserchbar()
-{
-	ob.validatesearchbar();
-}
-
-@Test(priority = 7 , groups = "sanity")
-public void validatesignup() throws InterruptedException
-{
-	ob.signuplatestupadtes();
-}
-
-
-
 
 
 
