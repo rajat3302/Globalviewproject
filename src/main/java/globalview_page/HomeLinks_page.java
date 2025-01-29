@@ -243,7 +243,7 @@ private WebElement Ceramic;
 private WebElement BrassBronze;
 
 
-@FindBy(xpath="((//a[contains(text(),'Candles')])[1]")
+@FindBy(xpath="(//a[contains(text(),'Candles')])[1]")
 private WebElement  Candles;
 @FindBy(xpath="(//a[contains(text(),'Clear Glass')])[1]")
 private WebElement ClearGlass;
@@ -252,6 +252,8 @@ private WebElement ClearGlass;
 @FindBy(xpath="(//a[contains(text(),'Decorative Items')])[1]")
 private WebElement DecorativeItems;
 //submenu decorative items 
+@FindBy(xpath = "(//a[contains(text(),'Decorative Items')])[1]/span")
+private WebElement submenuDecorativeItems;
 @FindBy(xpath="(//a[contains(text(),'Accent Pieces')])[1]")
 private WebElement AccentPieces;
 @FindBy(xpath="(//a[contains(text(),'Plate Stands')])[1]")
@@ -377,6 +379,7 @@ private WebElement Cocktail;
 @FindBy(xpath="(//a[contains(text(),'Textiles')])[1]")
 private WebElement Textiles;
 //submenutextiles
+
 @FindBy(xpath="(//a[contains(text(),'Textiles')])[1]/span")
 private WebElement submenuTextiles;
 @FindBy(xpath="(//a[contains(text(),'Throws')])[1]")
@@ -393,6 +396,8 @@ private WebElement Trays;
 @FindBy(xpath="(//a[contains(text(),'Wall Decor')])[1]")
 private WebElement WallDecor;
 //submenu walldecor
+@FindBy(xpath="(//a[contains(text(),'Wall Decor')])[1]/span")
+private WebElement WallDecorsubmenu;
 @FindBy(xpath="(//a[contains(text(),'Wall Art')])[1]")
 private WebElement WallArt;
 @FindBy(xpath="(//a[contains(text(),'Wall Objects')])[1]")
@@ -409,40 +414,6 @@ private WebElement WallPanels;
 private WebElement OnlineOnly;
 @FindBy(xpath="(//a[contains(text(),'Special Buys')])[1]")
 private WebElement SpecialBuys;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Footer more
 @FindBy(xpath="//*[text()='About Us']")
@@ -838,11 +809,11 @@ public void signuplatestupadtes() throws InterruptedException
 }
 
 
-public void Verifyshopcategorylinks()
+public void Verifyshopcategorylinks() throws InterruptedException
 {
 	try 
 	{
-		Thread.sleep(1000);
+	    Thread.sleep(1000);
 		ob=  new Applicationutility();
 		
 		ob.mousehover(shopmenucategory, driver);
@@ -858,21 +829,18 @@ public void Verifyshopcategorylinks()
 		Applicationutility.waitforclickible(driver, barwaresubmenu);
 		Thread.sleep(1000);
 		
-		// Find all links within the submenu
-		//WebElement submenu = driver.findElement(By.xpath("//div[@id='submenu-barware']")); // Replace with the correct locator
-        
+
         // Get all links within the submenu
-        List<WebElement> links = barwaresubmenu.findElements(By.tagName("a"));
+            List<WebElement> links = barwaresubmenu.findElements(By.tagName("a"));
         
         // Iterate through each link
-        for (int i = 0; i < links.size(); i++) {
-            // Re-fetch the list of links to avoid StaleElementReferenceException
+            for (int i = 0; i < links.size(); i++)
+            {
             links = barwaresubmenu.findElements(By.tagName("a"));
             
-            // Click each link
-            WebElement link = links.get(i);
-            System.out.println("Clicking on link: " +link.getText());
-            link.click();
+            WebElement linkbarware = links.get(i);
+            System.out.println("Clicking on link: " +linkbarware.getText());
+            linkbarware.click();
             
             // Perform any post-click validation if needed
             System.out.println("Page Title: " +driver.getTitle());
@@ -881,8 +849,209 @@ public void Verifyshopcategorylinks()
             driver.navigate().back();
             
             System.out.println("links are open in barware submenu ");
-            Thread.sleep(3000);
-	}}
+            }
+           
+          Applicationutility.waitforclickible(driver, candelholders);  
+    	  Thread.sleep(1000);
+          ob.mousehover(shopmenucategory, driver);
+          Applicationutility.waitforclickible(driver, candelholderssubmenu);
+          
+          List<WebElement> linkss = candelholderssubmenu.findElements(By.tagName("a"));
+          
+          
+              for (int k = 0; k < linkss.size(); k++) 
+              {
+              linkss = barwaresubmenu.findElements(By.tagName("a"));
+              
+              WebElement linkcandleholder = links.get(k);
+              System.out.println("Clicking on link: " +linkcandleholder.getText());
+              linkcandleholder.click();
+              System.out.println("Page Title: " +driver.getTitle());
+              driver.navigate().back();
+              ob.mousehover(shopmenucategory, driver);
+              System.out.println("links are open in linkcandleholder submenu ");
+              }
+           
+           Applicationutility.waitforclickible(driver, Candles);  
+           Thread.sleep(1000);
+           ob.mousehover(shopmenucategory, driver);
+           Applicationutility.waitforclickible(driver, ClearGlass);  
+           Thread.sleep(1000);
+           ob.mousehover(shopmenucategory, driver);
+           Applicationutility.waitforclickible(driver, DecorativeItems);  
+           Thread.sleep(1000);
+           ob.mousehover(shopmenucategory, driver);
+           Applicationutility.waitforclickible(driver, submenuDecorativeItems);  
+           
+           List<WebElement> linksss = submenuDecorativeItems.findElements(By.tagName("a"));
+           
+           
+	           for (int k = 0; k < linksss.size(); k++) 
+	           {
+	           linksss = submenuDecorativeItems.findElements(By.tagName("a"));
+	           
+	           WebElement submenuDecorativeItems = links.get(k);
+	           System.out.println("Clicking on link: " +submenuDecorativeItems.getText());
+	           submenuDecorativeItems.click();
+	           System.out.println("Page Title: " +driver.getTitle());
+	           driver.navigate().back(); 
+	           System.out.println("links are open in submenuDecorativeItems ");
+	           }
+	           
+	           
+	       Applicationutility.waitforclickible(driver, ElectrifiedLighting);
+	       Thread.sleep(1000);
+	       ob.mousehover(shopmenucategory, driver);
+	       Applicationutility.waitforclickible(driver, submenuElectrifiedLighting);
+	       List<WebElement> linkssss = submenuElectrifiedLighting.findElements(By.tagName("a"));
+           
+           
+	           for (int j = 0; j < linkssss.size(); j++) 
+	           {
+	           linkssss = submenuElectrifiedLighting.findElements(By.tagName("a"));
+	           
+	           WebElement submenuElectrifiedLighting = links.get(j);
+	           System.out.println("Clicking on link: " +submenuElectrifiedLighting.getText());
+	           submenuElectrifiedLighting.click();
+	           System.out.println("Page Title: " +driver.getTitle());
+	           driver.navigate().back(); 
+	           System.out.println("links are open in submenuElectrifiedLighting ");
+	           }
+	        
+	        Applicationutility.waitforclickible(driver, Furniture);
+	        ob.mousehover(shopmenucategory, driver);
+	        
+	        Thread.sleep(2000);  
+		    Applicationutility.myClick(furnituresubmenu);
+		    List<WebElement> linksssss = furnituresubmenu.findElements(By.tagName("a"));
+	           
+	           
+	           for (int k = 0; k < linksssss.size(); k++) 
+	           {
+	           linksssss = furnituresubmenu.findElements(By.tagName("a"));
+	           
+	           WebElement furnituresubmenu = links.get(k);
+	           System.out.println("Clicking on link: " +furnituresubmenu.getText());
+	           furnituresubmenu.click();
+	           System.out.println("Page Title: " +driver.getTitle());
+	           driver.navigate().back(); 
+	           System.out.println("links are open in furnituresubmenu ");
+	           }
+	        Thread.sleep(1000);   
+	        Applicationutility.waitforclickible(driver, Mirrors);
+		    ob.mousehover(shopmenucategory, driver);
+		    Applicationutility.waitforclickible(driver, Office);
+		    ob.mousehover(shopmenucategory, driver);
+		    Applicationutility.waitforclickible(driver, Sculpture);
+		    ob.mousehover(shopmenucategory, driver);
+		    Applicationutility.waitforclickible(driver, Seating);
+		    ob.mousehover(shopmenucategory, driver);
+		    Applicationutility.waitforclickible(driver, seatingsubmenu);
+		    
+		    List<WebElement> linkssssss = seatingsubmenu.findElements(By.tagName("a"));
+	           
+	           
+	           for (int l = 0; l < links.size(); l++) 
+	           {
+	           linkssssss = seatingsubmenu.findElements(By.tagName("a"));
+	           
+	           WebElement seatingsubmenu = links.get(l);
+	           System.out.println("Clicking on link: " +seatingsubmenu.getText());
+	           seatingsubmenu.click();
+	           System.out.println("Page Title: " +driver.getTitle());
+	           driver.navigate().back(); 
+	           System.out.println("links are open in seatingsubmenu ");
+	           }
+	           
+	        Thread.sleep(1000);
+	        Applicationutility.waitforclickible(driver, Storage);
+	        ob.mousehover(shopmenucategory, driver);
+		    Applicationutility.waitforclickible(driver, submenuStorage);
+		    List<WebElement> linksssssss = submenuStorage.findElements(By.tagName("a"));
+	           
+	           
+	           for (int m = 0; m < links.size(); m++) 
+	           {
+	           linksssssss = submenuStorage.findElements(By.tagName("a"));
+	           
+	           WebElement submenuStorage = links.get(m);
+	           System.out.println("Clicking on link: " +submenuStorage.getText());
+	           submenuStorage.click();
+	           System.out.println("Page Title: " +driver.getTitle());
+	           driver.navigate().back(); 
+	           System.out.println("links are open in submenuStorage ");
+	           }   
+	           
+	         Applicationutility.waitforclickible(driver, Tables);
+		     ob.mousehover(shopmenucategory, driver);
+		     Applicationutility.waitforclickible(driver, submenuTables);
+		     List<WebElement> linkssssssss = submenuTables.findElements(By.tagName("a"));
+	           
+	           
+	           for (int n = 0; n < links.size(); n++) 
+	           {
+	           linkssssssss = submenuTables.findElements(By.tagName("a"));
+	           
+	           WebElement submenuTables = links.get(n);
+	           System.out.println("Clicking on link: " +submenuTables.getText());
+	           submenuTables.click();
+	           System.out.println("Page Title: " +driver.getTitle());
+	           driver.navigate().back(); 
+	           System.out.println("links are open in submenuTables ");
+	           }   
+	           
+	        Applicationutility.waitforclickible(driver, Textiles);
+	        ob.mousehover(shopmenucategory, driver);
+			Applicationutility.waitforclickible(driver, submenuTextiles);
+			List<WebElement> linksssssssss = submenuTextiles.findElements(By.tagName("a"));
+	           
+	           
+	           for (int o = 0; o < links.size(); o++) 
+	           {
+	           linksssssssss = submenuTextiles.findElements(By.tagName("a"));
+	           
+	           WebElement submenuTextiles = links.get(o);
+	           System.out.println("Clicking on link: " +submenuTextiles.getText());
+	           submenuTextiles.click();
+	           System.out.println("Page Title: " +driver.getTitle());
+	           driver.navigate().back(); 
+	           System.out.println("links are open in submenuTables ");
+	           } 	
+	           
+	        Applicationutility.waitforclickible(driver, Trays);
+		    ob.mousehover(shopmenucategory, driver);
+		    Applicationutility.waitforclickible(driver, WallDecor);
+		    ob.mousehover(shopmenucategory, driver);
+		    Applicationutility.waitforclickible(driver, WallDecor);
+		    ob.mousehover(shopmenucategory, driver);
+		    Applicationutility.waitforclickible(driver, WallDecorsubmenu);
+            
+		    List<WebElement> linkssssssssss = WallDecorsubmenu.findElements(By.tagName("a"));
+	           
+	           
+	           for (int p = 0; p < links.size(); p++) 
+	           {
+	           linkssssssssss = WallDecorsubmenu.findElements(By.tagName("a"));
+	           
+	           WebElement WallDecorsubmenu = links.get(p);
+	           System.out.println("Clicking on link: " +WallDecorsubmenu.getText());
+	           WallDecorsubmenu.click();
+	           System.out.println("Page Title: " +driver.getTitle());
+	           driver.navigate().back(); 
+	           System.out.println("links are open in submenuTables ");
+	           } 	
+	           
+	       Applicationutility.waitforclickible(driver, OnlineOnly);    
+	       ob.mousehover(shopmenucategory, driver);
+		   Applicationutility.waitforclickible(driver, SpecialBuys);    
+		   
+		   
+		   Thread.sleep(2000);
+           System.out.println("Verified all links");
+		       
+             
+	
+}
 	catch (Exception e) 
 	{
 		System.out.println("issue in exception" +e);

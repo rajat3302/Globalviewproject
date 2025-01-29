@@ -7,7 +7,7 @@
         <methods>
           <include name="teardown"/>
           <include name="getLaunchurl_globalview"/>
-          <include name="validatesignup"/>
+          <include name="validatelinksshopcategory"/>
         </methods>
       </class> <!-- globalview_test.HomeLinks_Test -->
     </classes>
