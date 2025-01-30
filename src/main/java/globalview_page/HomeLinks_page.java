@@ -10,11 +10,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 
 import applicationutility.Applicationutility;
 import baselibrary.BaseLibrary;
+import baselibrary.CustomReportListener;
+import io.reactivex.rxjava3.internal.util.AppendOnlyLinkedArrayList;
 import propertyutility.Propertyutility;
 
+
+@Listeners(CustomReportListener.class)
 public class HomeLinks_page extends BaseLibrary
 
 {
@@ -416,6 +421,8 @@ private WebElement OnlineOnly;
 private WebElement SpecialBuys;
 
 //Footer more
+@FindBy(xpath ="//h3[contains(@class,'tooglecont')]")
+private WebElement more;
 @FindBy(xpath="//*[text()='About Us']")
 private WebElement aboutus;
 @FindBy(xpath="//*[text()='Contract']")
@@ -431,6 +438,8 @@ private WebElement Blog;
 
 
 //Brands
+@FindBy(xpath="//h3[text()='Brands']")
+private WebElement BRANDS;
 @FindBy(xpath="//a[text()='Surya']")
 private WebElement surya;
 @FindBy(xpath="//a[@title='Mitchell Gold + Bob Williams']")
@@ -440,6 +449,8 @@ private WebElement rstbrand;
 
 //customer service
 
+@FindBy(xpath="//h3[contains(@class,'custservisdesk')]/a")
+private WebElement customservice;
 @FindBy(xpath="//a[text()='Terms and Conditions']")
 private WebElement TermsConditions;
 @FindBy(xpath="//a[text()='Privacy Policy']")
@@ -1058,7 +1069,88 @@ public void Verifyshopcategorylinks() throws InterruptedException
 	}
 }
 
+
+
+
+public void verifypageFooter() throws InterruptedException
+{
+	try 
+	{
+		Thread.sleep(1000);
 		
+		String expected = Propertyutility.getproperty("more");
+		String actual = more.getText();
+		System.out.println(actual);
+		assertEquals(actual, expected);
+		
+		
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(aboutus);
+		System.out.println("aboutus verified");
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(Contract);
+		System.out.println("contract verfied");
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(Showrooms);
+		System.out.println("showrooms verified");
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(MarketDates);
+		System.out.println("marketdates verified");
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(catalogsmenu);
+		System.out.println("catalogsmenu");
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(Blog);
+		System.out.println("Blog");
+		Applicationutility.scrolltobottom();
+		
+		
+		String expectedbrand = Propertyutility.getproperty("brands");
+		String actualbrand =  BRANDS.getText();
+		System.out.println(actualbrand);
+		assertEquals(actualbrand, expectedbrand);
+		
+		Applicationutility.myClick(surya);
+		Thread.sleep(2000);
+		Applicationutility.chnagewindow(0, driver);
+		Applicationutility.myClick(mitchellgold);
+		Thread.sleep(2000);
+		Applicationutility.chnagewindow(0, driver);
+		Applicationutility.myClick(rstbrand);
+		Thread.sleep(2000);
+		Applicationutility.chnagewindow(0, driver);
+		
+		Applicationutility.myClick(customservice);
+		Applicationutility.scrolltobottom();
+		
+		Applicationutility.myClick(TermsConditions);
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(privacy);
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(shipping);
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(environmental);
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(credit);
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(contactus);
+		Applicationutility.scrolltobottom();
+		Applicationutility.myClick(sitemap);
+		Applicationutility.scrolltobottom();
+		
+
+		
+		
+		Thread.sleep(1000);
+	} 
+	catch (Exception e) 
+	{
+		// TODO: handle exception
+	}
+	
+}
+
+
 }
 
 
