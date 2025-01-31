@@ -88,14 +88,18 @@ public class HomeLinks_Test extends BaseLibrary
 //}
 
 
-@Test(priority = 0 , groups = "sanity")
+//@Test(priority = 0 , groups = "sanity")
+//
+//public void validatefooterlinks() throws InterruptedException
+//{
+//	ob.verifypageFooter();
+//}
 
-public void validatefooterlinks() throws InterruptedException
+@Test(priority = 1)
+public void dignupupdates() throws InterruptedException
 {
-	ob.verifypageFooter();
+	ob.siggnupform();
 }
-
-
 
 
 @AfterTest

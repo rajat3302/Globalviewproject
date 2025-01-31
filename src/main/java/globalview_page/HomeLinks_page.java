@@ -468,9 +468,13 @@ private WebElement sitemap;
 
 
 
+@FindBy(xpath ="//div[contains(@class,'f-signup')]/h4")
+private WebElement dontmissout;
 @FindBy(xpath="//a[@title='Sign Me Up']")
 private WebElement signupme;
 
+@FindBy(xpath="//span[contains(@class,'base')]")
+private WebElement fignforupdates;
 @FindBy(xpath= "//input[@title='First Name']")
 private WebElement fname;
 @FindBy(xpath= "Last Name")
@@ -487,6 +491,10 @@ private WebElement selectstate;
 private WebElement region;
 @FindBy(xpath="//input[@placeholder='ZIP CODE']")
 private WebElement zipcode;
+@FindBy(xpath="//input[@type='checkbox']/following-sibling::label")
+private WebElement checkboxlabel;
+@FindBy(xpath="//span[@id='recaptcha-anchor']")
+private WebElement recaptcha;
 @FindBy(xpath="//button[@title='Submit']")
 private WebElement submit;
 
@@ -1137,20 +1145,72 @@ public void verifypageFooter() throws InterruptedException
 		Applicationutility.scrolltobottom();
 		Applicationutility.myClick(sitemap);
 		Applicationutility.scrolltobottom();
-		
-
-		
-		
 		Thread.sleep(1000);
+		
+	
 	} 
 	catch (Exception e) 
 	{
-		// TODO: handle exception
+		System.out.println("issue in validate footer" +e);
 	}
 	
 }
 
+public void siggnupform() throws InterruptedException
 
+{
+	String expected = Propertyutility.getproperty("dontmissout");
+	String actual = dontmissout.getText();
+	System.out.println(actual);
+	assertEquals(actual, expected);
+	
+	signupme.click();
+	
+	String expceted1 = Propertyutility.getproperty("fignforupdates");
+	String actual1= fignforupdates.getText();
+	System.out.println(actual1);
+	assertEquals(actual1, expceted1);
+	
+	fname.click();
+	fname.sendKeys(Propertyutility.getproperty("fname"));
+	lname.click();
+	fname.sendKeys(Propertyutility.getproperty("lname"));
+	email.click();
+	email.sendKeys(Propertyutility.getproperty("emailsign"));
+	company.click();
+	company.sendKeys(Propertyutility.getproperty("company"));
+	
+	describe.click();
+	describe.sendKeys(Propertyutility.getproperty("describe"));
+	describe.sendKeys(Keys.ENTER);
+	
+	Thread.sleep(1000);
+	
+	selectstate.click();
+	selectstate.sendKeys(Propertyutility.getproperty("selectstate"));
+	selectstate.sendKeys(Keys.ENTER);
+	
+	Thread.sleep(1000);
+	
+	region.click();
+	region.sendKeys(Propertyutility.getproperty("region"));
+	region.sendKeys(Keys.ENTER);
+	
+	
+	zipcode.click();
+	zipcode.sendKeys(Propertyutility.getproperty("PINCODE"));
+	
+	checkboxlabel.click();
+	Thread.sleep(1000);
+
+	
+	submit.click();
+	
+	Thread.sleep(2000);
+	
+	
+	
+   }
 }
 
 

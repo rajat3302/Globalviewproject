@@ -5,10 +5,10 @@
     <classes>
       <class name="globalview_test.HomeLinks_Test">
         <methods>
-          <include name="validatefooterlinks"/>
           <include name="tearDown"/>
           <include name="teardown"/>
           <include name="getLaunchurl_globalview"/>
+          <include name="dignupupdates"/>
         </methods>
       </class> <!-- globalview_test.HomeLinks_Test -->
     </classes>
