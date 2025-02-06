@@ -8,7 +8,7 @@
           <include name="tearDown"/>
           <include name="teardown"/>
           <include name="getLaunchurl_globalview"/>
-          <include name="dignupupdates"/>
+          <include name="signupupdates"/>
         </methods>
       </class> <!-- globalview_test.HomeLinks_Test -->
     </classes>

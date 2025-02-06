@@ -477,26 +477,29 @@ private WebElement signupme;
 private WebElement fignforupdates;
 @FindBy(xpath= "//input[@title='First Name']")
 private WebElement fname;
-@FindBy(xpath= "Last Name")
+@FindBy(xpath= "//input[@placeholder='Last Name*']")
 private WebElement lname;
 @FindBy(xpath="//input[@name='loffield_c32']")
 private WebElement email;
 @FindBy(xpath="//input[@title='Company']")
 private WebElement company;
-@FindBy(xpath="//span[@title='WHAT DESCRIBES YOU?']")
-private WebElement describe;
+
 @FindBy(xpath="//span[@title='-- Please Select --']")
-private WebElement selectstate;
-@FindBy(xpath="//input[@placeholder='REGION, STATE, PROVINCE']")
-private WebElement region;
+private WebElement city;
+@FindBy(xpath="//input[@type='search']")
+private WebElement selectcity;
+
 @FindBy(xpath="//input[@placeholder='ZIP CODE']")
 private WebElement zipcode;
-@FindBy(xpath="//input[@type='checkbox']/following-sibling::label")
+@FindBy(xpath="//input[@type='checkbox']")
 private WebElement checkboxlabel;
-@FindBy(xpath="//span[@id='recaptcha-anchor']")
+@FindBy(xpath="//div[contains(@class,'recaptcha-checkbox-checkmark')]")
 private WebElement recaptcha;
 @FindBy(xpath="//button[@title='Submit']")
 private WebElement submit;
+
+@FindBy(xpath="//div[text()='Please check reCaptcha and try again.']")
+private WebElement verifyerrorcaptcha;
 
 
 public void Validatelogo() throws InterruptedException
@@ -1159,59 +1162,79 @@ public void verifypageFooter() throws InterruptedException
 public void siggnupform() throws InterruptedException
 
 {
+	
+	
+	
 	String expected = Propertyutility.getproperty("dontmissout");
 	String actual = dontmissout.getText();
 	System.out.println(actual);
 	assertEquals(actual, expected);
 	
+
 	signupme.click();
+	Thread.sleep(2000);
 	
 	String expceted1 = Propertyutility.getproperty("fignforupdates");
 	String actual1= fignforupdates.getText();
 	System.out.println(actual1);
 	assertEquals(actual1, expceted1);
 	
-	fname.click();
-	fname.sendKeys(Propertyutility.getproperty("fname"));
-	lname.click();
-	fname.sendKeys(Propertyutility.getproperty("lname"));
+	
+	Applicationutility.myClick(fname);
+	fname.sendKeys(Propertyutility.getproperty("ffname"));
+	Thread.sleep(1000);
+	Applicationutility.myClick(lname);
+	lname.sendKeys(Propertyutility.getproperty("llname"));
+	Thread.sleep(1000);
+	
 	email.click();
-	email.sendKeys(Propertyutility.getproperty("emailsign"));
+	email.sendKeys(Propertyutility.getproperty("eemailsign"));
+	
 	company.click();
-	company.sendKeys(Propertyutility.getproperty("company"));
+	company.sendKeys(Propertyutility.getproperty("ccompany"));
 	
-	describe.click();
-	describe.sendKeys(Propertyutility.getproperty("describe"));
-	describe.sendKeys(Keys.ENTER);
-	
-	Thread.sleep(1000);
-	
-	selectstate.click();
-	selectstate.sendKeys(Propertyutility.getproperty("selectstate"));
-	selectstate.sendKeys(Keys.ENTER);
-	
-	Thread.sleep(1000);
-	
-	region.click();
-	region.sendKeys(Propertyutility.getproperty("region"));
-	region.sendKeys(Keys.ENTER);
-	
-	
-	zipcode.click();
-	zipcode.sendKeys(Propertyutility.getproperty("PINCODE"));
-	
-	checkboxlabel.click();
 	Thread.sleep(1000);
 
 	
-	submit.click();
+	Applicationutility.myClick(city);
+	Thread.sleep(1000);
+	Applicationutility.myClick(selectcity);
+	selectcity.sendKeys(Propertyutility.getproperty("rregion"));
+	Thread.sleep(1000);
+	selectcity.sendKeys(Keys.ENTER);
 	
+	
+	Thread.sleep(1000);
+	Applicationutility.myClick(zipcode);
+	zipcode.sendKeys(Propertyutility.getproperty("PPINCODE"));
+	
+    Applicationutility.getscroll(checkboxlabel, driver);
+	Applicationutility.myClick(checkboxlabel);
+	Thread.sleep(1000);
+    
+	
+//	Applicationutility.myClick(recaptcha);
+//	Thread.sleep(1000);
+//	
+	
+	Applicationutility.myClick(submit);
 	Thread.sleep(2000);
 	
+	Applicationutility.scrolltotop();
+	
+	String exp = Propertyutility.getproperty("verifyrecaptchaerror");
+	String act = verifyerrorcaptcha.getText();
+	System.out.println(act);
+	assertEquals(act, exp);
+	
+	System.out.println("error verified");
+	
+	} 
 	
 	
-   }
+	
 }
+
 
 
 

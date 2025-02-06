@@ -1,97 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-31T18:29:51 IST" name="Default suite" finished-at="2025-01-31T18:30:01 IST" duration-ms="10308">
+  <suite started-at="2025-02-05T17:46:23 IST" name="Default suite" finished-at="2025-02-05T17:51:13 IST" duration-ms="290045">
     <groups>
+      <group name="regression">
+        <method signature="HomeLinks_Test.validatelinksshopcategory()[pri:8, instance:globalview_test.HomeLinks_Test@491b9b8]" name="validatelinksshopcategory" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifybrandpart()[pri:5, instance:globalview_test.HomeLinks_Test@491b9b8]" name="verifybrandpart" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifyheader()[pri:2, instance:globalview_test.HomeLinks_Test@491b9b8]" name="verifyheader" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifynewintroimages()[pri:4, instance:globalview_test.HomeLinks_Test@491b9b8]" name="verifynewintroimages" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifyserchbar()[pri:6, instance:globalview_test.HomeLinks_Test@491b9b8]" name="verifyserchbar" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifythepage()[pri:3, instance:globalview_test.HomeLinks_Test@491b9b8]" name="verifythepage" class="globalview_test.HomeLinks_Test"/>
+      </group> <!-- regression -->
+      <group name="sanity">
+        <method signature="HomeLinks_Test.gettitle()[pri:0, instance:globalview_test.HomeLinks_Test@491b9b8]" name="gettitle" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.validatefooterlinks()[pri:9, instance:globalview_test.HomeLinks_Test@491b9b8]" name="validatefooterlinks" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.validatesignup()[pri:7, instance:globalview_test.HomeLinks_Test@491b9b8]" name="validatesignup" class="globalview_test.HomeLinks_Test"/>
+        <method signature="HomeLinks_Test.verifylogoofpage()[pri:1, instance:globalview_test.HomeLinks_Test@491b9b8]" name="verifylogoofpage" class="globalview_test.HomeLinks_Test"/>
+      </group> <!-- sanity -->
     </groups>
-    <test started-at="2025-01-31T18:29:51 IST" name="Default test" finished-at="2025-01-31T18:30:01 IST" duration-ms="10308">
+    <test started-at="2025-02-05T17:46:23 IST" name="Default test" finished-at="2025-02-05T17:51:13 IST" duration-ms="290045">
       <class name="globalview_test.HomeLinks_Test">
-        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.HomeLinks_Test@4d14b6c2]" started-at="2025-01-31T18:29:51 IST" name="getLaunchurl_globalview" finished-at="2025-01-31T18:29:56 IST" duration-ms="5851" status="PASS">
+        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:46:23 IST" name="getLaunchurl_globalview" finished-at="2025-02-05T17:46:30 IST" duration-ms="7054" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getLaunchurl_globalview -->
-        <test-method signature="dignupupdates()[pri:1, instance:globalview_test.HomeLinks_Test@4d14b6c2]" started-at="2025-01-31T18:29:57 IST" name="dignupupdates" finished-at="2025-01-31T18:30:01 IST" duration-ms="4141" status="FAIL">
-          <exception class="org.openqa.selenium.InvalidSelectorException">
-            <message>
-              <![CDATA[invalid selector
-from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression Last Name because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string 'Last Name' is not a valid XPath expression."}
-  (Session info: chrome=132.0.6834.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b33328298cf27bc620d53be9ebb590b4, findElement {value=Last Name, using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.160, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\RAJATS~1.INN\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58213/devtoo..., se:cdpVersion: 132.0.6834.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b33328298cf27bc620d53be9ebb590b4]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector
-from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression Last Name because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string 'Last Name' is not a valid XPath expression."}
-  (Session info: chrome=132.0.6834.160)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b33328298cf27bc620d53be9ebb590b4, findElement {value=Last Name, using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.160, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\RAJATS~1.INN\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58213}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58213/devtoo..., se:cdpVersion: 132.0.6834.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b33328298cf27bc620d53be9ebb590b4
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
-at globalview_page.HomeLinks_page.siggnupform(HomeLinks_page.java:1176)
-at globalview_test.HomeLinks_Test.dignupupdates(HomeLinks_Test.java:101)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+        <test-method signature="gettitle()[pri:0, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:46:30 IST" name="gettitle" finished-at="2025-02-05T17:46:30 IST" duration-ms="94" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dignupupdates -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:globalview_test.HomeLinks_Test@4d14b6c2]" started-at="2025-01-31T18:30:01 IST" name="tearDown" finished-at="2025-01-31T18:30:01 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- gettitle -->
+        <test-method signature="verifylogoofpage()[pri:1, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:46:30 IST" name="verifylogoofpage" finished-at="2025-02-05T17:46:32 IST" duration-ms="1993" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifylogoofpage -->
+        <test-method signature="verifyheader()[pri:2, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:46:32 IST" name="verifyheader" finished-at="2025-02-05T17:46:51 IST" duration-ms="19604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyheader -->
+        <test-method signature="verifythepage()[pri:3, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:46:51 IST" name="verifythepage" finished-at="2025-02-05T17:47:07 IST" duration-ms="15926" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifythepage -->
+        <test-method signature="verifynewintroimages()[pri:4, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:47:07 IST" name="verifynewintroimages" finished-at="2025-02-05T17:47:19 IST" duration-ms="11086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifynewintroimages -->
+        <test-method signature="verifybrandpart()[pri:5, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:47:19 IST" name="verifybrandpart" finished-at="2025-02-05T17:47:59 IST" duration-ms="40578" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifybrandpart -->
+        <test-method signature="verifyserchbar()[pri:6, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:47:59 IST" name="verifyserchbar" finished-at="2025-02-05T17:48:10 IST" duration-ms="11305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyserchbar -->
+        <test-method signature="validatesignup()[pri:7, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:48:10 IST" name="validatesignup" finished-at="2025-02-05T17:48:28 IST" duration-ms="18087" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatesignup -->
+        <test-method signature="validatelinksshopcategory()[pri:8, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:48:28 IST" name="validatelinksshopcategory" finished-at="2025-02-05T17:50:18 IST" duration-ms="109541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatelinksshopcategory -->
+        <test-method signature="validatefooterlinks()[pri:9, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:50:18 IST" name="validatefooterlinks" finished-at="2025-02-05T17:50:55 IST" duration-ms="37440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatefooterlinks -->
+        <test-method signature="signupupdates()[pri:10, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:50:55 IST" name="signupupdates" finished-at="2025-02-05T17:51:13 IST" duration-ms="17192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signupupdates -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:51:13 IST" name="tearDown" finished-at="2025-02-05T17:51:13 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.HomeLinks_Test@4d14b6c2]" started-at="2025-01-31T18:30:01 IST" name="teardown" finished-at="2025-01-31T18:30:01 IST" depends-on-methods="globalview_test.HomeLinks_Test.tearDown" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.HomeLinks_Test@491b9b8]" started-at="2025-02-05T17:51:13 IST" name="teardown" finished-at="2025-02-05T17:51:13 IST" depends-on-methods="globalview_test.HomeLinks_Test.tearDown" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
