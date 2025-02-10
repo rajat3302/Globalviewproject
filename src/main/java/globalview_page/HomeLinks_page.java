@@ -502,6 +502,83 @@ private WebElement submit;
 private WebElement verifyerrorcaptcha;
 
 
+
+//brand partnerrs shop menu validation
+@FindBy(xpath="//a[text()='BRAND PARTNERS']")
+private WebElement brandpartnersheading;
+@FindBy(xpath="//div[text()='ANN GISH']")
+private WebElement ANNGISH;
+@FindBy(xpath="//div[text()='ARETE']")
+private WebElement ARETE;
+@FindBy(xpath="//div[text()='BARBARA BARRY']")
+private WebElement BARBARABARRY;
+@FindBy(xpath="//div[text()='MCFCHAN']")
+private WebElement MCFCHAN;
+@FindBy(xpath="//div[text()='JULIA BUCKINGHAM']")
+private WebElement JULIABUCKINGHAM;
+@FindBy(xpath="//div[text()='Lemieux Et Cie']")
+private WebElement LemieuxEtCie;
+@FindBy(xpath="//div[text()='WILLIAMSBURG']")
+private WebElement WILLIAMSBURG;
+@FindBy(xpath="//div[text()='CITIZEN ARTIST']")
+private WebElement CITIZENARTIST;
+@FindBy(xpath="//div[text()='Ashley Childers']")
+private WebElement AshleyChilders;
+@FindBy(xpath="//div[text()='Edward Nader']")
+private WebElement EdwardNader;
+
+
+
+@FindBy(xpath="//div[text()='ANN GISH']/following-sibling::div")
+private WebElement angishimageclick;
+@FindBy(xpath="//div[text()='ARETE']/following-sibling::div")
+private WebElement areteimageclick;
+@FindBy(xpath="//div[text()='BARBARA BARRY']/following-sibling::div")
+private WebElement BARBARABARRYimageclick;
+@FindBy(xpath="//div[text()='MCFCHAN']/following-sibling::div")
+private WebElement MCFCHANimageclick;
+@FindBy(xpath="//div[text()='JULIABUCKINGHAM']/following-sibling::div")
+private WebElement JULIABUCKINGHAMimageclick;
+@FindBy(xpath="//div[text()='Lemieux Et Cie']/following-sibling::div")
+private WebElement LemieuxEtCieimageclick;
+@FindBy(xpath="//div[text()='WILLIAMSBURG']/following-sibling::div")
+private WebElement WILLIAMSBURGimageclick;
+@FindBy(xpath="//div[text()='CITIZENARTIST']/following-sibling::div")
+private WebElement CITIZENARTISTimageclick;
+@FindBy(xpath="//div[text()='Ashley Childers']/following-sibling::div")
+private WebElement AshleyChildersimageclick;
+@FindBy(xpath="//div[text()='EdwardNader']/following-sibling::div")
+private WebElement EdwardNaderimageclick;
+
+//validate explore links 
+
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Ann Gish Collection')]/following::a[1]")
+private WebElement angishexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Barbara Barry Collection')]/following::a[1]")
+private WebElement BarbaraBarryCollectionexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Ann Gish Collection')]/following::a[1]")
+private WebElement angishexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Ann Gish Collection')]/following::a[1]")
+private WebElement angishexplore;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public void Validatelogo() throws InterruptedException
 {
 	try 
@@ -840,13 +917,10 @@ public void Verifyshopcategorylinks() throws InterruptedException
 		
 		ob.mousehover(shopmenucategory, driver);
 		Applicationutility.waitforclickible(driver, newintroduction);
-		Thread.sleep(1000);
 		ob.mousehover(shopmenucategory, driver);
 		Applicationutility.waitforclickible(driver, arete);
-		Thread.sleep(1000);
 		ob.mousehover(shopmenucategory, driver);
 		Applicationutility.waitforclickible(driver, barware);
-		Thread.sleep(1000);
 		ob.mousehover(shopmenucategory, driver);
 		Applicationutility.waitforclickible(driver, barwaresubmenu);
 		Thread.sleep(1000);
@@ -874,7 +948,6 @@ public void Verifyshopcategorylinks() throws InterruptedException
             }
            
           Applicationutility.waitforclickible(driver, candelholders);  
-    	  Thread.sleep(1000);
           ob.mousehover(shopmenucategory, driver);
           Applicationutility.waitforclickible(driver, candelholderssubmenu);
           
@@ -895,13 +968,10 @@ public void Verifyshopcategorylinks() throws InterruptedException
               }
            
            Applicationutility.waitforclickible(driver, Candles);  
-           Thread.sleep(1000);
            ob.mousehover(shopmenucategory, driver);
            Applicationutility.waitforclickible(driver, ClearGlass);  
-           Thread.sleep(1000);
            ob.mousehover(shopmenucategory, driver);
            Applicationutility.waitforclickible(driver, DecorativeItems);  
-           Thread.sleep(1000);
            ob.mousehover(shopmenucategory, driver);
            Applicationutility.waitforclickible(driver, submenuDecorativeItems);  
            
@@ -922,7 +992,6 @@ public void Verifyshopcategorylinks() throws InterruptedException
 	           
 	           
 	       Applicationutility.waitforclickible(driver, ElectrifiedLighting);
-	       Thread.sleep(1000);
 	       ob.mousehover(shopmenucategory, driver);
 	       Applicationutility.waitforclickible(driver, submenuElectrifiedLighting);
 	       List<WebElement> linkssss = submenuElectrifiedLighting.findElements(By.tagName("a"));
@@ -1122,13 +1191,13 @@ public void verifypageFooter() throws InterruptedException
 		assertEquals(actualbrand, expectedbrand);
 		
 		Applicationutility.myClick(surya);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		Applicationutility.chnagewindow(0, driver);
 		Applicationutility.myClick(mitchellgold);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		Applicationutility.chnagewindow(0, driver);
 		Applicationutility.myClick(rstbrand);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		Applicationutility.chnagewindow(0, driver);
 		
 		Applicationutility.myClick(customservice);
@@ -1230,10 +1299,27 @@ public void siggnupform() throws InterruptedException
 	System.out.println("error verified");
 	
 	} 
+
+public void Validatebrandpartnerinshop()
+{
 	
+	try 
+	{
+		ob =  new Applicationutility();
+		ob.mousehover(shopmenu, driver);
+		
+		
+	}
+	catch (Exception e)
+	{
 	
+	}
 	
 }
+	
+	
+	
+   }
 
 
 
