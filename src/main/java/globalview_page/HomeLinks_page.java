@@ -178,6 +178,8 @@ private WebElement latestupdate;
 private WebElement emailsignup;
 @FindBy(xpath= "//span[contains(@class,'select2 select2-container')]/span/span")
 private WebElement selectstore;
+@FindBy(xpath="//span[contains(@class,'select2-dropdown--below')]//input")
+private WebElement storeslection;
 @FindBy(xpath="//span[contains(@class,'select2-search--dropdown')]/input/following::span/ul/child::li[3]")
 private WebElement onlinestore;
 @FindBy(xpath="//button[@title='Submit']")
@@ -527,7 +529,7 @@ private WebElement AshleyChilders;
 @FindBy(xpath="//div[text()='Edward Nader']")
 private WebElement EdwardNader;
 
-
+//imageclick verify 
 
 @FindBy(xpath="//div[text()='ANN GISH']/following-sibling::div")
 private WebElement angishimageclick;
@@ -537,17 +539,17 @@ private WebElement areteimageclick;
 private WebElement BARBARABARRYimageclick;
 @FindBy(xpath="//div[text()='MCFCHAN']/following-sibling::div")
 private WebElement MCFCHANimageclick;
-@FindBy(xpath="//div[text()='JULIABUCKINGHAM']/following-sibling::div")
+@FindBy(xpath="//div[text()='JULIA BUCKINGHAM']/following-sibling::div")
 private WebElement JULIABUCKINGHAMimageclick;
 @FindBy(xpath="//div[text()='Lemieux Et Cie']/following-sibling::div")
 private WebElement LemieuxEtCieimageclick;
 @FindBy(xpath="//div[text()='WILLIAMSBURG']/following-sibling::div")
 private WebElement WILLIAMSBURGimageclick;
-@FindBy(xpath="//div[text()='CITIZENARTIST']/following-sibling::div")
+@FindBy(xpath="//div[text()='CITIZEN ARTIST']/following-sibling::div")
 private WebElement CITIZENARTISTimageclick;
 @FindBy(xpath="//div[text()='Ashley Childers']/following-sibling::div")
 private WebElement AshleyChildersimageclick;
-@FindBy(xpath="//div[text()='EdwardNader']/following-sibling::div")
+@FindBy(xpath="//div[text()='Edward Nader']/following-sibling::div")
 private WebElement EdwardNaderimageclick;
 
 //validate explore links 
@@ -556,27 +558,38 @@ private WebElement EdwardNaderimageclick;
 private WebElement angishexplore;
 @FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Barbara Barry Collection')]/following::a[1]")
 private WebElement BarbaraBarryCollectionexplore;
-@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Ann Gish Collection')]/following::a[1]")
-private WebElement angishexplore;
-@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Ann Gish Collection')]/following::a[1]")
-private WebElement angishexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Arete Collection Collection')]/following::a[1]")
+private WebElement ARETEexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'MCFCHAN Collection')]/following::a[1]")
+private WebElement MCFCHANcollecionexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Julia Buckingham Collection')]/following::a[1]")
+private WebElement juliaexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Williamsburg Collection')]/following::a[1]")
+private WebElement WilliamsburgCollectionexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Lemieux Et Cie Collection')]/following::a[1]")
+private WebElement LemieuxCollectionexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Citizen Artist Collection')]/following::a[1]")
+private WebElement CitizenCollectionexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Ashley Childers Collection')]/following::a[1]")
+private WebElement AshleyCollectionexplore;
+@FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Edward Nader Collection')]/following::a[1]")
+private WebElement EdwardCollectionexplore;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//socailmedia links 
+@FindBy(xpath="//a[@title='Pinterest']")
+private WebElement pinerest;
+@FindBy(xpath="//a[@title='Instagram']")
+private WebElement insta;
+@FindBy(xpath="//a[@title='Facebook']")
+private WebElement facebook;
+@FindBy(xpath="//a[@title='Twitter']")
+private WebElement Twitter;
+@FindBy(xpath="//a[@title='Linkedin']")
+private WebElement Linkedin;
+@FindBy(xpath="//a[@title='YouTube']")
+private WebElement YouTube;
 
 
 public void Validatelogo() throws InterruptedException
@@ -643,7 +656,6 @@ public void validateheader() throws InterruptedException
 		driver.navigate().back();
 		driver.navigate().back();
 	
-		
 		
 		
 		
@@ -857,7 +869,7 @@ public void validatesearchbar()
 		
 		Thread.sleep(1000);
 		driver.navigate().back();
-		
+		Thread.sleep(2000);
 	}
 	catch (Exception e)
 	{
@@ -870,7 +882,10 @@ public void signuplatestupadtes() throws InterruptedException
 
 
 {
-	//Applicationutility.getscroll(latestupdate, driver);
+	try
+	{
+		
+	Applicationutility.getscroll(latestupdate, driver);
 	String expected = Propertyutility.getproperty("latestnews");
 	String actual =  latestupdate.getText();
 	System.out.println(actual);
@@ -881,18 +896,24 @@ public void signuplatestupadtes() throws InterruptedException
 	Applicationutility.myClick(searchbar);
 	emailsignup.sendKeys(Propertyutility.getproperty("email"));
 	
-	//Applicationutility.waitforVisible(driver, selectstore);
+	
 	Thread.sleep(1000);
 	Applicationutility.waitforVisible(driver, selectstore);
 	Applicationutility.myClick(selectstore);
 	Thread.sleep(1000);
-	selectstore.sendKeys(Propertyutility.getproperty("storeshop"));
+	Applicationutility.waitforVisible(driver, storeslection);
+	Applicationutility.myClick(storeslection);
+	
 	Thread.sleep(1000);
-	emailsignup.sendKeys(Keys.ENTER);
+	storeslection.sendKeys(Propertyutility.getproperty("storeshop"));
+	Thread.sleep(1000);
+	storeslection.sendKeys(Keys.ENTER);
+	Thread.sleep(1000);
 	Applicationutility.myClick(signup);
 	
-	
+	Thread.sleep(2000);
 	Applicationutility.myClick(close);
+	Thread.sleep(1000);
 	
 	
 	studio.click();
@@ -902,9 +923,12 @@ public void signuplatestupadtes() throws InterruptedException
 	signature.click();
 	Thread.sleep(1000);
 	driver.navigate().back();
-	
 	backtotop.click();
-	
+	}
+	catch (Exception e)
+	{
+		System.out.println("issue in the signuplatestupdates" +e);
+	}
 }
 
 
@@ -1300,26 +1324,170 @@ public void siggnupform() throws InterruptedException
 	
 	} 
 
-public void Validatebrandpartnerinshop()
+public void Verifybrandpartnerinshop()
 {
 	
 	try 
 	{
 		ob =  new Applicationutility();
-		ob.mousehover(shopmenu, driver);
 		
+		ob.mousehover(shopmenu, driver);
+		String expanngish = Propertyutility.getproperty("Anngish");
+		String actanngish = ANNGISH.getText();
+		System.out.println(actanngish);
+		assertEquals(expanngish, actanngish);
+		
+		Applicationutility.myClick(angishimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(angishexplore);
+		
+		ob.mousehover(shopmenu, driver);
+		String exparete = Propertyutility.getproperty("arete");
+		String actarete = ARETE.getText();
+		System.out.println(actarete);
+		assertEquals(exparete, actarete);
+		
+		Applicationutility.myClick(areteimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(ARETEexplore);
+		
+		ob.mousehover(shopmenu, driver);
+		String expbarbara = Propertyutility.getproperty("barbara");
+		String actnarbara = BARBARABARRY.getText();
+		System.out.println(actnarbara);
+		assertEquals(expbarbara, actnarbara);
+		
+		Applicationutility.myClick(BARBARABARRYimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(BarbaraBarryCollectionexplore);
+		
+		
+		
+		ob.mousehover(shopmenu, driver);
+		String expmcfchan = Propertyutility.getproperty("mcchan");
+		String actmcfchan = MCFCHAN.getText();
+		System.out.println(actmcfchan);
+		assertEquals(expmcfchan, actmcfchan);
+		
+		Applicationutility.myClick(MCFCHANimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(MCFCHANcollecionexplore);
+		
+		
+		ob.mousehover(shopmenu, driver);
+		String expjulia = Propertyutility.getproperty("julia");
+		String actjulia = JULIABUCKINGHAM.getText();
+		System.out.println(actjulia);
+		assertEquals(expjulia, actjulia);
+		
+		Thread.sleep(1000);
+		Applicationutility.myClick(JULIABUCKINGHAMimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(juliaexplore);
+		
+		
+		ob.mousehover(shopmenu, driver);
+		String expwilliams = Propertyutility.getproperty("william");
+		String actwilliams = WILLIAMSBURG.getText();
+		System.out.println(actwilliams);
+		assertEquals(expwilliams, actwilliams);
+		
+		Applicationutility.myClick(WILLIAMSBURGimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(WilliamsburgCollectionexplore);
+		
+		
+		
+		ob.mousehover(shopmenu, driver);
+		String explemiux = Propertyutility.getproperty("lemitex");
+		String actlemiux = LemieuxEtCie.getText();
+		System.out.println(actlemiux);
+		assertEquals(explemiux, actlemiux);
+		
+		Applicationutility.myClick(LemieuxEtCieimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(LemieuxCollectionexplore);
+		
+		ob.mousehover(shopmenu, driver);
+		String expcitizen = Propertyutility.getproperty("citizen");
+		String actcitizen = CITIZENARTIST.getText();
+		System.out.println(actcitizen);
+		assertEquals(expcitizen, actcitizen);
+		
+		Applicationutility.myClick(CITIZENARTISTimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(CitizenCollectionexplore);
+		
+		ob.mousehover(shopmenu, driver);
+		String expashley = Propertyutility.getproperty("ashley");
+		String actashley = AshleyChilders.getText();
+		System.out.println(actashley);
+		assertEquals(expashley, actashley);
+		
+		Applicationutility.myClick(AshleyChildersimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(AshleyCollectionexplore);
+		
+		
+		ob.mousehover(shopmenu, driver);
+		String expedwards = Propertyutility.getproperty("edward");
+		String actedwards = EdwardNader.getText();
+		System.out.println(actedwards);
+		assertEquals(expedwards, actedwards);
+		
+		Applicationutility.myClick(EdwardNaderimageclick);
+		Thread.sleep(1000);
+		Applicationutility.myClick(EdwardCollectionexplore);
+		
+		Applicationutility.scrolltobottom();
+		
+		Thread.sleep(1000);
+	    
 		
 	}
 	catch (Exception e)
 	{
-	
+		System.out.println("issue in Verifybrandpartnerinshop" +e);
 	}
 	
 }
 	
-	
-	
-   }
+public void verifysocialmedialinks()
+{
+	try 
+	{
+		Applicationutility.myClick(pinerest);
+		Thread.sleep(3000);
+		Applicationutility.chnagewindow(0, driver);
+		Applicationutility.myClick(insta);
+		Thread.sleep(3000);
+		Applicationutility.chnagewindow(0, driver);
+		Applicationutility.myClick(facebook);
+		Thread.sleep(3000);
+		Applicationutility.chnagewindow(0, driver);
+		Applicationutility.myClick(Twitter);
+		Thread.sleep(3000);
+		Applicationutility.chnagewindow(0, driver);
+		Applicationutility.myClick(Linkedin);
+		Thread.sleep(3000);
+		Applicationutility.chnagewindow(0, driver);
+		Applicationutility.myClick(YouTube);
+		Thread.sleep(3000);
+		Applicationutility.chnagewindow(0, driver);
+		Thread.sleep(1000);
+		
+		Applicationutility.myClick(verifylogoglobalview);
+		Thread.sleep(2000);
+		
+		
+		
+	} 
+	catch (Exception e) 
+	{
+		System.out.println("issue in social media links" +e);
+	}
+}
+}
 
 
 

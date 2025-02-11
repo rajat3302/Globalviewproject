@@ -31,7 +31,7 @@ public class HomeLinks_Test extends BaseLibrary
 	
     }
 
-@Test(priority = 0 , groups = "sanity")
+@Test(priority = 0 , groups = "sanity" )
 
 	public void gettitle()
 	{
@@ -95,13 +95,25 @@ public void validatefooterlinks() throws InterruptedException
 	ob.verifypageFooter();
 }
 
-@Test(priority = 10)
+@Test(priority = 10 , groups = "regression")
 public void signupupdates() throws InterruptedException
 {
 	
 	ob.siggnupform();
 }
 
+@Test(priority = 11 , groups = "sanity")
+public void Validatebrandpartnerinshop()
+
+{
+	ob.Verifybrandpartnerinshop();
+}
+
+@Test(priority= 12 ,  groups = "regression")
+public void Validatesocialmedialinks()
+{
+	ob.verifysocialmedialinks();
+}
 
 @AfterTest
 public void tearDown()
