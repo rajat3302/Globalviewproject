@@ -46,7 +46,7 @@ public class HomeLinks_Test extends BaseLibrary
 	}
 
 @Test(priority = 2 , groups = "regression")
-	public void verifyheader() throws InterruptedException
+public void verifyheader() throws InterruptedException
    {
 	  ob.validateheader();
    }
@@ -57,7 +57,7 @@ public void verifythepage() throws InterruptedException
 	ob.verifypage();
 }
 
-@Test(priority = 4  , groups = "regression")
+@Test(priority = 1  , groups = "regression")
 public void verifynewintroimages()
 {
 	ob.validatenewindrodcutions();
@@ -75,7 +75,7 @@ public void verifyserchbar()
 	ob.validatesearchbar();
 }
 
-@Test(priority = 7 , groups = "sanity")
+@Test(priority = 7, groups = "sanity")
 public void validatesignup() throws InterruptedException
 {
 	ob.signuplatestupadtes();

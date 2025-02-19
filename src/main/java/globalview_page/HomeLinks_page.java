@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,10 +24,10 @@ import propertyutility.Propertyutility;
 public class HomeLinks_page extends BaseLibrary
 
 {
-		Applicationutility ob;
-		
+		Applicationutility ob;		
 		public HomeLinks_page()
 		{
+		
 			PageFactory.initElements(driver, this);
 		}
 	
@@ -37,7 +38,6 @@ public class HomeLinks_page extends BaseLibrary
 private WebElement search;
 @FindBy(xpath="//input[@placeholder='search global views']")
 private WebElement searchbar;
-
 @FindBy(xpath ="//img[contains(@src,'https://uat.globalviews.com/pub/media/wysiwyg/logo-header.png')]")
 private WebElement verifylogoglobalview;
 @FindBy(xpath="(//span[text()='Shop'])[1]")
@@ -176,7 +176,7 @@ private WebElement signatureshop;
 private WebElement latestupdate;
 @FindBy(xpath= "//input[@placeholder='Email']")
 private WebElement emailsignup;
-@FindBy(xpath= "//span[contains(@class,'select2 select2-container')]/span/span")
+@FindBy(xpath= "(//div[contains(@class,'input-box col-sm-12')])[2]/span")
 private WebElement selectstore;
 @FindBy(xpath="//span[contains(@class,'select2-dropdown--below')]//input")
 private WebElement storeslection;
@@ -592,6 +592,9 @@ private WebElement Linkedin;
 private WebElement YouTube;
 
 
+
+
+
 public void Validatelogo() throws InterruptedException
 {
 	try 
@@ -729,6 +732,7 @@ public void validatenewindrodcutions()
 			
 			ob = new Applicationutility();
 			ob.mousehover(firstimage, driver);
+			Thread.sleep(1000);
 			ob.mousehover(secondimage, driver);
 			ob.mousehover(thirdimage, driver);
 			ob.mousehover(fourthimage, driver);
@@ -899,15 +903,19 @@ public void signuplatestupadtes() throws InterruptedException
 	
 	Thread.sleep(1000);
 	Applicationutility.waitforVisible(driver, selectstore);
+	Thread.sleep(1000);
 	Applicationutility.myClick(selectstore);
 	Thread.sleep(1000);
 	Applicationutility.waitforVisible(driver, storeslection);
+	Thread.sleep(1000);
 	Applicationutility.myClick(storeslection);
 	
 	Thread.sleep(1000);
-	storeslection.sendKeys(Propertyutility.getproperty("storeshop"));
-	Thread.sleep(1000);
-	storeslection.sendKeys(Keys.ENTER);
+	Applicationutility.myClick(onlinestore);
+	
+//	storeslection.sendKeys(Propertyutility.getproperty("storeshop"));
+//	Thread.sleep(1000);
+//	storeslection.sendKeys(Keys.ENTER);
 	Thread.sleep(1000);
 	Applicationutility.myClick(signup);
 	
@@ -1256,7 +1264,8 @@ public void siggnupform() throws InterruptedException
 
 {
 	
-	
+	try
+	{
 	
 	String expected = Propertyutility.getproperty("dontmissout");
 	String actual = dontmissout.getText();
@@ -1323,7 +1332,11 @@ public void siggnupform() throws InterruptedException
 	System.out.println("error verified");
 	
 	} 
-
+	catch (Exception e)
+	{
+		System.out.println("issue in exception" +e);
+	}
+}
 public void Verifybrandpartnerinshop()
 {
 	

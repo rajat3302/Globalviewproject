@@ -28,7 +28,8 @@ public class Register_page extends BaseLibrary
 
 {
 //	Applicationutility ob;
-	public Register_page() {
+	public Register_page() 
+	{
 		PageFactory.initElements(driver, this);
 
 	}
@@ -49,15 +50,30 @@ public class Register_page extends BaseLibrary
 	private WebElement hearaboutus;
 	@FindBy(xpath = "//*[@id='business_location_state']")
 	private WebElement locationstate;
+	
+	@FindBy(xpath="//h5[@id='sales_tax_state_check']")
+	private WebElement salestaxastatus;
 	@FindBy(xpath = "//*[@id='sales_tax_state']")
 	private WebElement salestax;
 	@FindBy(xpath = "//input[@id='representative']")
 	private WebElement representative;
 	@FindBy(xpath = "//input[@id='tax_exemption_1']")
 	private WebElement salesTaxno;
+	
+	@FindBy(xpath = "//h5[@id='tax_exemption_check']")
+	private WebElement taxexemptionrequired;
 	@FindBy(xpath = "//label[@for='certificate']/following-sibling::div/input")
 	private WebElement cerificatefile;
-	@FindBy(xpath = "//label[@for='tax_federal_tax_id']/following-sibling::input")
+	
+	@FindBy(xpath= "//*[@id=\"sizeError\"]")
+	private WebElement sizeerror;
+	@FindBy(xpath= "//h5[@id='customFile_check']")
+	private WebElement cutmfile;
+	@FindBy(xpath="//h5[@id='fileError']")
+	private WebElement fileerror;
+	
+
+	@FindBy(xpath = "//input[@id='tax_exemption_1']")
 	private WebElement TaxId;
 	@FindBy(xpath = "//label[@for='tax_bussiness_license_number']/following-sibling::input")
 	private WebElement blnumber;
@@ -203,6 +219,8 @@ public class Register_page extends BaseLibrary
 	//Review page 
 	@FindBy(xpath = "//a[@id='company_edit']")
 	private WebElement comapnyinfoedit;
+	@FindBy(xpath="//select[@id='hear_about_us']")
+	private WebElement heraaboutedit;
 	@FindBy(xpath = "(//a[@id='business_edit'])[4]")
 	private WebElement businessoveredit;
 	@FindBy(xpath="//a[@id='billing_edit']")
@@ -236,7 +254,12 @@ public class Register_page extends BaseLibrary
 		try
 
 		{
-						
+			
+			checkbox.click();
+			Thread.sleep(1000);
+			submit.click();
+			Thread.sleep(1000);
+			
 			companyname.click();
 			companyname.sendKeys(Propertyutility.getproperty("Companyname"));
 			businesstype.click();
@@ -249,39 +272,183 @@ public class Register_page extends BaseLibrary
 			hearaboutus.click();
 			Applicationutility.dropdown(hearaboutus, "Tradeshow");
 			
+			
 //			JavascriptExecutor js = (JavascriptExecutor) driver;
 //			js.executeScript("window.scrollBy(0, 500);", locationstate);
 			
+			
+			Applicationutility.waitforVisible(driver, locationstate);
 			locationstate.click();
-			Applicationutility.dropdown(locationstate, "Alabama");
+			Applicationutility.dropdown(locationstate, "Arizona");
 			
 			Thread.sleep(1000);
 			salestax.click();
+			// first test non-exempt
 			Applicationutility.dropdown(salestax, "Non-Exempt");
+			System.out.println("slect non-exempt");
 			
-			salestax.click();
-			Applicationutility.dropdown(salestax, "Exempt");
+			//submitwithout attchement 
+			Applicationutility.myClick(submit);
+			
+			String custexp = Propertyutility.getproperty("cutmerror");
+			String cstact = cutmfile.getText();
+			System.out.println(cstact);
+			assertEquals(custexp, cstact);
+			
+			Thread.sleep(1000);
+			System.out.println("Veriifed error");
 			
 			representative.click();
 			representative.sendKeys(Propertyutility.getproperty("representative"));
 			
 			salesTaxno.click();
 			salesTaxno.sendKeys(Propertyutility.getproperty("salestexno"));
-			
 		
+			Applicationutility.myClick(submit);
+			
+			//upload file in resale file more than 2 mb 
 			Thread.sleep(1000);
-		        // Provide the full file path to upload
-		        String filePath = "C:\\Users\\rajat.shrotriya.INNOAGE\\Downloads\\Cart (1).pdf";
-		        cerificatefile.sendKeys(filePath);
-		        
-		        locationstate.click();
-				Applicationutility.dropdown(locationstate, "Alaska");
-		     
-		        TaxId.click();
-		        TaxId.sendKeys(Propertyutility.getproperty("TaxId"));
-		         
-		        blnumber.click();
-		        blnumber.sendKeys(Propertyutility.getproperty("bnumber"));
+			
+	        String filePath = "C:/Users/rajat.shrotriya.INNOAGE/Downloads/2mb.pdf";
+	        cerificatefile.sendKeys(filePath);
+	        
+	        Applicationutility.myClick(submit);
+	        
+	        String exp = Propertyutility.getproperty("sizeerror");
+	        String act = sizeerror.getText();
+	        System.out.println(act);
+	        assertEquals(act, exp);
+	        
+	        System.out.println("verified error ");
+	        Thread.sleep(1000);
+	        
+	        
+	        //upload file .zip ettension
+	        String filePath1 = "C:\\Users\\rajat.shrotriya.INNOAGE\\Downloads\\diffrent device screen test dev.zip";
+	        cerificatefile.sendKeys(filePath1);
+	        
+	        Applicationutility.myClick(submit);
+	        
+	        Thread.sleep(1000);
+	        String exp1 = Propertyutility.getproperty("fileerror");
+	        String act1 = fileerror.getText();
+	        System.out.println(act1);
+	        assertEquals(act1, exp1);
+	        
+	        
+	        Thread.sleep(1000);
+	        System.out.println("verified error");
+	        
+	        
+	        //upload valid file 
+	        String filePath2 = "C:/Users/rajat.shrotriya.INNOAGE/Downloads/cart_6_.pdf";
+	        cerificatefile.sendKeys(filePath2);
+	        
+	        Applicationutility.myClick(submit);
+	        
+	        System.out.println("File accepteted less than 2MB in Non-expemt");
+	       
+	        Thread.sleep(1000);
+	        
+	  
+			driver.navigate().refresh();
+			Thread.sleep(1000);
+			
+			companyname.click();
+			companyname.sendKeys(Propertyutility.getproperty("Companyname"));
+			businesstype.click();
+			Thread.sleep(2000);
+
+			
+			Applicationutility.dropdown(businesstype, "Design");
+			
+			hearaboutus.click();
+			Applicationutility.dropdown(hearaboutus, "Tradeshow");
+			
+			
+			Applicationutility.waitforVisible(driver, locationstate);
+			locationstate.click();
+			Applicationutility.dropdown(locationstate, "Arizona");
+			
+		    String expt = Propertyutility.getproperty("salesTaxstatus");
+		    String actt = salestaxastatus.getText();
+		    System.out.println(actt);
+		    assertEquals(actt, expt);
+		    
+		    Thread.sleep(1000);
+			Applicationutility.myClick(salestax);
+			Thread.sleep(1000);
+		    
+			// select exepmt
+			Applicationutility.dropdown(salestax, "Exempt");
+            System.out.println("select exempt");
+            Thread.sleep(2000);
+            
+            // submit without file 
+            Applicationutility.myClick(submit);
+            
+            String expttaxno = Propertyutility.getproperty("taxiderror");
+            String acttaxno = taxexemptionrequired.getText();
+            System.out.println(acttaxno);
+            assertEquals(acttaxno, expttaxno);
+            
+            System.out.println("Verified error");
+            
+            Applicationutility.myClick(TaxId);
+            TaxId.sendKeys(Propertyutility.getproperty("TaxId"));
+            
+            Applicationutility.myClick(submit);
+            
+            String expexempt = Propertyutility.getproperty("cutmerror");
+			String cstexempt = cutmfile.getText();
+			System.out.println(cstexempt);
+			assertEquals(expexempt, cstexempt);
+			
+			Thread.sleep(1000);
+			System.out.println("Verified error");
+			
+            Thread.sleep(1000);		
+	        String filePath3 = "C:/Users/rajat.shrotriya.INNOAGE/Downloads/2mb.pdf";
+	        cerificatefile.sendKeys(filePath3);
+	        
+	        Thread.sleep(1000);
+	        Applicationutility.myClick(submit);
+	        
+	        String expexempt1 = Propertyutility.getproperty("sizeerror");
+	        String actexempt1 = sizeerror.getText();
+	        System.out.println(actexempt1);
+	        assertEquals(expexempt1, actexempt1);
+	        
+	        System.out.println("Verified error");
+	        
+	        String filePath4 = "C:\\Users\\rajat.shrotriya.INNOAGE\\Downloads\\diffrent device screen test dev.zip";
+	        cerificatefile.sendKeys(filePath4);
+	        
+	        Applicationutility.myClick(submit);
+	        
+	        Thread.sleep(1000);
+	        String expexempt2 = Propertyutility.getproperty("fileerror");
+	        String actexempt2 = fileerror.getText();
+	        System.out.println(actexempt2);
+	        assertEquals(expexempt2, expexempt2);
+	        
+	        
+	        Thread.sleep(1000);
+	        System.out.println("verified error");
+	        
+	        String filePath5 = "C:/Users/rajat.shrotriya.INNOAGE/Downloads/cart_6_.pdf";
+	        cerificatefile.sendKeys(filePath5);
+	        
+	        Applicationutility.myClick(submit);
+	        
+	        System.out.println("File accepteted less than 2MB in expemt");
+	       
+	        Thread.sleep(1000);
+	        
+	        
+	          
+//		        blnumber.click();
+//		        blnumber.sendKeys(Propertyutility.getproperty("bnumber"));
 						
 		}
 		
@@ -538,16 +705,17 @@ public class Register_page extends BaseLibrary
 	{
 		try 
 		{
+			Thread.sleep(1000);
 			Applicationutility.myClick(comapnyinfoedit);
 //			comapnyinfoedit.click();
 			hearaboutus.click();
 			Thread.sleep(1000);
-			Applicationutility.dropdown(hearaboutus, "Trade Association/Buying Group");
-			Thread.sleep(1000);
-			blnumber.click();
-			blnumber.clear();
-			Thread.sleep(1000);
-			blnumber.sendKeys(Propertyutility.getproperty("bnumber2"));
+			Applicationutility.dropdown(heraaboutedit, "Trade Association/Buying Group");
+//			Thread.sleep(1000);
+//			blnumber.click();
+//			blnumber.clear();
+//			Thread.sleep(1000);
+//			blnumber.sendKeys(Propertyutility.getproperty("bnumber2"));
 			submit.click();
 			
 			Thread.sleep(2000);

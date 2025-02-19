@@ -23,7 +23,6 @@ public class Applicationutility extends BaseLibrary
 
 
 
-
 {
 	
 	public static void doubleclick(WebElement ele, WebDriver driver)

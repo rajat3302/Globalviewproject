@@ -31,11 +31,11 @@ public class SignIn_page extends BaseLibrary
 	private WebElement login;
 	@FindBy(xpath = "//*[@id=\"login-form\"]/fieldset/div[4]/div[1]")
 	private WebElement rememberme;
-	@FindBy(xpath = "//input[@placeholder='EMAIL ADDRESS*']")
+	@FindBy(xpath = "//label[text()='Email Address*']/following-sibling::div/input")
 	private WebElement uname;
-	@FindBy(xpath = "//input[@placeholder='PASSWORD*']")
+	@FindBy(xpath = "//label[text()='Password*']/following-sibling::div/input")
 	private WebElement pass1;
-	@FindBy(xpath = "//span[text()='LOGIN']")
+	@FindBy(xpath = "//button[text()='Login']")
 	private WebElement login2;
 	@FindBy(xpath= "//*[text()='Log Out']")
 	private WebElement logout;

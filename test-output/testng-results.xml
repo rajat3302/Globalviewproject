@@ -1,94 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="6" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-11T17:33:56 IST" name="Default suite" finished-at="2025-02-11T17:38:57 IST" duration-ms="301113">
+  <suite started-at="2025-02-19T16:36:24 IST" name="Default suite" finished-at="2025-02-19T16:37:26 IST" duration-ms="61964">
     <groups>
-      <group name="regression">
-        <method signature="HomeLinks_Test.Validatesocialmedialinks()[pri:12, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="Validatesocialmedialinks" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.signupupdates()[pri:10, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="signupupdates" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.validatelinksshopcategory()[pri:8, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="validatelinksshopcategory" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.verifybrandpart()[pri:5, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="verifybrandpart" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.verifyheader()[pri:2, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="verifyheader" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.verifynewintroimages()[pri:4, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="verifynewintroimages" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.verifyserchbar()[pri:6, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="verifyserchbar" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.verifythepage()[pri:3, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="verifythepage" class="globalview_test.HomeLinks_Test"/>
-      </group> <!-- regression -->
-      <group name="sanity">
-        <method signature="HomeLinks_Test.Validatebrandpartnerinshop()[pri:11, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="Validatebrandpartnerinshop" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.gettitle()[pri:0, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="gettitle" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.validatefooterlinks()[pri:9, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="validatefooterlinks" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.validatesignup()[pri:7, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="validatesignup" class="globalview_test.HomeLinks_Test"/>
-        <method signature="HomeLinks_Test.verifylogoofpage()[pri:1, instance:globalview_test.HomeLinks_Test@7a6d7e92]" name="verifylogoofpage" class="globalview_test.HomeLinks_Test"/>
-      </group> <!-- sanity -->
     </groups>
-    <test started-at="2025-02-11T17:33:56 IST" name="Default test" finished-at="2025-02-11T17:38:57 IST" duration-ms="301113">
-      <class name="globalview_test.HomeLinks_Test">
-        <test-method is-config="true" signature="getLaunchurl_globalview()[pri:0, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:33:56 IST" name="getLaunchurl_globalview" finished-at="2025-02-11T17:34:02 IST" duration-ms="5819" status="PASS">
+    <test started-at="2025-02-19T16:36:24 IST" name="Default test" finished-at="2025-02-19T16:37:26 IST" duration-ms="61964">
+      <class name="globalview_test.AddtoCart_Test">
+        <test-method is-config="true" signature="getlaunchurl_globalview()[pri:0, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:36:24 IST" name="getlaunchurl_globalview" finished-at="2025-02-19T16:36:30 IST" duration-ms="6322" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getLaunchurl_globalview -->
-        <test-method signature="gettitle()[pri:0, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:34:02 IST" name="gettitle" finished-at="2025-02-11T17:34:02 IST" duration-ms="83" status="PASS">
+        </test-method> <!-- getlaunchurl_globalview -->
+        <test-method signature="clickonmyaccount()[pri:0, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:36:30 IST" name="clickonmyaccount" finished-at="2025-02-19T16:36:31 IST" duration-ms="286" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- gettitle -->
-        <test-method signature="verifylogoofpage()[pri:1, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:34:02 IST" name="verifylogoofpage" finished-at="2025-02-11T17:34:04 IST" duration-ms="1966" status="PASS">
+        </test-method> <!-- clickonmyaccount -->
+        <test-method signature="clickonsignIn()[pri:1, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:36:31 IST" name="clickonsignIn" finished-at="2025-02-19T16:36:32 IST" duration-ms="1086" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifylogoofpage -->
-        <test-method signature="verifyheader()[pri:2, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:34:04 IST" name="verifyheader" finished-at="2025-02-11T17:34:22 IST" duration-ms="18288" status="PASS">
+        </test-method> <!-- clickonsignIn -->
+        <test-method signature="usernamepass()[pri:2, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:36:32 IST" name="usernamepass" finished-at="2025-02-19T16:36:33 IST" duration-ms="1307" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyheader -->
-        <test-method signature="verifythepage()[pri:3, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:34:22 IST" name="verifythepage" finished-at="2025-02-11T17:34:35 IST" duration-ms="12485" status="PASS">
+        </test-method> <!-- usernamepass -->
+        <test-method signature="loginaccount()[pri:3, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:36:33 IST" name="loginaccount" finished-at="2025-02-19T16:36:37 IST" duration-ms="3824" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifythepage -->
-        <test-method signature="verifynewintroimages()[pri:4, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:34:35 IST" name="verifynewintroimages" finished-at="2025-02-11T17:34:46 IST" duration-ms="11165" status="PASS">
+        </test-method> <!-- loginaccount -->
+        <test-method signature="shopbrandpartners()[pri:4, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:36:37 IST" name="shopbrandpartners" finished-at="2025-02-19T16:36:51 IST" duration-ms="13607" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifynewintroimages -->
-        <test-method signature="verifybrandpart()[pri:5, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:34:46 IST" name="verifybrandpart" finished-at="2025-02-11T17:35:25 IST" duration-ms="38890" status="PASS">
+        </test-method> <!-- shopbrandpartners -->
+        <test-method signature="validatepdppage()[pri:5, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:36:51 IST" name="validatepdppage" finished-at="2025-02-19T16:37:11 IST" duration-ms="20432" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Cart quantity didnot increase correctly! expected [1] but found [0]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Cart quantity didnot increase correctly! expected [1] but found [0]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:907)
+at globalview_page.AddtoCart_page.pdppage(AddtoCart_page.java:159)
+at globalview_test.AddtoCart_Test.validatepdppage(AddtoCart_Test.java:66)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifybrandpart -->
-        <test-method signature="verifyserchbar()[pri:6, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:35:25 IST" name="verifyserchbar" finished-at="2025-02-11T17:35:37 IST" duration-ms="12181" status="PASS">
+        </test-method> <!-- validatepdppage -->
+        <test-method signature="addsecondproduct()[pri:6, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:37:11 IST" name="addsecondproduct" finished-at="2025-02-19T16:37:24 IST" duration-ms="12446" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyserchbar -->
-        <test-method signature="validatesignup()[pri:7, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:35:37 IST" name="validatesignup" finished-at="2025-02-11T17:35:41 IST" duration-ms="3457" status="PASS">
+        </test-method> <!-- addsecondproduct -->
+        <test-method signature="validateaddtocart()[pri:7, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:37:24 IST" name="validateaddtocart" finished-at="2025-02-19T16:37:26 IST" duration-ms="2198" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Crat quantity didnot increase correctly! expected [2] but found [1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Crat quantity didnot increase correctly! expected [2] but found [1]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:907)
+at globalview_page.AddtoCart_page.Addtocart(AddtoCart_page.java:216)
+at globalview_test.AddtoCart_Test.validateaddtocart(AddtoCart_Test.java:78)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validatesignup -->
-        <test-method signature="validatelinksshopcategory()[pri:8, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:35:41 IST" name="validatelinksshopcategory" finished-at="2025-02-11T17:36:43 IST" duration-ms="61999" status="PASS">
+        </test-method> <!-- validateaddtocart -->
+        <test-method is-config="true" signature="quitdriver()[pri:0, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:37:26 IST" name="quitdriver" finished-at="2025-02-19T16:37:26 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validatelinksshopcategory -->
-        <test-method signature="validatefooterlinks()[pri:9, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:36:43 IST" name="validatefooterlinks" finished-at="2025-02-11T17:37:20 IST" duration-ms="37463" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validatefooterlinks -->
-        <test-method signature="signupupdates()[pri:10, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:37:20 IST" name="signupupdates" finished-at="2025-02-11T17:37:37 IST" duration-ms="16666" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signupupdates -->
-        <test-method signature="Validatebrandpartnerinshop()[pri:11, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:37:37 IST" name="Validatebrandpartnerinshop" finished-at="2025-02-11T17:38:34 IST" duration-ms="57640" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Validatebrandpartnerinshop -->
-        <test-method signature="Validatesocialmedialinks()[pri:12, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:38:34 IST" name="Validatesocialmedialinks" finished-at="2025-02-11T17:38:57 IST" duration-ms="22844" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Validatesocialmedialinks -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:38:57 IST" name="tearDown" finished-at="2025-02-11T17:38:57 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.HomeLinks_Test@7a6d7e92]" started-at="2025-02-11T17:38:57 IST" name="teardown" finished-at="2025-02-11T17:38:57 IST" depends-on-methods="globalview_test.HomeLinks_Test.tearDown" duration-ms="0" status="PASS">
+        </test-method> <!-- quitdriver -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.AddtoCart_Test@4d15107f]" started-at="2025-02-19T16:37:26 IST" name="teardown" finished-at="2025-02-19T16:37:26 IST" depends-on-methods="globalview_test.AddtoCart_Test.quitdriver" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- globalview_test.HomeLinks_Test -->
+      </class> <!-- globalview_test.AddtoCart_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
