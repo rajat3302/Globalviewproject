@@ -25,6 +25,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.xml.XmlSuite;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 
@@ -40,6 +42,7 @@ public class BaseLibrary
 	{
 		String loc= "C:\\GlobalViews\\Comglobalview\\driver\\chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", loc);
+		WebDriverManager.chromedriver().setup();
 	    ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
 		driver= new ChromeDriver();
@@ -83,6 +86,7 @@ public class BaseLibrary
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", "C:\\GlobalViews\\Comglobalview\\driver\\chromedriver.exe");
+			 WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 		    options.addArguments("--incognito");
 			driver = new ChromeDriver();
@@ -92,6 +96,7 @@ public class BaseLibrary
 		else if (browser.equalsIgnoreCase("firefox"))
 		{
 			System.setProperty("webdriver.gecko.driver", "C:\\GlobalViews\\Comglobalview\\driver\\geckodriver.exe");
+			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
 	        options.addArguments("-private");
 			driver = new FirefoxDriver();
@@ -101,6 +106,7 @@ public class BaseLibrary
 		else if (browser.equalsIgnoreCase("edge")) 
 		{
 			System.setProperty("webdriver.edge.driver", "C:\\GlobalViews\\Comglobalview\\driver\\msedgedriver.exe");
+			WebDriverManager.edgedriver().setup();
 			EdgeOptions options = new EdgeOptions(); 
 	        options.addArguments("-inprivate");
 			driver = new EdgeDriver();

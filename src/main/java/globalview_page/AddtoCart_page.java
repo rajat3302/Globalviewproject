@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import applicationutility.Applicationutility;
 import baselibrary.BaseLibrary;
@@ -48,9 +49,9 @@ public class AddtoCart_page extends BaseLibrary
     
     @FindBy(xpath = "(//a[contains(text(),'New Introductions')])[1]")
     private WebElement newintroduction;
-    @FindBy(xpath="//span[text()='Channel Back Sofa-Black Velvet']")
+    @FindBy(xpath="//span[text()='Duncan Chair-Black Velvet']")
     private WebElement channelblack;
-    @FindBy(xpath="//h1[text()='Channel Back Sofa-Black Velvet']")
+    @FindBy(xpath="//h1[text()='Duncan Chair-Black Velvet']")
     private WebElement verifyproductpdp;
     @FindBy(xpath="//button[@title='Add to Cart']")
     private WebElement addtocart;
@@ -58,13 +59,33 @@ public class AddtoCart_page extends BaseLibrary
     private WebElement countercart;
     @FindBy(xpath="//span[text()='Cart']")
     private WebElement cartbucket;
-    @FindBy(xpath="//strong[contains(@class,'product-item-name')]/a")
+    @FindBy(xpath="//span[text()='Shopping Cart']")
     private WebElement shoppingcartnameverify;
-    @FindBy(xpath="//tr[contains(@class,'grand totals')]//td//span")
+    
+    @FindBy(xpath = "(//div[@title='Availability'])[1]/span")
+    private WebElement firstprodavaibility;
+    @FindBy(xpath="(//div[@title='Availability'])[2]/span")
+    private WebElement secondprodavibility;
+    @FindBy(xpath = "(//span[contains(@class,'cart-price')])[1]/span")
+    private WebElement pricefirstitem;
+    @FindBy(xpath="(//span[contains(@class,'cart-price')])[3]/span")
+    private WebElement priceseconditem;
+    @FindBy(xpath="(//input[@title='Qty'])[1]")
+    private WebElement quantiyfirstitems;
+    @FindBy(xpath="(//input[@title='Qty'])[2]")
+    private WebElement quantityseconditem;
+    
+    
+    @FindBy(xpath="(//td[@data-th='Subtotal'])[1]/span/span/span")
+    private WebElement firstsubtotal;
+    @FindBy(xpath="(//td[@data-th='Subtotal'])[2]/span/span/span")
+    private WebElement secondsubtotal;
+    @FindBy(xpath="//tr[contains(@class,'grand totals')]/td/strong/span")
     private WebElement carttotal;
+   
     @FindBy(xpath="//button[@title='Update Shopping Cart']")
     private WebElement upadtecart;
-    
+   
     
     @FindBy(xpath="//span[text()='Channel Back Sofa-Black Velvet']")
     private WebElement addscoundproduct;
@@ -152,7 +173,7 @@ public class AddtoCart_page extends BaseLibrary
 	Thread.sleep(1000);
 	System.out.println(initialquantitycart);
 	Applicationutility.myClick(addtocart);
-	Thread.sleep(1000);
+	Thread.sleep(3000);
 	int updatedqauntitycart =  Integer.parseInt(countercart.getText());
 	System.out.println(updatedqauntitycart);
 	
@@ -205,21 +226,124 @@ public void addproductnewintro() throws InterruptedException
 
 public void Addtocart() throws InterruptedException
 {
-	int initialquantitycart = Integer.parseInt(countercart.getText());
+	int initialquantitycart1 = Integer.parseInt(countercart.getText());
 	Thread.sleep(1000);
-	System.out.println(initialquantitycart);
+	System.out.println(initialquantitycart1);
 	Applicationutility.myClick(addtocart);
-	Thread.sleep(1000);
-	int updatedqauntitycart =  Integer.parseInt(countercart.getText());
-	System.out.println(updatedqauntitycart);
+	Thread.sleep(3000);
+	int updatedqauntitycart1 =  Integer.parseInt(countercart.getText());
+	System.out.println(updatedqauntitycart1);
 	
-	assertEquals(updatedqauntitycart, initialquantitycart + 1, "Crat quantity didnot increase correctly!");
+	assertEquals(updatedqauntitycart1, initialquantitycart1 + 1, "Cart quantity didnot increase correctly!");
 		
 	Thread.sleep(1000);
 	
 }
 
+public void validateavaivaility() throws InterruptedException
+{
+	 Applicationutility.myClick(cartbucket);
+	 
+	 String expshoppingcart = Propertyutility.getproperty("shoppingcartname");
+	 String actshppingcart = shoppingcartnameverify.getText();
+	 System.out.println(actshppingcart);
+	 assertEquals(expshoppingcart, actshppingcart);
+	 
+	 System.out.println("page name is verified");	 
+	 
+	 // validate avibility status first item
+	 String stockText = firstprodavaibility.getText().trim();
+     System.out.println("Stock Status Displayed: " + stockText);
+
+     // Verify and print the stock status
+     if (stockText.equalsIgnoreCase("IN STOCK")) 
+     {
+         System.out.println("Product is IN STOCK");
+     } 
+     else if (stockText.equalsIgnoreCase("OUT OF STOCK")) 
+     {
+         System.out.println("Product is OUT OF STOCK");
+     } 
+     else 
+     {
+         System.out.println("Stock status is unknown: " + stockText);
+     }
+
+     // Assert that stock status is either "IN STOCK" or "OUT OF STOCK"
+     Assert.assertTrue(stockText.equalsIgnoreCase("IN STOCK") || stockText.equalsIgnoreCase("OUT OF STOCK"),
+             "Stock status is not recognized!");
+     
+     
+     // validate avibility status second item
+	 String stockText2 = secondprodavibility.getText().trim();
+     System.out.println("Stock Status Displayed: " + stockText2);
+
+     // Verify and print the stock status
+     if (stockText2.equalsIgnoreCase("IN STOCK")) 
+     {
+         System.out.println("Product is IN STOCK");
+     } 
+     else if (stockText2.equalsIgnoreCase("OUT OF STOCK")) 
+     {
+         System.out.println("Product is OUT OF STOCK");
+     } 
+     else 
+     {
+         System.out.println("Stock status is unknown: " + stockText2);
+     }
+
+     // Assert that stock status is either "IN STOCK" or "OUT OF STOCK"
+     Assert.assertTrue(stockText2.equalsIgnoreCase("IN STOCK") || stockText2.equalsIgnoreCase("OUT OF STOCK"),
+             "Stock status is not recognized!");
+     
+     Thread.sleep(2000);
+     //Verified first price of an item
+     
+     
+ }
+	 
+public void verifytheproductpricesubtotal() throws InterruptedException
+{
+	  
+      String priceText1 = pricefirstitem.getText().replace("$", "").trim(); // Remove '$' if present
+      double price1 = Double.parseDouble(priceText1);
+      System.out.println("Product Price: $" + price1);
+
+      // Locate and fetch product quantity
+      Thread.sleep(1000);
+      String quantityText1 = quantiyfirstitems.getAttribute("value").trim(); // Get quantity value from input field
+      int quantity1 = Integer.parseInt(quantityText1);
+      System.out.println("Product Quantity: " + quantity1);
+
+      Thread.sleep(1000);
+      // Calculate expected subtotal
+      double expectedSubtotal1 = price1 * quantity1;
+      System.out.println("Expected Subtotal: $" + expectedSubtotal1);
+
+      // Locate and fetch actual subtotal displayed on the page
+    
+      Thread.sleep(1000);
+      String subtotalText1 = firstsubtotal.getText().replace("$", "").trim();
+      double actualSubtotal1 = Double.parseDouble(subtotalText1);
+      System.out.println("Displayed Subtotal: $" + actualSubtotal1);
+
+      // Verify if expected subtotal matches actual subtotal
+      Assert.assertEquals(actualSubtotal1, expectedSubtotal1, "Subtotal mismatch! Test Failed.");
+      System.out.println("Test Passed: Expected and Displayed Subtotals Match.");
+      
+      Thread.sleep(1000);
+      
+      
 }
+
+
+
+
+}
+
+
+
+
 	 
 
  

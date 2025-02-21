@@ -77,6 +77,16 @@ public class AddtoCart_Test extends BaseLibrary
 	{
 		ob1.Addtocart();
 	}
+	@Test(priority= 8)
+	public void cartcheckout() throws InterruptedException
+	{
+		ob1.validateavaivaility();
+	}
+	@Test(priority = 9)
+	public void theproductpricesubtotal() throws InterruptedException
+	{
+		ob1.verifytheproductpricesubtotal();
+	}
 	
 	
 @AfterTest
