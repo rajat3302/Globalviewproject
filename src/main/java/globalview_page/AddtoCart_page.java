@@ -2,6 +2,10 @@ package globalview_page;
 
 import static org.testng.Assert.assertEquals;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -61,6 +65,8 @@ public class AddtoCart_page extends BaseLibrary
     private WebElement cartbucket;
     @FindBy(xpath="//span[text()='Shopping Cart']")
     private WebElement shoppingcartnameverify;
+    @FindBy(xpath="//div[@id='out_stock_checkout_popup']")
+    private WebElement outofstockvalidation;
     
     @FindBy(xpath = "(//div[@title='Availability'])[1]/span")
     private WebElement firstprodavaibility;
@@ -78,7 +84,7 @@ public class AddtoCart_page extends BaseLibrary
     
     @FindBy(xpath="(//td[@data-th='Subtotal'])[1]/span/span/span")
     private WebElement firstsubtotal;
-    @FindBy(xpath="(//td[@data-th='Subtotal'])[2]/span/span/span")
+    @FindBy(xpath="(//td[@data-th='Subtotal'])[2]/span/span")
     private WebElement secondsubtotal;
     @FindBy(xpath="//tr[contains(@class,'grand totals')]/td/strong/span")
     private WebElement carttotal;
@@ -86,15 +92,7 @@ public class AddtoCart_page extends BaseLibrary
     @FindBy(xpath="//button[@title='Update Shopping Cart']")
     private WebElement upadtecart;
    
-    
-    @FindBy(xpath="//span[text()='Channel Back Sofa-Black Velvet']")
-    private WebElement addscoundproduct;
-    @FindBy(xpath="//a[text()='Channel Back Sofa-Black Velvet']")
-    private WebElement senodnameverify;
-    @FindBy(xpath="//span[text()='$474.00']")
-    private WebElement priceoffirstitem;
-    @FindBy(xpath="//span[text()='$4,598.00']")
-    private WebElement priceofseconditem;
+ 
     @FindBy(xpath="//input[@id='ponumber_code']")
     private WebElement ponumber;
     @FindBy(xpath="//*[@id='order_notes']")
@@ -302,7 +300,7 @@ public void validateavaivaility() throws InterruptedException
      
  }
 	 
-public void verifytheproductpricesubtotal() throws InterruptedException
+public void verifytheproductpricesubtotal() throws InterruptedException, ParseException
 {
 	  
       String priceText1 = pricefirstitem.getText().replace("$", "").trim(); // Remove '$' if present
@@ -318,7 +316,7 @@ public void verifytheproductpricesubtotal() throws InterruptedException
       Thread.sleep(1000);
       // Calculate expected subtotal
       double expectedSubtotal1 = price1 * quantity1;
-      System.out.println("Expected Subtotal: $" + expectedSubtotal1);
+      System.out.println("Expected Subtotal1: $" + expectedSubtotal1);
 
       // Locate and fetch actual subtotal displayed on the page
     
@@ -333,13 +331,81 @@ public void verifytheproductpricesubtotal() throws InterruptedException
       
       Thread.sleep(1000);
       
+      Applicationutility.getscroll(outofstockvalidation, driver);
+      Thread.sleep(1000);
+      String priceText2 = priceseconditem.getText().replace("$", "").trim(); // Remove '$' if present
+      double price2 = Double.parseDouble(priceText2);
+      System.out.println("Product Price: $" + price2);
+
+      // Locate and fetch product quantity
+      Thread.sleep(1000);
       
+      String quantityText2 = quantityseconditem.getAttribute("value").trim(); // Get quantity value from input field
+      int quantity2 = Integer.parseInt(quantityText2);
+      System.out.println("Product Quantity: " + quantity2);
+
+      Thread.sleep(1000);
+      // Calculate expected subtotal
+      double expectedSubtotal2 = price2 * quantity2;
+      System.out.println("Expected Subtotal2: $" + expectedSubtotal2);
+
+      // Locate and fetch actual subtotal displayed on the page
+    
+      Thread.sleep(1000);
+      String subtotalText2 = secondsubtotal.getText().replace("$", "").trim();
+      
+      NumberFormat format = NumberFormat.getInstance(Locale.US); // Adjust locale as needed
+      double actualSubtotal2 = format.parse(subtotalText2).doubleValue();
+      System.out.println("Displayed Subtotal: $" + actualSubtotal2);
+      
+//      double actualSubtotal2 = Double.parseDouble(subtotalText2);
+//      System.out.println("Displayed Subtotal: $" + actualSubtotal2);
+
+      // Verify if expected subtotal matches actual subtotal
+      Assert.assertEquals(actualSubtotal2, expectedSubtotal2, "Subtotal mismatch! Test Failed.");
+      System.out.println("Test Passed: Expected and Displayed Subtotals Match.");
+      
+      Thread.sleep(1000);
+}     
+public void verifythecarttotal() throws ParseException, InterruptedException
+
+
+{
+	 String subtotalText1 = firstsubtotal.getText().replace("$", "").trim();
+     double actualSubtotal1 = Double.parseDouble(subtotalText1);
+     System.out.println("Displayed Subtotal: $" + actualSubtotal1);
+     
+     String subtotalText2 = secondsubtotal.getText().replace("$", "").trim();     
+     NumberFormat format = NumberFormat.getInstance(Locale.US); // Adjust locale as needed
+     double actualSubtotal2 = format.parse(subtotalText2).doubleValue();
+     System.out.println("Displayed Subtotal: $" + actualSubtotal2);
+     
+     Thread.sleep(1000);
+     double expectedTotal = actualSubtotal1 + actualSubtotal2;
+     System.out.println("Expected Cart Total: $" + expectedTotal);
+     
+
+     String carttotaltext = carttotal.getText().replace("$", "").trim(); 
+     NumberFormat formatcart = NumberFormat.getInstance(Locale.US); // Adjust locale as needed
+     double totalcart = formatcart.parse(carttotaltext).doubleValue();
+     System.out.println("Displayed Subtotal: $" + totalcart);
+     
+     Assert.assertEquals(totalcart, expectedTotal, "Cart total does not match the sum of product prices!");
+
+     System.out.println("Test Passed: Cart total matches sum of both product prices.");
+     
+     Thread.sleep(1000);
+ }
+     
+     
 }
+      
+      
 
 
 
 
-}
+
 
 
 

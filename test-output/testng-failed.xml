@@ -6,9 +6,10 @@
       <class name="globalview_test.AddtoCart_Test">
         <methods>
           <include name="teardown"/>
+          <include name="validatepdppage"/>
           <include name="quitdriver"/>
-          <include name="theproductpricesubtotal"/>
           <include name="getlaunchurl_globalview"/>
+          <include name="validateaddtocart"/>
         </methods>
       </class> <!-- globalview_test.AddtoCart_Test -->
     </classes>

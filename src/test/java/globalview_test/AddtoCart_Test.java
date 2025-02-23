@@ -1,5 +1,7 @@
 package globalview_test;
 
+import java.text.ParseException;
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
@@ -83,11 +85,15 @@ public class AddtoCart_Test extends BaseLibrary
 		ob1.validateavaivaility();
 	}
 	@Test(priority = 9)
-	public void theproductpricesubtotal() throws InterruptedException
+	public void theproductpricesubtotal() throws InterruptedException, ParseException
 	{
 		ob1.verifytheproductpricesubtotal();
 	}
-	
+	@Test(priority = 10)
+	public void validatecarttotal() throws ParseException, InterruptedException
+	{
+		ob1.verifythecarttotal();
+	}
 	
 @AfterTest
 public void quitdriver()
