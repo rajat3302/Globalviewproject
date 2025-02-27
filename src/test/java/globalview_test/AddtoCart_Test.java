@@ -11,6 +11,7 @@ import baselibrary.BaseLibrary;
 import baselibrary.CustomReportListener;
 import globalview_page.AddtoCart_page;
 import globalview_page.HomeLinks_page;
+import globalview_page.HomepageTitle;
 import globalview_page.SignIn_page;
 
 
@@ -22,6 +23,7 @@ public class AddtoCart_Test extends BaseLibrary
 	SignIn_page ob;
 	AddtoCart_page ob1;
 	HomeLinks_page ob2;
+	HomepageTitle ob3;
 	
 	@BeforeTest
 	public void getlaunchurl_globalview()
@@ -30,6 +32,7 @@ public class AddtoCart_Test extends BaseLibrary
 		ob = new SignIn_page();
 		ob1 = new AddtoCart_page();
 		ob2 = new HomeLinks_page();
+		ob3 = new HomepageTitle();
 	}
 	
 	
@@ -93,6 +96,36 @@ public class AddtoCart_Test extends BaseLibrary
 	public void validatecarttotal() throws ParseException, InterruptedException
 	{
 		ob1.verifythecarttotal();
+	}
+	@Test(priority =11)
+	public void validateremoveitem() throws InterruptedException
+	{
+		ob1.removeproductoncart();
+	}
+	@Test(priority = 12)
+	public void vaidatesubtotalagain() throws InterruptedException
+	{
+		ob1.verifysubtotalagainfirstitem();
+	}	
+	@Test(priority = 13)
+	public void validateprintcart() throws InterruptedException
+	{
+		ob1.printcartvaldate();
+	}
+	@Test(priority = 14)
+	public void securecheckout() throws InterruptedException
+	{
+		ob1.securecheckout();
+	}
+	@Test(priority = 15)
+	public void clearcart() throws InterruptedException
+	{
+		ob1.clearshopingcart();
+	}
+	@Test(priority = 16)
+	public void verifypagetitle()
+	{
+		ob3.gettitleGolbalView();
 	}
 	
 @AfterTest

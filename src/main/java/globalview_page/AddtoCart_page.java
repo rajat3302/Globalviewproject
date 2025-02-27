@@ -89,23 +89,54 @@ public class AddtoCart_page extends BaseLibrary
     @FindBy(xpath="//tr[contains(@class,'grand totals')]/td/strong/span")
     private WebElement carttotal;
    
+    @FindBy(xpath="(//a[@title='Remove item'])[2]")
+    private WebElement removeitem2;
     @FindBy(xpath="//button[@title='Update Shopping Cart']")
     private WebElement upadtecart;
+    @FindBy(xpath="//button[@title='Print Cart']")
+    private WebElement printcart;
+    @FindBy(xpath="//input[@name='add_contact_info']")
+    private WebElement addcontact;
+    @FindBy(xpath="//input[@name='contact_name']")
+    private WebElement contactname;
+    @FindBy(xpath="//input[@name='contact_email']")
+    private WebElement contcatemail;
+    @FindBy(xpath="//input[@name='contact_company']")
+    private WebElement namecompany;
+    @FindBy(xpath="//input[@name='contact_phone']")
+    private WebElement contactphone;
+    @FindBy(xpath="//h5[text()='QUANTITY OF ITEMS PER PAGE']")
+    private WebElement quantitypage;
+    @FindBy(xpath="//h5[text()='QUANTITY OF ITEMS PER PAGE']/following-sibling::div[1]")
+    private WebElement firtforemat;
+    @FindBy(xpath = "//h5[text()='QUANTITY OF ITEMS PER PAGE']/following-sibling::div[2]")
+    private WebElement secondformat;
+    @FindBy(xpath="//h5[text()='QUANTITY OF ITEMS PER PAGE']/following-sibling::div[3]")
+    private WebElement thirdformat;
+    @FindBy(xpath="//textarea[@name='notes']")
+    private WebElement textarea;
+    @FindBy(xpath="//button[text()='SAVE AS PDF']")
+    private WebElement savepdf;
+    @FindBy(xpath="(//span[text()='Close'])[1]")
+    private WebElement closepopup;
+    
    
- 
     @FindBy(xpath="//input[@id='ponumber_code']")
     private WebElement ponumber;
     @FindBy(xpath="//*[@id='order_notes']")
     private WebElement ordrnotes;
     @FindBy(xpath="//span[text()='Clear Shopping Cart']")
     private WebElement clearcart;
+    @FindBy(xpath="//button[@title='Proceed to Checkout']")
+    private WebElement checkout;
     
-    
-    
-    
-    
-    
-    
+    @FindBy(xpath="//li[contains(@class,'item CHECKOUT')]/strong/following::h1/span")
+    private WebElement checkoutpage;
+    @FindBy(xpath = "//div[contains(@class,'cart-empty')]/p[contains(text(),'You have no items in your shopping cart.')]")
+    private WebElement emptycart;
+    @FindBy(xpath = "//div[contains(@class,'cart-empty')]/p[contains(text(),'You have no items in your shopping cart.')]/following-sibling::p/a")
+    private WebElement continueshooping;
+  
     
  public void shopmodule() throws InterruptedException
  {
@@ -228,7 +259,7 @@ public void Addtocart() throws InterruptedException
 	Thread.sleep(1000);
 	System.out.println(initialquantitycart1);
 	Applicationutility.myClick(addtocart);
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 	int updatedqauntitycart1 =  Integer.parseInt(countercart.getText());
 	System.out.println(updatedqauntitycart1);
 	
@@ -295,14 +326,22 @@ public void validateavaivaility() throws InterruptedException
              "Stock status is not recognized!");
      
      Thread.sleep(2000);
-     //Verified first price of an item
+   
+     // verified the validation error message out of atock product
      
+     String expshiplater = Propertyutility.getproperty("outofstockerror");
+     String actshiplater =  outofstockvalidation.getText();
+     System.out.println(actshiplater);
+     assertEquals(expshiplater, actshiplater);
+     
+     System.out.println("Actual & expected errortext is verified.");
+          
      
  }
 	 
 public void verifytheproductpricesubtotal() throws InterruptedException, ParseException
 {
-	  
+	//Verified first price of an item
       String priceText1 = pricefirstitem.getText().replace("$", "").trim(); // Remove '$' if present
       double price1 = Double.parseDouble(priceText1);
       System.out.println("Product Price: $" + price1);
@@ -395,9 +434,153 @@ public void verifythecarttotal() throws ParseException, InterruptedException
      System.out.println("Test Passed: Cart total matches sum of both product prices.");
      
      Thread.sleep(1000);
+     
  }
-     
-     
+
+public void removeproductoncart() throws InterruptedException
+{
+	Applicationutility.getscroll(ponumber, driver);
+	Thread.sleep(1000);
+	Applicationutility.myClick(removeitem2);
+	Thread.sleep(2000);
+	
+	System.out.println("one product remove from cart successffully");
+	
+	// verify the minimum order fee in cart total
+	
+	System.out.println("increase quantity of product again");
+	 for(int k= 0; k<5 ;k++)
+	 {
+		 Applicationutility.myClick(incitems);
+		 System.out.println("increase items quantity" +(k+1));
+	 }
+	 
+	 Thread.sleep(1000);
+	 
+	 Applicationutility.myClick(upadtecart);
+	 Thread.sleep(1000);
+	 
+	 System.out.println("updatecartsuccessfully");
+	 
+}
+
+public void verifysubtotalagainfirstitem() throws InterruptedException
+{
+	String priceText1 = pricefirstitem.getText().replace("$", "").trim(); // Remove '$' if present
+    double price1 = Double.parseDouble(priceText1);
+    System.out.println("Product Price: $" + price1);
+
+    // Locate and fetch product quantity
+    Thread.sleep(1000);
+    String quantityText1 = quantiyfirstitems.getAttribute("value").trim(); // Get quantity value from input field
+    int quantity1 = Integer.parseInt(quantityText1);
+    System.out.println("Product Quantity: " + quantity1);
+
+    Thread.sleep(1000);
+    // Calculate expected subtotal
+    double expectedprice1 = price1 * quantity1;
+    System.out.println("Expected Subtotal1: $" + expectedprice1);
+
+    // Locate and fetch actual subtotal displayed on the page
+  
+    Thread.sleep(1000);
+    String subtotalText1 = firstsubtotal.getText().replace("$", "").trim();
+    double actualSubtotal1 = Double.parseDouble(subtotalText1);
+    System.out.println("Displayed Subtotal: $" + actualSubtotal1);
+
+    // Verify if expected subtotal matches actual subtotal
+    Assert.assertEquals(actualSubtotal1, expectedprice1, "Subtotal mismatch! Test Failed.");
+    System.out.println("Test Passed: Expected and Displayed Subtotals Match.");
+    
+    Thread.sleep(1000);
+    
+    
+    // verify the subtotal with cart total again
+    
+    String carttotaltext = carttotal.getText().replace("$", "").trim(); 
+    double totalcart = Double.parseDouble(carttotaltext);
+    System.out.println("Displayed Carttotal: $" + totalcart); 
+    
+    Assert.assertEquals(totalcart, actualSubtotal1, "Cart total does not match the sum of product prices!");
+
+    System.out.println("Test Passed: Cart total matches with sutotal of product.");
+    
+    Thread.sleep(1000);
+    
+    
+}
+
+public void printcartvaldate() throws InterruptedException
+{
+	Applicationutility.getscroll(ordrnotes, driver);
+	Thread.sleep(1000);
+	Applicationutility.myClick(printcart);
+	Applicationutility.myClick(addcontact);
+	Applicationutility.myClick(contactname);
+	contactname.sendKeys(Propertyutility.getproperty("billtoname"));
+	contcatemail.sendKeys(Propertyutility.getproperty("email"));
+	contactphone.sendKeys(Propertyutility.getproperty("phoneno"));
+	namecompany.sendKeys(Propertyutility.getproperty("Companyname"));
+	Thread.sleep(1000);
+	
+	String expquantityperpage =  Propertyutility.getproperty("quantityprpage");
+	String actquantityperpage =  quantitypage.getText();
+	System.out.println(actquantityperpage);
+	assertEquals(expquantityperpage, actquantityperpage);
+	
+	Thread.sleep(1000);
+	Applicationutility.myClick(firtforemat);
+	
+	Applicationutility.myClick(textarea);
+	
+	textarea.sendKeys(Propertyutility.getproperty("message"));
+	Thread.sleep(1000);
+	
+	Applicationutility.myClick(savepdf);
+	
+	Thread.sleep(1000);
+	Applicationutility.myClick(closepopup);
+	
+	System.out.println("download print cart successfully");
+	
+	Thread.sleep(1000);
+	
+	
+}
+
+public void securecheckout() throws InterruptedException
+{
+	Applicationutility.myClick(ponumber);
+	ponumber.sendKeys(Propertyutility.getproperty("ponumber"));
+	Thread.sleep(1000);
+	Applicationutility.myClick(ordrnotes);
+	ordrnotes.sendKeys(Propertyutility.getproperty("ordernote"));
+	
+	// click on checkout 
+	Thread.sleep(1000);
+	Applicationutility.myClick(checkout);
+	Thread.sleep(1000);
+}
+
+public void clearshopingcart() throws InterruptedException
+{
+	Applicationutility.waitforVisible(driver, checkoutpage);
+	driver.navigate().back();
+	Thread.sleep(2000);
+	Applicationutility.getscroll(ponumber, driver);
+	Applicationutility.myClick(clearcart);
+	Thread.sleep(1000);
+	
+	String expclearcartmessge =  Propertyutility.getproperty("clearcart");
+	String actclearcartmessge =  emptycart.getText();
+	System.out.println(actclearcartmessge);
+	assertEquals(expclearcartmessge, actclearcartmessge);
+		
+	Applicationutility.waitforclickible(driver, continueshooping);
+	Thread.sleep(1000);
+	
+}
+
 }
       
       
