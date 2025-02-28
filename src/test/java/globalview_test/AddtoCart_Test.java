@@ -127,6 +127,11 @@ public class AddtoCart_Test extends BaseLibrary
 	{
 		ob3.gettitleGolbalView();
 	}
+	@Test(priority = 17)
+	public void validatelogout() throws InterruptedException
+	{
+		ob.logout();
+	}
 	
 @AfterTest
 public void quitdriver()

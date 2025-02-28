@@ -57,8 +57,27 @@ public class AddtoCart_page extends BaseLibrary
     private WebElement channelblack;
     @FindBy(xpath="//h1[text()='Duncan Chair-Black Velvet']")
     private WebElement verifyproductpdp;
+    @FindBy(xpath ="//h3[text()='Downloads']")
+    private WebElement download;
+    @FindBy(xpath="//a[@title='Product Image']/span")
+    private WebElement productimage;
+    @FindBy(xpath="//a[@title='Tear Sheet']/span")
+    private WebElement tearsheet;
+    @FindBy(xpath="//label[text()='DISPLAY WHOLESALE PRICING']")
+    private WebElement wholesale;
+    @FindBy(xpath="//p[text()='Please select product to download PDF.']/following::input/following::label[1]")
+    private WebElement checkbox;
+    @FindBy(xpath="//label[@for='notes']/following::textarea")
+    private WebElement notesarea;
+    @FindBy(xpath="//label[@for='notes']/following::textarea/following::button[1]/following::button[1]")
+    private WebElement downloadtearsheet;
+    @FindBy(xpath="//button[contains(@class,'action-close')]")
+    private WebElement closebutton;
+    
     @FindBy(xpath="//button[@title='Add to Cart']")
     private WebElement addtocart;
+    @FindBy(xpath="//div[@id='validation-message-box']")
+    private WebElement validationerror;
     @FindBy(xpath="//a[@title='Cart']/child::span[3]")
     private WebElement countercart;
     @FindBy(xpath="//span[text()='Cart']")
@@ -180,8 +199,40 @@ public class AddtoCart_page extends BaseLibrary
 	 Applicationutility.myClick(delivery);
 	 Applicationutility.myClick(delivery);
 	
+	 Thread.sleep(1000);
+	 Applicationutility.myClick(download);
+	 Applicationutility.myClick(productimage);
+	 System.out.println("product image download successfully");
+	 Applicationutility.myClick(download);
+	 Applicationutility.myClick(tearsheet);
+	 Thread.sleep(1000);
+	 
+	 Applicationutility.myClick(wholesale);
+	 Applicationutility.myClick(checkbox);
+	 Thread.sleep(1000);
+	 Applicationutility.myClick(notesarea);
+	 notesarea.sendKeys(Propertyutility.getproperty("tearsheetnote"));
+	 Applicationutility.myClick(downloadtearsheet);
+	 System.out.println("tearsheet download successfully");
+	 Thread.sleep(1000);
+	 Applicationutility.waitforclickible(driver, closebutton);
+	 Thread.sleep(1000);
 	 Applicationutility.scrolltotop();
 	 Thread.sleep(1000);
+	 
+	 Applicationutility.getscroll(addtocart, driver);
+	 Thread.sleep(1000);
+	 Applicationutility.myClick(addtocart);	 
+	 
+	 Applicationutility.getscroll(validationerror, driver);
+	 // click add to cart without select any product
+	 String experrormessage = Propertyutility.getproperty("errorvalidation");
+	 String acterrormessage = validationerror.getText();
+	 System.out.println(acterrormessage);
+	 assertEquals(experrormessage, acterrormessage);
+	 
+	 System.out.println("validation error verified");
+	 
 	 for(int k= 0; k<4 ;k++)
 	 {
 		 Applicationutility.myClick(incitems);
@@ -550,10 +601,13 @@ public void printcartvaldate() throws InterruptedException
 
 public void securecheckout() throws InterruptedException
 {
+	
 	Applicationutility.myClick(ponumber);
+	ponumber.clear();
 	ponumber.sendKeys(Propertyutility.getproperty("ponumber"));
 	Thread.sleep(1000);
 	Applicationutility.myClick(ordrnotes);
+	ordrnotes.clear();
 	ordrnotes.sendKeys(Propertyutility.getproperty("ordernote"));
 	
 	// click on checkout 
@@ -565,7 +619,8 @@ public void securecheckout() throws InterruptedException
 public void clearshopingcart() throws InterruptedException
 {
 	Applicationutility.waitforVisible(driver, checkoutpage);
-	driver.navigate().back();
+	Thread.sleep(1000);
+	driver.navigate().back();	driver.navigate().back();
 	Thread.sleep(2000);
 	Applicationutility.getscroll(ponumber, driver);
 	Applicationutility.myClick(clearcart);

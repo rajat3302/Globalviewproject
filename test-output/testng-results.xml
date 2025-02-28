@@ -1,210 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="9" failed="2" skipped="0">
+<testng-results ignored="0" total="18" passed="18" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-27T17:00:00 IST" name="Default suite" finished-at="2025-02-27T17:01:39 IST" duration-ms="99149">
+  <suite started-at="2025-02-28T12:20:04 IST" name="Default suite" finished-at="2025-02-28T12:22:33 IST" duration-ms="149120">
     <groups>
     </groups>
-    <test started-at="2025-02-27T17:00:00 IST" name="Default test" finished-at="2025-02-27T17:01:39 IST" duration-ms="99149">
+    <test started-at="2025-02-28T12:20:04 IST" name="Default test" finished-at="2025-02-28T12:22:33 IST" duration-ms="149120">
       <class name="globalview_test.AddtoCart_Test">
-        <test-method is-config="true" signature="getlaunchurl_globalview()[pri:0, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:00:00 IST" name="getlaunchurl_globalview" finished-at="2025-02-27T17:00:09 IST" duration-ms="8967" status="PASS">
+        <test-method is-config="true" signature="getlaunchurl_globalview()[pri:0, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:20:04 IST" name="getlaunchurl_globalview" finished-at="2025-02-28T12:20:09 IST" duration-ms="5658" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getlaunchurl_globalview -->
-        <test-method signature="clickonmyaccount()[pri:0, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:00:09 IST" name="clickonmyaccount" finished-at="2025-02-27T17:00:10 IST" duration-ms="495" status="PASS">
+        <test-method signature="clickonmyaccount()[pri:0, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:20:09 IST" name="clickonmyaccount" finished-at="2025-02-28T12:20:10 IST" duration-ms="275" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickonmyaccount -->
-        <test-method signature="clickonsignIn()[pri:1, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:00:10 IST" name="clickonsignIn" finished-at="2025-02-27T17:00:11 IST" duration-ms="1253" status="PASS">
+        <test-method signature="clickonsignIn()[pri:1, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:20:10 IST" name="clickonsignIn" finished-at="2025-02-28T12:20:11 IST" duration-ms="1077" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickonsignIn -->
-        <test-method signature="usernamepass()[pri:2, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:00:11 IST" name="usernamepass" finished-at="2025-02-27T17:00:13 IST" duration-ms="1404" status="PASS">
+        <test-method signature="usernamepass()[pri:2, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:20:11 IST" name="usernamepass" finished-at="2025-02-28T12:20:12 IST" duration-ms="1221" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- usernamepass -->
-        <test-method signature="loginaccount()[pri:3, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:00:13 IST" name="loginaccount" finished-at="2025-02-27T17:00:16 IST" duration-ms="3158" status="PASS">
+        <test-method signature="loginaccount()[pri:3, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:20:12 IST" name="loginaccount" finished-at="2025-02-28T12:20:15 IST" duration-ms="3008" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginaccount -->
-        <test-method signature="shopbrandpartners()[pri:4, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:00:16 IST" name="shopbrandpartners" finished-at="2025-02-27T17:00:32 IST" duration-ms="16558" status="PASS">
+        <test-method signature="shopbrandpartners()[pri:4, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:20:15 IST" name="shopbrandpartners" finished-at="2025-02-28T12:20:28 IST" duration-ms="13272" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shopbrandpartners -->
-        <test-method signature="validatepdppage()[pri:5, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:00:32 IST" name="validatepdppage" finished-at="2025-02-27T17:00:57 IST" duration-ms="24432" status="PASS">
+        <test-method signature="validatepdppage()[pri:5, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:20:28 IST" name="validatepdppage" finished-at="2025-02-28T12:21:06 IST" duration-ms="37301" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validatepdppage -->
-        <test-method signature="addsecondproduct()[pri:6, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:00:57 IST" name="addsecondproduct" finished-at="2025-02-27T17:01:14 IST" duration-ms="17677" status="PASS">
+        <test-method signature="addsecondproduct()[pri:6, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:21:06 IST" name="addsecondproduct" finished-at="2025-02-28T12:21:19 IST" duration-ms="13053" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addsecondproduct -->
-        <test-method signature="validateaddtocart()[pri:7, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:01:14 IST" name="validateaddtocart" finished-at="2025-02-27T17:01:19 IST" duration-ms="4304" status="PASS">
+        <test-method signature="validateaddtocart()[pri:7, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:21:19 IST" name="validateaddtocart" finished-at="2025-02-28T12:21:23 IST" duration-ms="4227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateaddtocart -->
-        <test-method signature="securecheckout()[pri:14, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:01:19 IST" name="securecheckout" finished-at="2025-02-27T17:01:19 IST" duration-ms="26" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='ponumber_code']"}
-  (Session info: chrome=133.0.6943.141)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9a347121d3c8df1000eeffb76a388a06, findElement {value=//input[@id='ponumber_code'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.141, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\RAJATS~1.INN\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59523}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59523/devtoo..., se:cdpVersion: 133.0.6943.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9a347121d3c8df1000eeffb76a388a06]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='ponumber_code']"}
-  (Session info: chrome=133.0.6943.141)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9a347121d3c8df1000eeffb76a388a06, findElement {value=//input[@id='ponumber_code'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.141, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\RAJATS~1.INN\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59523}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59523/devtoo..., se:cdpVersion: 133.0.6943.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9a347121d3c8df1000eeffb76a388a06
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy14.getAccessibleName(Unknown Source)
-at applicationutility.Applicationutility.myClick(Applicationutility.java:79)
-at globalview_page.AddtoCart_page.securecheckout(AddtoCart_page.java:553)
-at globalview_test.AddtoCart_Test.securecheckout(AddtoCart_Test.java:118)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="cartcheckout()[pri:8, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:21:23 IST" name="cartcheckout" finished-at="2025-02-28T12:21:29 IST" duration-ms="6351" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cartcheckout -->
+        <test-method signature="theproductpricesubtotal()[pri:9, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:21:29 IST" name="theproductpricesubtotal" finished-at="2025-02-28T12:21:39 IST" duration-ms="9353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- theproductpricesubtotal -->
+        <test-method signature="validatecarttotal()[pri:10, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:21:39 IST" name="validatecarttotal" finished-at="2025-02-28T12:21:41 IST" duration-ms="2115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatecarttotal -->
+        <test-method signature="validateremoveitem()[pri:11, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:21:41 IST" name="validateremoveitem" finished-at="2025-02-28T12:21:52 IST" duration-ms="10958" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateremoveitem -->
+        <test-method signature="vaidatesubtotalagain()[pri:12, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:21:52 IST" name="vaidatesubtotalagain" finished-at="2025-02-28T12:21:57 IST" duration-ms="5241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- vaidatesubtotalagain -->
+        <test-method signature="validateprintcart()[pri:13, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:21:57 IST" name="validateprintcart" finished-at="2025-02-28T12:22:06 IST" duration-ms="9296" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateprintcart -->
+        <test-method signature="securecheckout()[pri:14, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:22:06 IST" name="securecheckout" finished-at="2025-02-28T12:22:15 IST" duration-ms="8539" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- securecheckout -->
-        <test-method signature="clearcart()[pri:15, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:01:19 IST" name="clearcart" finished-at="2025-02-27T17:01:39 IST" duration-ms="20176" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //li[contains(@class,'item CHECKOUT')]/strong/following::h1/span' (tried for 20 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //li[contains(@class,'item CHECKOUT')]/strong/following::h1/span' (tried for 20 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at applicationutility.Applicationutility.waitforVisible(Applicationutility.java:65)
-at globalview_page.AddtoCart_page.clearshopingcart(AddtoCart_page.java:567)
-at globalview_test.AddtoCart_Test.clearcart(AddtoCart_Test.java:123)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[contains(@class,'item CHECKOUT')]/strong/following::h1/span"}
-  (Session info: chrome=133.0.6943.141)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.26.0', revision: '8ccf0219d7'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9a347121d3c8df1000eeffb76a388a06, findElement {value=//li[contains(@class,'item CHECKOUT')]/strong/following::h1/span, using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.141, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\RAJATS~1.INN\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59523}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59523/devtoo..., se:cdpVersion: 133.0.6943.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9a347121d3c8df1000eeffb76a388a06
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 29 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="clearcart()[pri:15, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:22:15 IST" name="clearcart" finished-at="2025-02-28T12:22:28 IST" duration-ms="13106" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clearcart -->
-        <test-method signature="verifypagetitle()[pri:16, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:01:39 IST" name="verifypagetitle" finished-at="2025-02-27T17:01:39 IST" duration-ms="14" status="PASS">
+        <test-method signature="verifypagetitle()[pri:16, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:22:28 IST" name="verifypagetitle" finished-at="2025-02-28T12:22:28 IST" duration-ms="34" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifypagetitle -->
-        <test-method is-config="true" signature="quitdriver()[pri:0, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:01:39 IST" name="quitdriver" finished-at="2025-02-27T17:01:39 IST" duration-ms="0" status="PASS">
+        <test-method signature="validatelogout()[pri:17, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:22:28 IST" name="validatelogout" finished-at="2025-02-28T12:22:33 IST" duration-ms="4897" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- quitdriver -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.AddtoCart_Test@50378a4]" started-at="2025-02-27T17:01:39 IST" name="teardown" finished-at="2025-02-27T17:01:39 IST" depends-on-methods="globalview_test.AddtoCart_Test.quitdriver" duration-ms="0" status="PASS">
+        </test-method> <!-- validatelogout -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:22:33 IST" name="teardown" finished-at="2025-02-28T12:22:33 IST" depends-on-methods="globalview_test.AddtoCart_Test.quitdriver" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="quitdriver()[pri:0, instance:globalview_test.AddtoCart_Test@97e93f1]" started-at="2025-02-28T12:22:33 IST" name="quitdriver" finished-at="2025-02-28T12:22:33 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitdriver -->
       </class> <!-- globalview_test.AddtoCart_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

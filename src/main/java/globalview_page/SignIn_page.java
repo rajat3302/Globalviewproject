@@ -86,6 +86,7 @@ public class SignIn_page extends BaseLibrary
 	public void login3()
 	{
 		login2.click();
+		System.out.println("User login successfully");
 		
 	}
 	public void logout() throws InterruptedException
@@ -93,6 +94,8 @@ public class SignIn_page extends BaseLibrary
 		Thread.sleep(2000);
 		clickMyaccount.click();
 		logout.click();
+		driver.navigate().refresh();
+		System.out.println("User logout successfully");
 	}
 	
 	
