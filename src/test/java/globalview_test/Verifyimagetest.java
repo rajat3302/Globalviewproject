@@ -57,7 +57,8 @@ public class Verifyimagetest extends BaseLibrary
     }
 
     // Method to validate the image URL
-    public static boolean validateImageURL(String imageURL) {
+    public static boolean validateImageURL(String imageURL) 
+    {
         try {
             // Open a connection to the image URL
             HttpURLConnection connection = (HttpURLConnection) new URL(imageURL).openConnection();
