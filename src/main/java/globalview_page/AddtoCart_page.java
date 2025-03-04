@@ -20,6 +20,7 @@ public class AddtoCart_page extends BaseLibrary
 
 {
 	//SignIn_page ob;
+	
 	HomeLinks_page ob;
 	Applicationutility ob1;
 	
@@ -36,6 +37,13 @@ public class AddtoCart_page extends BaseLibrary
     private WebElement BARBARABARRYimageclick;
     @FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Barbara Barry Collection')]/following::a[1]")
     private WebElement BarbaraBarryCollectionexplore;
+    
+    @FindBy(xpath="//span[text()='Continue Shopping']")
+    private WebElement continueshopping;
+    @FindBy(xpath="(//div[contains(@class,'product details product-item-details')])[1]/div/a")
+    private WebElement selectfirstproduct;
+    @FindBy(xpath="//div[contains(@class,'product-name-wrapper')]")
+    private WebElement firstproductname;
     @FindBy(xpath="//a[@title='Clearlight Orb-Bronze']")
     private WebElement clearlight;
     @FindBy(xpath= "//div[contains(@class,'grouped-product-name_t')]")
@@ -105,8 +113,16 @@ public class AddtoCart_page extends BaseLibrary
     private WebElement firstsubtotal;
     @FindBy(xpath="(//td[@data-th='Subtotal'])[2]/span/span")
     private WebElement secondsubtotal;
+    
+    
     @FindBy(xpath="//tr[contains(@class,'grand totals')]/td/strong/span")
     private WebElement carttotal;
+    
+    public WebElement getcarttotal()
+    {
+		return carttotal;
+    	
+    }
    
     @FindBy(xpath="(//a[@title='Remove item'])[2]")
     private WebElement removeitem2;
@@ -253,7 +269,9 @@ public class AddtoCart_page extends BaseLibrary
 	Thread.sleep(1000);
 	System.out.println(initialquantitycart);
 	Applicationutility.myClick(addtocart);
-	Thread.sleep(3000);
+	Thread.sleep(2000);
+	driver.navigate().refresh();
+	Thread.sleep(1000);
 	int updatedqauntitycart =  Integer.parseInt(countercart.getText());
 	System.out.println(updatedqauntitycart);
 	
@@ -311,6 +329,8 @@ public void Addtocart() throws InterruptedException
 	System.out.println(initialquantitycart1);
 	Applicationutility.myClick(addtocart);
 	Thread.sleep(2000);
+	driver.navigate().refresh();
+	Thread.sleep(1000);
 	int updatedqauntitycart1 =  Integer.parseInt(countercart.getText());
 	System.out.println(updatedqauntitycart1);
 	
@@ -618,6 +638,8 @@ public void securecheckout() throws InterruptedException
 
 public void clearshopingcart() throws InterruptedException
 {
+	
+	
 	Applicationutility.waitforVisible(driver, checkoutpage);
 	Thread.sleep(1000);
 	driver.navigate().back();	driver.navigate().back();
@@ -633,6 +655,8 @@ public void clearshopingcart() throws InterruptedException
 		
 	Applicationutility.waitforclickible(driver, continueshooping);
 	Thread.sleep(1000);
+	
+
 	
 }
 

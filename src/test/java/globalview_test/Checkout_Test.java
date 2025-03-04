@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import baselibrary.BaseLibrary;
 import globalview_page.AddtoCart_page;
+import globalview_page.Checkout_page;
 import globalview_page.HomepageTitle;
 import globalview_page.SignIn_page;
 
@@ -17,6 +18,7 @@ public class Checkout_Test extends BaseLibrary
 	SignIn_page ob;
 	AddtoCart_page ob1;
 	HomepageTitle ob2;
+	Checkout_page ob3;
 	
 	
    @BeforeTest
@@ -26,6 +28,8 @@ public class Checkout_Test extends BaseLibrary
 	   ob = new SignIn_page();
 	   ob1= new AddtoCart_page();
 	   ob2= new HomepageTitle();
+	   ob3= new Checkout_page();
+	   
 	   
 	   
    }
@@ -110,4 +114,24 @@ public class Checkout_Test extends BaseLibrary
 	{
 		ob1.securecheckout();
 	}
+	@Test(priority = 15)
+	public void validatepagetitel() throws InterruptedException
+	{
+		ob3.validatepagetitlecheckout();
+	}
+	@Test(priority= 16)
+	public void ordersummery() throws InterruptedException
+	{
+		ob3.ordersummery();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
