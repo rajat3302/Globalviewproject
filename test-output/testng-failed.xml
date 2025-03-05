@@ -5,20 +5,9 @@
     <classes>
       <class name="globalview_test.Checkout_Test">
         <methods>
-          <include name="cartcheckout"/>
-          <include name="vaidatesubtotalagain"/>
-          <include name="validateaddtocart"/>
-          <include name="validatepdppage"/>
           <include name="ordersummery"/>
-          <include name="validateremoveitem"/>
-          <include name="validatepagetitel"/>
-          <include name="securecheckout"/>
           <include name="teardown"/>
           <include name="getlanunchurl_globalview"/>
-          <include name="shopbrandpartners"/>
-          <include name="theproductpricesubtotal"/>
-          <include name="validateprintcart"/>
-          <include name="validatecarttotal"/>
         </methods>
       </class> <!-- globalview_test.Checkout_Test -->
     </classes>

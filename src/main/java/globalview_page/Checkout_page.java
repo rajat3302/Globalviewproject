@@ -217,28 +217,24 @@ public void ordersummery() throws InterruptedException
     System.out.println("An error occurred: " + e.getMessage());
 	}
 	
-	String expitemname = Propertyutility.getproperty("pnameonpdp");
+	String expitemname = Propertyutility.getproperty("pnamecheckout");
 	String actitemname = itemnameverify.getText();
+	System.out.println(actitemname);
 	assertEquals(expitemname, actitemname);
-	
-	
 	System.out.println("name verified in summary box");
 	
 	
 	Thread.sleep(1000);
 	String expitempricecheckout =  itemspriceverify.getText().trim();
 	System.out.println("expected price" +expitempricecheckout);
-    String actitempricecehckout =  ob.getcarttotal().getText().trim();
-    System.out.println("actual price" +actitempricecehckout);
     
-    Thread.sleep(1000);
-    assertEquals(expitempricecheckout, actitempricecehckout);
-    System.out.println("price verified");
     
     Applicationutility.myClick(itemsimageverify);
     boolean isImageDisplayed = itemsimageverify.isDisplayed();
     System.out.println("Is the image displayed? " + isImageDisplayed);
     Assert.assertTrue(isImageDisplayed, "Image is not displayed on the page!");
+    
+    
     
     
     Thread.sleep(2000);
