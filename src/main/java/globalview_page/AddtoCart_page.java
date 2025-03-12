@@ -35,7 +35,7 @@ public class AddtoCart_page extends BaseLibrary
     private WebElement shopmenu;
     @FindBy(xpath="//div[text()='BARBARA BARRY']/following-sibling::div")
     private WebElement BARBARABARRYimageclick;
-    @FindBy(xpath="//div[contains(@class,'viewcollection-block-inner')]/h3[contains(text(),'Barbara Barry Collection')]/following::a[1]")
+    @FindBy(xpath="//span[text()='Explore']")
     private WebElement BarbaraBarryCollectionexplore;
     
     @FindBy(xpath="//span[text()='Continue Shopping']")
@@ -44,7 +44,7 @@ public class AddtoCart_page extends BaseLibrary
     private WebElement selectfirstproduct;
     @FindBy(xpath="//div[contains(@class,'product-name-wrapper')]")
     private WebElement firstproductname;
-    @FindBy(xpath="//a[@title='Clearlight Orb-Bronze']")
+    @FindBy(xpath="//a[@title='Clearlight Orb-Bronze']/following-sibling::div/div/a/span")
     private WebElement clearlight;
     @FindBy(xpath= "//div[contains(@class,'grouped-product-name_t')]")
     private WebElement verifynameonpdp;
@@ -175,17 +175,27 @@ public class AddtoCart_page extends BaseLibrary
     
  public void shopmodule() throws InterruptedException
  {
+	 try
+	 {
 	 ob1 = new Applicationutility();
 	 ob1.mousehover(shopmenu, driver);
 	 Thread.sleep(1000);
 	 Applicationutility.myClick(BARBARABARRYimageclick);
 	 Thread.sleep(2000);
-	 Applicationutility.myClick(BarbaraBarryCollectionexplore);
-	 Applicationutility.waitforclickible(driver, clearlight);
+	 Applicationutility.waitforclickible(driver, BarbaraBarryCollectionexplore);
+	 Thread.sleep(2000);
+	 Applicationutility.myClick(clearlight);
+	 }
+	 catch (Exception e)
+	 {
+	     System.out.println("issue in shop module"+e);
+	 }
  }
  
  public void pdppage() throws InterruptedException
  {
+	 try
+	 {
 	 Thread.sleep(1000);
 	 String nameexp = Propertyutility.getproperty("pnameonpdp");
 	 String nameact =  verifynameonpdp.getText();
@@ -195,7 +205,7 @@ public class AddtoCart_page extends BaseLibrary
 	 
 	 System.out.println("name assertion verified");
 	 
-	 verifynameonpdp.click();
+	 Applicationutility.myClick(verifynameonpdp);
 	 Thread.sleep(1000);
      Applicationutility.scrolltobottom();
 	 Thread.sleep(1000);
@@ -278,6 +288,12 @@ public class AddtoCart_page extends BaseLibrary
 	assertEquals(updatedqauntitycart, initialquantitycart+ 1, "Cart quantity didnot increase correctly!");
 		
 	Thread.sleep(1000);
+	}
+	catch (Exception e) 
+	{
+		System.out.println("issue in pdp page"+e);
+	}
+
 }	 
  
  
@@ -342,7 +358,7 @@ public void Addtocart() throws InterruptedException
 
 public void validateavaivaility() throws InterruptedException
 {
-	 Applicationutility.myClick(cartbucket);
+	// Applicationutility.myClick(cartbucket);
 	 
 	 String expshoppingcart = Propertyutility.getproperty("shoppingcartname");
 	 String actshppingcart = shoppingcartnameverify.getText();

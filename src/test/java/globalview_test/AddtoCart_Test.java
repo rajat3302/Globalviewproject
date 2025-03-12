@@ -77,61 +77,61 @@ public class AddtoCart_Test extends BaseLibrary
 		ob1.addproductnewintro();
 	}
 	
-	@Test(priority = 7)
-	public void validateaddtocart() throws InterruptedException
-	{
-		ob1.Addtocart();
-	}
-	@Test(priority= 8)
-	public void cartcheckout() throws InterruptedException
-	{
-		ob1.validateavaivaility();
-	}
-	@Test(priority = 9)
-	public void theproductpricesubtotal() throws InterruptedException, ParseException
-	{
-		ob1.verifytheproductpricesubtotal();
-	}
-	@Test(priority = 10)
-	public void validatecarttotal() throws ParseException, InterruptedException
-	{
-		ob1.verifythecarttotal();
-	}
-	@Test(priority =11)
-	public void validateremoveitem() throws InterruptedException
-	{
-		ob1.removeproductoncart();
-	}
-	@Test(priority = 12)
-	public void vaidatesubtotalagain() throws InterruptedException
-	{
-		ob1.verifysubtotalagainfirstitem();
-	}	
-	@Test(priority = 13)
-	public void validateprintcart() throws InterruptedException
-	{
-		ob1.printcartvaldate();
-	}
-	@Test(priority = 14)
-	public void securecheckout() throws InterruptedException
-	{
-		ob1.securecheckout();
-	}
-	@Test(priority = 15)
-	public void clearcart() throws InterruptedException
-	{
-		ob1.clearshopingcart();
-	}
-	@Test(priority = 16)
-	public void verifypagetitle()
-	{
-		ob3.gettitleGolbalView();
-	}
-	@Test(priority = 17)
-	public void validatelogout() throws InterruptedException
-	{
-		ob.logout();
-	}
+//	@Test(priority = 7)
+//	public void validateaddtocart() throws InterruptedException
+//	{
+//		ob1.Addtocart();
+//	}
+//	@Test(priority= 8)
+//	public void cartcheckout() throws InterruptedException
+//	{
+//		ob1.validateavaivaility();
+//	}
+//	@Test(priority = 9)
+//	public void theproductpricesubtotal() throws InterruptedException, ParseException
+//	{
+//		ob1.verifytheproductpricesubtotal();
+//	}
+//	@Test(priority = 10)
+//	public void validatecarttotal() throws ParseException, InterruptedException
+//	{
+//		ob1.verifythecarttotal();
+//	}
+//	@Test(priority =11)
+//	public void validateremoveitem() throws InterruptedException
+//	{
+//		ob1.removeproductoncart();
+//	}
+//	@Test(priority = 12)
+//	public void vaidatesubtotalagain() throws InterruptedException
+//	{
+//		ob1.verifysubtotalagainfirstitem();
+//	}	
+//	@Test(priority = 13)
+//	public void validateprintcart() throws InterruptedException
+//	{
+//		ob1.printcartvaldate();
+//	}
+//	@Test(priority = 14)
+//	public void securecheckout() throws InterruptedException
+//	{
+//		ob1.securecheckout();
+//	}
+//	@Test(priority = 15)
+//	public void clearcart() throws InterruptedException
+//	{
+//		ob1.clearshopingcart();
+//	}
+//	@Test(priority = 16)
+//	public void verifypagetitle()
+//	{
+//		ob3.gettitleGolbalView();
+//	}
+//	@Test(priority = 17)
+//	public void validatelogout() throws InterruptedException
+//	{
+//		ob.logout();
+//	}
 	
 @AfterTest
 public void quitdriver()

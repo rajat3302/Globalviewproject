@@ -41,10 +41,14 @@ private WebElement itemsimageverify;
 @FindBy(xpath="//span[contains(@class,'cart-price')]/span")
 private WebElement itemspriceverify;
 
+@FindBy(xpath="//div[text()='Shipping Address']")
+private WebElement shippingadderesstext;
 @FindBy(xpath="//select[@name='shipping_address_id']")
-private WebElement dhippingaddress;
+private WebElement selectshippingaddress;
 @FindBy(xpath="//div[contains(@class,'shipping-address-item selected-item')]")
 private WebElement selectedshippingsdd;
+//@FindBy(xpath="//div[contains(@class,'shipping-address-item selected-item')]")
+////private WebElement 
 
 @FindBy(xpath="//h1[contains(@class,'modal-title')]")
 private WebElement modaltitle;
@@ -234,12 +238,35 @@ public void ordersummery() throws InterruptedException
     System.out.println("Is the image displayed? " + isImageDisplayed);
     Assert.assertTrue(isImageDisplayed, "Image is not displayed on the page!");
     
-    
-    
-    
+   
     Thread.sleep(2000);
-    
+    	
+}
+
+public void selectshippingadderess() throws InterruptedException
+{
+	String expshippingadresstext =   Propertyutility.getproperty("");
+	String actshippingadresstext =   shippingadderesstext.getText();
+	System.out.println(actshippingadresstext);
+	assertEquals(expshippingadresstext, actshippingadresstext);
 	
+	System.err.println("Shiping adderess text verified");
+	
+	
+	Applicationutility.waitforVisible(driver, selectshippingaddress);
+	Applicationutility.myClick(selectshippingaddress);
+	
+	Applicationutility.dropdown(selectshippingaddress, "Naveen Sharma, Interior design home, ARIZONA, Arizona 12345, United States");
+	Thread.sleep(1000);
+	
+	Applicationutility.myClick(selectedshippingsdd);
+	
+	
+	
+}
+
+public void selectshippingmethod ()
+{
 	
 }
 
