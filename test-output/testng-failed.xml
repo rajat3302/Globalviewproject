@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="globalview_test.AddtoCart_Test">
+      <class name="globalview_test.Checkout_Test">
         <methods>
-          <include name="shopbrandpartners"/>
           <include name="teardown"/>
-          <include name="validatepdppage"/>
-          <include name="quitdriver"/>
-          <include name="getlaunchurl_globalview"/>
+          <include name="selectshipingmethod"/>
+          <include name="getlanunchurl_globalview"/>
+          <include name="verifynewaddressform"/>
         </methods>
-      </class> <!-- globalview_test.AddtoCart_Test -->
+      </class> <!-- globalview_test.Checkout_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

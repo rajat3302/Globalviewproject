@@ -124,6 +124,22 @@ public class Checkout_Test extends BaseLibrary
 	{
 		ob3.ordersummery();
 	}
+	@Test(priority = 17)
+	public void selectshippingaddress() throws InterruptedException
+	{
+		ob3.selectshippingadderess();
+	}
+	@Test(priority = 18)
+	public void verifynewaddressform() throws InterruptedException
+	{
+		ob3.validatenewshippingaddressform();
+	}
+	@Test(priority= 19)
+	public void selectshipingmethod() throws InterruptedException
+	{
+		ob3.selectshippingmethod();
+	}
+	
 	
 	
 	

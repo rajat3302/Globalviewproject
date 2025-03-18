@@ -358,8 +358,8 @@ public void Addtocart() throws InterruptedException
 
 public void validateavaivaility() throws InterruptedException
 {
-	// Applicationutility.myClick(cartbucket);
-	 
+	 Applicationutility.myClick(cartbucket);
+	 Thread.sleep(1000);
 	 String expshoppingcart = Propertyutility.getproperty("shoppingcartname");
 	 String actshppingcart = shoppingcartnameverify.getText();
 	 System.out.println(actshppingcart);
