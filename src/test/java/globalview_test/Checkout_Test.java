@@ -139,7 +139,21 @@ public class Checkout_Test extends BaseLibrary
 	{
 		ob3.selectshippingmethod();
 	}
-	
+	@Test(priority = 20)
+	public void editponumber() throws InterruptedException
+	{
+	ob3.validateeditponumber();
+	}	
+	@Test(priority= 21)
+	public void validateinfinalcheckout() throws InterruptedException
+	{
+		ob3.finalcheckoutpagevalidation();
+	}
+	@Test(priority = 22)
+	public void finalcheckout() throws InterruptedException
+	{
+		ob3.finalcheckout();
+	}
 	
 	
 	

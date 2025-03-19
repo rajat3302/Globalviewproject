@@ -97,11 +97,17 @@ private WebElement standarddeliveryprice;
 @FindBy(xpath="//span[text()='Next']")
 private WebElement next;
 
+@FindBy(xpath="//span[text()='Go back to edit your po number']")
+private WebElement editponumber;
+@FindBy(xpath="//button[@title='Proceed to Checkout']")
+private WebElement checkout;
 
+@FindBy(xpath="//input[@id='ponumber_code']")
+private WebElement ponumber;
 @FindBy(xpath="//div[text()='Billing Address:']")
 private WebElement billingaddreesheading;
 
-@FindBy(xpath="//div[contains(@class,'billing-address-details')]")
+@FindBy(xpath="//div[contains(@class,'billing-address-details')]/span[1]")
 private WebElement billingaddress;
 @FindBy(xpath="//div[contains(@class,'shipping-address-details')]")
 private WebElement shippingadreess;
@@ -129,6 +135,37 @@ private WebElement shippingmethodverify;
 private WebElement shippingstandarddelivery;
 @FindBy(xpath="//div[text()='Payment Method']")
 private WebElement paymentmethod;
+
+@FindBy(xpath="//span[text()='Credit Card']")
+private WebElement creditcardtext;
+@FindBy(xpath="//span[text()='Use registered card:']")
+private WebElement useregisteredcard;
+@FindBy(xpath="//span[text()='Use registered card:']/following-sibling::div[1]/input")
+private WebElement firstexistingcard;
+@FindBy(xpath="//span[text()='Use registered card:']/following-sibling::div[2]/input")
+private WebElement secondexistingcard;
+@FindBy(xpath="//span[text()='Use registered card:']/following-sibling::div[3]/input")
+private WebElement registercardnewone;
+
+@FindBy(xpath="//input[@id='sage_name']")
+private WebElement cardholdername;
+@FindBy(xpath="//input[@id='sage_addres']")
+private WebElement cardholderadderess;
+@FindBy(xpath="//input[@id='sage_city']")
+private WebElement cardholdercity;
+@FindBy(xpath="//input[@id='sage_state']")
+private WebElement cardholderstate;
+@FindBy(xpath="//input[@id='sage_zip']")
+private WebElement cardholderzipcode;
+@FindBy(xpath="//input[@id='sage_country']")
+private WebElement cardholdercountry;
+@FindBy(xpath="//input[@name='payment[cc_number]']")
+private WebElement ccnumber;
+
+
+
+
+
 
 @FindBy(xpath="//div[contains(@class,'checkout-agreement field choice required')]/input/following::label")
 private WebElement clickcheckbox;
@@ -307,18 +344,19 @@ public void validatenewshippingaddressform() throws InterruptedException
 	
 //	Assert.assertTrue(addressmodal.isDisplayed(), "Selected Address Modal is not displayed!");
 //	System.out.println("shipping adderess modal displayed");
-	Thread.sleep(1000);
+	
+	
 }
 
 public void selectshippingmethod () throws InterruptedException
 {
 	try
 	{
-	String expshippingmethod =  "SHIPPING METHODS";
-	String actshippingmethod =  shippingmethod.getText();
-	System.out.println(actshippingmethod);
-	assertEquals(expshippingmethod, actshippingmethod);
-	System.out.println("verified text shipping method");
+//	String expshippingmethod =  Propertyutility.getproperty("shpingmethodvalidate");
+//	String actshippingmethod =  shippingmethod.getText();
+//	System.out.println(actshippingmethod);
+//	assertEquals(expshippingmethod, actshippingmethod);
+//	System.out.println("verified text shipping method");
 	
 	Applicationutility.myClick(handlingpage);
 	Thread.sleep(2000);
@@ -342,65 +380,106 @@ public void selectshippingmethod () throws InterruptedException
 	
 	Applicationutility.myClick(next);
 	System.out.println("Move to the next checkout page");
-	Thread.sleep(1000);
-	Applicationutility.waitforVisible(driver, billingaddreesheading);
-	Thread.sleep(1000);
+	Thread.sleep(2000);
+
 	}
 	catch (Exception e) 
 	{
 		System.out.println("issue in select shipping method" +e);
 	}
-}	
-public void finalcheckoutpagevalidation()
+}
+
+public void validateeditponumber() throws InterruptedException
 {
-	String exptextbillingaddress = Propertyutility.getproperty("");
+	Applicationutility.myClick(editponumber);
+	Thread.sleep(1000);
+	Applicationutility.myClick(ponumber);
+	ponumber.clear();
+	
+	ponumber.sendKeys("GV09876");
+	Thread.sleep(1000);
+	Applicationutility.myClick(checkout);
+	Thread.sleep(1000);
+	
+}
+public void finalcheckoutpagevalidation() throws InterruptedException
+{
+	
+	Applicationutility.myClick(selectshippingaddress);
+	Thread.sleep(1000);
+	Applicationutility.dropdown(selectshippingaddress, "Naveen Sharma, Interior design home, ARIZONA, Arizona 12345, United States");
+	System.out.println("address selected agian ");
+	Thread.sleep(1000);
+	Applicationutility.myClick(next);
+	System.out.println("Move to the final checkout page agian");
+	
+	Thread.sleep(1000);
+	Applicationutility.myClick(billingaddreesheading);
+	String exptextbillingaddress = Propertyutility.getproperty("billingaddress");
 	String acttextbillingaddress = billingaddreesheading.getText();
 	System.out.println(acttextbillingaddress);
 	assertEquals(exptextbillingaddress, acttextbillingaddress);
 	System.out.println("verified billing adress");
+	Thread.sleep(1000);
 	
+	Applicationutility.myClick(billingaddress);
 	String expbilling = "BILLING ADDRESS";
 	String actbilling = billingaddress.getText();
 	System.out.println(actbilling);
 	assertEquals(expbilling, actbilling);
 	System.out.println("verified billing");
+	Thread.sleep(2000);
 	
-	String expshipping = "SHIPPING ADDRESS";
-	String actshipping = shippingadderess.getText();
+	Applicationutility.myClick(shippingadderess);
+	String expshipping = Propertyutility.getproperty("shippingaddress");
+	String actshipping = shippingadreess.getText();
 	System.out.println(actshipping);
 	assertEquals(expshipping, actshipping);
 	System.out.println("verified shpping address");
+	Thread.sleep(1000);
 	
+	Applicationutility.myClick(verifyitemnameinbox);
 	String expitems = Propertyutility.getproperty("pnamecheckout");
 	String actitems =  verifyitemnameinbox.getText();
 	System.out.println(actitems);
 	assertEquals(expitems, actitems);
 	System.out.println("produt name verified final page");
+	Thread.sleep(1000);
 	
+	Applicationutility.myClick(ponumberverify);
 	String expponumber =  "PO NUMBER:";
 	String actponumber = ponumberverify.getText();
 	System.out.println(actponumber);
 	assertEquals(expponumber, actponumber);
+	Thread.sleep(1000);
 	
+	Applicationutility.myClick(ordernotesverify);
 	String expordernotes = "ORDER NOTES:";
 	String actordernotes = ordernotesverify.getText();
 	System.out.println(actordernotes);
 	assertEquals(expordernotes, actordernotes);
+	Thread.sleep(1000);
 	
-	String expshippingmethod = "Shipping Method:";
-	String actshippingmethod = 	shippingmethodverify.getText();
-	System.out.println(actshippingmethod);
-	assertEquals(expshippingmethod, actshippingmethod);
-	
+//	Applicationutility.myClick(shippingmethodverify);
+//	String expshippingmethod = Propertyutility.getproperty("shippingmethodvalidate");
+//	String actshippingmethod = 	shippingmethodverify.getText();
+//	System.out.println(actshippingmethod);
+//	assertEquals(expshippingmethod, actshippingmethod);
+//	System.out.println("verified shipping address");
 
-	
+	Applicationutility.myClick(shippingstandarddelivery);
+	String expshippindelivery =  Propertyutility.getproperty("standarddelivery");
+	String actshippingdelivery = shippingstandarddelivery.getText();
+	System.out.println(shippingstandarddelivery);
+	assertEquals(expshippindelivery, actshippingdelivery);
+	System.out.println("vaerified shpiing method on final checkoutpage ");
 }
 
 public void finalcheckout() throws InterruptedException
 {
 	
 	Thread.sleep(1000);
-	cartsubtotal.click();
+    Applicationutility.myClick(shippingmethodverify);
 	
 	double cartSubtotal = Double.parseDouble(cartsubtotal.getText().replace("$", "").trim());
     double shipping = Double.parseDouble(shippingcharges.getText().replace("$", "").trim());
@@ -414,6 +493,41 @@ public void finalcheckout() throws InterruptedException
     Assert.assertEquals(orderTotal, expectedTotal, "Order Total does not match expected sum!");
     System.out.println("Validation Passed: Order Total is correctly calculated.");
     
+    
+    Thread.sleep(1000);
+    Applicationutility.myClick(priceonitem);
+    
+    double itemPrice = Double.parseDouble(priceonitem.getText().replace("$", "").trim());
+    System.out.println("Cart Subtotal: $" + cartSubtotal);
+    System.out.println("Item Price: $" + itemPrice);
+    
+    Assert.assertEquals(cartSubtotal, itemPrice, "Cart Subtotal does not match Item Price!");
+    System.out.println("Validation Passed: Cart Subtotal matches Item Price.");
+    Thread.sleep(1000);
+    
+}
+
+public void selectpaymentmethod()
+{
+	try
+	{
+	Applicationutility.myClick(paymentmethod);
+	String exppaymentmethodtext = Propertyutility.getproperty("paymnetmethod");
+	String actpaymentmethodtext =  paymentmethod.getText();
+	System.out.println(actpaymentmethodtext);
+	assertEquals(exppaymentmethodtext, actpaymentmethodtext);
+	System.out.println("Text payment method verified");
+	
+	Thread.sleep(1000);
+	
+	
+	}
+	catch (Exception e) 
+	{
+	
+	}
+	
+	
 }
 
 

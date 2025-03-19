@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\rajat.shrotriya.INNOAGE\AppData\Local\Temp\testng-eclipse--1169531218\testng-customsuite.xml</span>
+                    <span>C:\Users\rajat.shrotriya.INNOAGE\AppData\Local\Temp\testng-eclipse--1666241508\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">20 methods,   20 passed</span>
+                    <span class="method-stats">23 methods, 1 failed,   22 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="globalview_test.Checkout_Test" class="method navigator-link" hash-for-method="validateinfinalcheckout">validateinfinalcheckout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -120,6 +134,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="globalview_test.Checkout_Test" class="method navigator-link" hash-for-method="clickonsignIn">clickonsignIn</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="globalview_test.Checkout_Test" class="method navigator-link" hash-for-method="editponumber">editponumber</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="globalview_test.Checkout_Test" class="method navigator-link" hash-for-method="finalcheckout">finalcheckout</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -214,6 +238,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">globalview_test.Checkout_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateinfinalcheckout">
+                  </a> <!-- validateinfinalcheckout -->
+                  <span class="method-name">validateinfinalcheckout</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [] but found [SHIPPING ADDRESS]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at globalview_page.Checkout_page.finalcheckoutpagevalidation(Checkout_page.java:406)
+	at globalview_test.Checkout_Test.validateinfinalcheckout(Checkout_Test.java:150)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -246,6 +322,20 @@
                   <a name="clickonsignIn">
                   </a> <!-- clickonsignIn -->
                   <span class="method-name">clickonsignIn</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="editponumber">
+                  </a> <!-- editponumber -->
+                  <span class="method-name">editponumber</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="finalcheckout">
+                  </a> <!-- finalcheckout -->
+                  <span class="method-name">finalcheckout</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -365,7 +455,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\rajat.shrotriya.INNOAGE\AppData\Local\Temp\testng-eclipse--1169531218\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\rajat.shrotriya.INNOAGE\AppData\Local\Temp\testng-eclipse--1666241508\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -414,92 +504,104 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(20);
+data.addRows(23);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validatepdppage')
 data.setCell(0, 2, 'globalview_test.Checkout_Test')
-data.setCell(0, 3, 40073);
+data.setCell(0, 3, 40455);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'shopbrandpartners')
 data.setCell(1, 2, 'globalview_test.Checkout_Test')
-data.setCell(1, 3, 16013);
+data.setCell(1, 3, 20491);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'addsecondproduct')
 data.setCell(2, 2, 'globalview_test.Checkout_Test')
-data.setCell(2, 3, 13514);
+data.setCell(2, 3, 14378);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'validateremoveitem')
 data.setCell(3, 2, 'globalview_test.Checkout_Test')
-data.setCell(3, 3, 11756);
+data.setCell(3, 3, 11635);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'theproductpricesubtotal')
+data.setCell(4, 1, 'cartcheckout')
 data.setCell(4, 2, 'globalview_test.Checkout_Test')
-data.setCell(4, 3, 9276);
+data.setCell(4, 3, 9607);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'validateprintcart')
+data.setCell(5, 1, 'selectshipingmethod')
 data.setCell(5, 2, 'globalview_test.Checkout_Test')
-data.setCell(5, 3, 9162);
+data.setCell(5, 3, 9363);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'validateaddtocart')
+data.setCell(6, 1, 'theproductpricesubtotal')
 data.setCell(6, 2, 'globalview_test.Checkout_Test')
-data.setCell(6, 3, 8827);
+data.setCell(6, 3, 9329);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'securecheckout')
+data.setCell(7, 1, 'validateprintcart')
 data.setCell(7, 2, 'globalview_test.Checkout_Test')
-data.setCell(7, 3, 8559);
+data.setCell(7, 3, 9227);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'selectshipingmethod')
+data.setCell(8, 1, 'validateaddtocart')
 data.setCell(8, 2, 'globalview_test.Checkout_Test')
-data.setCell(8, 3, 7605);
+data.setCell(8, 3, 9218);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'cartcheckout')
+data.setCell(9, 1, 'editponumber')
 data.setCell(9, 2, 'globalview_test.Checkout_Test')
-data.setCell(9, 3, 6120);
+data.setCell(9, 3, 8928);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'verifynewaddressform')
+data.setCell(10, 1, 'securecheckout')
 data.setCell(10, 2, 'globalview_test.Checkout_Test')
-data.setCell(10, 3, 5593);
+data.setCell(10, 3, 8352);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'vaidatesubtotalagain')
+data.setCell(11, 1, 'validateinfinalcheckout')
 data.setCell(11, 2, 'globalview_test.Checkout_Test')
-data.setCell(11, 3, 5181);
+data.setCell(11, 3, 6726);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'selectshippingaddress')
+data.setCell(12, 1, 'vaidatesubtotalagain')
 data.setCell(12, 2, 'globalview_test.Checkout_Test')
-data.setCell(12, 3, 4354);
+data.setCell(12, 3, 5166);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'ordersummery')
+data.setCell(13, 1, 'verifynewaddressform')
 data.setCell(13, 2, 'globalview_test.Checkout_Test')
-data.setCell(13, 3, 4340);
+data.setCell(13, 3, 4737);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'loginaccount')
+data.setCell(14, 1, 'selectshippingaddress')
 data.setCell(14, 2, 'globalview_test.Checkout_Test')
-data.setCell(14, 3, 3128);
+data.setCell(14, 3, 4398);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'validatecarttotal')
+data.setCell(15, 1, 'ordersummery')
 data.setCell(15, 2, 'globalview_test.Checkout_Test')
-data.setCell(15, 3, 2095);
+data.setCell(15, 3, 4381);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'validatepagetitel')
+data.setCell(16, 1, 'finalcheckout')
 data.setCell(16, 2, 'globalview_test.Checkout_Test')
-data.setCell(16, 3, 2075);
+data.setCell(16, 3, 3350);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'usernamepass')
+data.setCell(17, 1, 'validatecarttotal')
 data.setCell(17, 2, 'globalview_test.Checkout_Test')
-data.setCell(17, 3, 1187);
+data.setCell(17, 3, 2091);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'clickonsignIn')
+data.setCell(18, 1, 'validatepagetitel')
 data.setCell(18, 2, 'globalview_test.Checkout_Test')
-data.setCell(18, 3, 1068);
+data.setCell(18, 3, 2089);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'clickonmyaccount')
+data.setCell(19, 1, 'usernamepass')
 data.setCell(19, 2, 'globalview_test.Checkout_Test')
-data.setCell(19, 3, 182);
+data.setCell(19, 3, 1183);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'clickonsignIn')
+data.setCell(20, 2, 'globalview_test.Checkout_Test')
+data.setCell(20, 3, 1073);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'clickonmyaccount')
+data.setCell(21, 2, 'globalview_test.Checkout_Test')
+data.setCell(21, 3, 270);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'loginaccount')
+data.setCell(22, 2, 'globalview_test.Checkout_Test')
+data.setCell(22, 3, 52);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -532,87 +634,101 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">clickonmyaccount</span>
-                <span class="method-start">5108 ms</span>
+                <span class="method-start">5442 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">clickonsignIn</span>
-                <span class="method-start">5383 ms</span>
+                <span class="method-start">5772 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">usernamepass</span>
-                <span class="method-start">6453 ms</span>
+                <span class="method-start">6848 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginaccount</span>
-                <span class="method-start">7642 ms</span>
+                <span class="method-start">8045 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">shopbrandpartners</span>
-                <span class="method-start">10774 ms</span>
+                <span class="method-start">8099 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validatepdppage</span>
-                <span class="method-start">26790 ms</span>
+                <span class="method-start">28592 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">addsecondproduct</span>
-                <span class="method-start">66867 ms</span>
+                <span class="method-start">69052 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateaddtocart</span>
-                <span class="method-start">80386 ms</span>
+                <span class="method-start">83434 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">cartcheckout</span>
-                <span class="method-start">89217 ms</span>
+                <span class="method-start">92656 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">theproductpricesubtotal</span>
-                <span class="method-start">95339 ms</span>
+                <span class="method-start">102265 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validatecarttotal</span>
-                <span class="method-start">104619 ms</span>
+                <span class="method-start">111599 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateremoveitem</span>
-                <span class="method-start">106719 ms</span>
+                <span class="method-start">113695 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">vaidatesubtotalagain</span>
-                <span class="method-start">118478 ms</span>
+                <span class="method-start">125345 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validateprintcart</span>
-                <span class="method-start">123665 ms</span>
+                <span class="method-start">130513 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">securecheckout</span>
-                <span class="method-start">132832 ms</span>
+                <span class="method-start">139744 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">validatepagetitel</span>
-                <span class="method-start">141395 ms</span>
+                <span class="method-start">148101 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">ordersummery</span>
-                <span class="method-start">143472 ms</span>
+                <span class="method-start">150192 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">selectshippingaddress</span>
-                <span class="method-start">147826 ms</span>
+                <span class="method-start">154587 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifynewaddressform</span>
-                <span class="method-start">152184 ms</span>
+                <span class="method-start">158988 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">selectshipingmethod</span>
-                <span class="method-start">157780 ms</span>
+                <span class="method-start">163729 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">editponumber</span>
+                <span class="method-start">173097 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">validateinfinalcheckout</span>
+                <span class="method-start">182027 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">finalcheckout</span>
+                <span class="method-start">188757 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">165390 ms</span>
+                <span class="method-start">192109 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

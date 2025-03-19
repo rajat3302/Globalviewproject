@@ -6,9 +6,8 @@
       <class name="globalview_test.Checkout_Test">
         <methods>
           <include name="teardown"/>
-          <include name="selectshipingmethod"/>
           <include name="getlanunchurl_globalview"/>
-          <include name="verifynewaddressform"/>
+          <include name="validateinfinalcheckout"/>
         </methods>
       </class> <!-- globalview_test.Checkout_Test -->
     </classes>
