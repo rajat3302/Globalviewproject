@@ -2,11 +2,14 @@ package globalview_page;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.Random;
+
 import org.apache.poi.sl.usermodel.ObjectMetaData.Application;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import applicationutility.Applicationutility;
@@ -145,7 +148,7 @@ private WebElement useregisteredcard;
 private WebElement firstexistingcard;
 @FindBy(xpath="//span[text()='Use registered card:']/following-sibling::div[2]/input")
 private WebElement secondexistingcard;
-@FindBy(xpath="//span[text()='Use registered card:']/following-sibling::div[3]/input")
+@FindBy(xpath="//span[text()='Use registered card:']/following-sibling::div[4]/input")
 private WebElement registercardnewone;
 
 @FindBy(xpath="//input[@id='sage_name']")
@@ -163,6 +166,10 @@ private WebElement cardholdercountry;
 @FindBy(xpath="//input[@name='payment[cc_number]']")
 private WebElement ccnumber;
 
+@FindBy(xpath="//select[@name='payment[cc_exp_month]']")
+private WebElement selectmonth;
+@FindBy(xpath="//select[@name='payment[cc_exp_year]']")
+private WebElement selectyear;
 
 
 
@@ -183,6 +190,10 @@ private WebElement closemodal;
 @FindBy(xpath="//button[contains(@class,'action primary checkout')]/span")
 private WebElement placeorder;
 
+@FindBy(xpath="//div[text()='This is a required field.']")
+private WebElement validationerror;
+@FindBy(xpath="//label[@for='agreement_sage_1']")
+private WebElement checkbox;
 
 @FindBy(xpath="//a[contains(@class,'order-number')]/strong")
 private WebElement ordernumber;
@@ -516,7 +527,7 @@ public void finalcheckout() throws InterruptedException
     
 }
 
-public void selectpaymentmethod()
+public void selectplaceorder()
 {
 	try
 	{
@@ -529,6 +540,84 @@ public void selectpaymentmethod()
 	
 	Thread.sleep(1000);
 	
+	Applicationutility.myClick(creditcardtext);
+	String expcreditcardtext = Propertyutility.getproperty("creditcard");
+	String actcreditcardtext = creditcardtext.getText();
+	System.out.println(actcreditcardtext);
+	assertEquals(expcreditcardtext, actcreditcardtext);
+	System.out.println("verified text credit card");
+	
+	Applicationutility.myClick(useregisteredcard);
+	String exptextuseregistered = Propertyutility.getproperty("useregistredcard");
+	String acttextuseregistered = useregisteredcard.getText();
+	System.out.println(acttextuseregistered);
+	assertEquals(exptextuseregistered, acttextuseregistered);
+	System.out.println("verified text USE REGISTRED CARD:");
+	
+	Thread.sleep(1000);
+	Applicationutility.myClick(firstexistingcard);
+	Applicationutility.myClick(secondexistingcard);
+	Thread.sleep(1000);
+	
+	Applicationutility.myClick(Reorderonprintrecipt);
+	Thread.sleep(1000);
+	
+	Applicationutility.myClick(cardholdername);
+	cardholdername.sendKeys("Peter parker");
+	Applicationutility.waitforclickible(driver, cardholderadderess);
+	cardholderadderess.sendKeys("Interior street line");
+	Applicationutility.waitforclickible(driver, cardholdercity);
+	cardholderadderess.sendKeys("ARIZONA");
+	Applicationutility.waitforclickible(driver, cardholderstate);
+	cardholderadderess.sendKeys("ARIZONA");
+	Applicationutility.waitforclickible(driver, cardholderzipcode);
+	cardholderadderess.sendKeys("12345");
+	Applicationutility.waitforclickible(driver, cardholdercountry);
+	cardholderadderess.sendKeys("UNITED STATES");
+	
+	Applicationutility.waitforclickible(driver, ccnumber);
+	
+	String randomcard = Applicationutility.getRandomTestCard();
+	ccnumber.sendKeys(randomcard);
+	
+	
+	Applicationutility.myClick(selectmonth);
+	
+	// Generate random expiration month (01 to 12)
+	int randomMonth = new Random().nextInt(12) + 1;
+	Select monthdropdown =  new Select(selectmonth);
+	monthdropdown.selectByVisibleText(String.format("%02d", randomMonth)); // Format to "01"
+
+	// Generate random expiration year (next 5-10 years)
+	
+	int randomYear = new Random().nextInt(6) + 2025; // Range: 2025-2030
+	Select yeardropdown =  new Select(selectyear);
+	yeardropdown.selectByVisibleText(String.valueOf(randomYear));
+	
+	Thread.sleep(2000);
+	
+	Applicationutility.myClick(reviewcheck);
+	Applicationutility.myClick(whoelprices);
+	Thread.sleep(1000);
+	Applicationutility.scrolltobottom();
+	
+	Thread.sleep(1000);
+	Applicationutility.myClick(closemodal);
+	
+	Applicationutility.myClick(placeorder);
+	
+	Applicationutility.myClick(validationerror);
+	String expvalidatonerrorcheckbox =  Propertyutility.getproperty("validationerrormessage");
+	String actvalidationerrorcheckbox =  validationerror.getText();
+	System.out.println(actvalidationerrorcheckbox);
+	assertEquals(expvalidatonerrorcheckbox, actvalidationerrorcheckbox);
+	System.out.println("validation error verified when yuser place order without click checkbox");
+	
+	Applicationutility.myClick(checkbox);
+	Thread.sleep(1000);
+	Applicationutility.myClick(placeorder);
+	
+	Thread.sleep(2000);
 	
 	}
 	catch (Exception e) 

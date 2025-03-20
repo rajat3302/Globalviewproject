@@ -1,109 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="23" passed="23" failed="0" skipped="0">
+<testng-results ignored="0" total="24" passed="24" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-20T15:17:50 IST" name="Default suite" finished-at="2025-03-20T15:21:21 IST" duration-ms="210914">
+  <suite started-at="2025-03-20T18:29:33 IST" name="Default suite" finished-at="2025-03-20T18:33:10 IST" duration-ms="217138">
     <groups>
     </groups>
-    <test started-at="2025-03-20T15:17:50 IST" name="Default test" finished-at="2025-03-20T15:21:21 IST" duration-ms="210914">
+    <test started-at="2025-03-20T18:29:33 IST" name="Default test" finished-at="2025-03-20T18:33:10 IST" duration-ms="217138">
       <class name="globalview_test.Checkout_Test">
-        <test-method is-config="true" signature="getlanunchurl_globalview()[pri:0, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:17:50 IST" name="getlanunchurl_globalview" finished-at="2025-03-20T15:17:56 IST" duration-ms="6012" status="PASS">
+        <test-method is-config="true" signature="getlanunchurl_globalview()[pri:0, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:29:33 IST" name="getlanunchurl_globalview" finished-at="2025-03-20T18:29:50 IST" duration-ms="17071" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getlanunchurl_globalview -->
-        <test-method signature="clickonmyaccount()[pri:0, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:17:56 IST" name="clickonmyaccount" finished-at="2025-03-20T15:17:56 IST" duration-ms="217" status="PASS">
+        <test-method signature="clickonmyaccount()[pri:0, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:29:50 IST" name="clickonmyaccount" finished-at="2025-03-20T18:29:50 IST" duration-ms="297" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickonmyaccount -->
-        <test-method signature="clickonsignIn()[pri:1, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:17:56 IST" name="clickonsignIn" finished-at="2025-03-20T15:17:57 IST" duration-ms="1071" status="PASS">
+        <test-method signature="clickonsignIn()[pri:1, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:29:50 IST" name="clickonsignIn" finished-at="2025-03-20T18:29:51 IST" duration-ms="1082" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickonsignIn -->
-        <test-method signature="usernamepass()[pri:2, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:17:57 IST" name="usernamepass" finished-at="2025-03-20T15:17:58 IST" duration-ms="1222" status="PASS">
+        <test-method signature="usernamepass()[pri:2, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:29:51 IST" name="usernamepass" finished-at="2025-03-20T18:29:53 IST" duration-ms="1231" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- usernamepass -->
-        <test-method signature="loginaccount()[pri:3, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:17:58 IST" name="loginaccount" finished-at="2025-03-20T15:18:01 IST" duration-ms="3149" status="PASS">
+        <test-method signature="loginaccount()[pri:3, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:29:53 IST" name="loginaccount" finished-at="2025-03-20T18:29:56 IST" duration-ms="3520" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginaccount -->
-        <test-method signature="shopbrandpartners()[pri:4, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:18:01 IST" name="shopbrandpartners" finished-at="2025-03-20T15:18:22 IST" duration-ms="20162" status="PASS">
+        <test-method signature="shopbrandpartners()[pri:4, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:29:56 IST" name="shopbrandpartners" finished-at="2025-03-20T18:30:13 IST" duration-ms="17066" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shopbrandpartners -->
-        <test-method signature="validatepdppage()[pri:5, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:18:22 IST" name="validatepdppage" finished-at="2025-03-20T15:19:02 IST" duration-ms="40220" status="PASS">
+        <test-method signature="validatepdppage()[pri:5, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:30:13 IST" name="validatepdppage" finished-at="2025-03-20T18:30:54 IST" duration-ms="41186" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validatepdppage -->
-        <test-method signature="addsecondproduct()[pri:6, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:19:02 IST" name="addsecondproduct" finished-at="2025-03-20T15:19:15 IST" duration-ms="13537" status="PASS">
+        <test-method signature="addsecondproduct()[pri:6, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:30:54 IST" name="addsecondproduct" finished-at="2025-03-20T18:31:08 IST" duration-ms="13249" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addsecondproduct -->
-        <test-method signature="validateaddtocart()[pri:7, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:19:15 IST" name="validateaddtocart" finished-at="2025-03-20T15:19:24 IST" duration-ms="8789" status="PASS">
+        <test-method signature="validateaddtocart()[pri:7, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:31:08 IST" name="validateaddtocart" finished-at="2025-03-20T18:31:17 IST" duration-ms="8971" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateaddtocart -->
-        <test-method signature="cartcheckout()[pri:8, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:19:24 IST" name="cartcheckout" finished-at="2025-03-20T15:19:31 IST" duration-ms="6998" status="PASS">
+        <test-method signature="cartcheckout()[pri:8, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:31:17 IST" name="cartcheckout" finished-at="2025-03-20T18:31:23 IST" duration-ms="6467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cartcheckout -->
-        <test-method signature="theproductpricesubtotal()[pri:9, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:19:31 IST" name="theproductpricesubtotal" finished-at="2025-03-20T15:19:40 IST" duration-ms="9326" status="PASS">
+        <test-method signature="theproductpricesubtotal()[pri:9, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:31:23 IST" name="theproductpricesubtotal" finished-at="2025-03-20T18:31:32 IST" duration-ms="9308" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- theproductpricesubtotal -->
-        <test-method signature="validatecarttotal()[pri:10, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:19:40 IST" name="validatecarttotal" finished-at="2025-03-20T15:19:43 IST" duration-ms="2114" status="PASS">
+        <test-method signature="validatecarttotal()[pri:10, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:31:32 IST" name="validatecarttotal" finished-at="2025-03-20T18:31:34 IST" duration-ms="2096" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validatecarttotal -->
-        <test-method signature="validateremoveitem()[pri:11, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:19:43 IST" name="validateremoveitem" finished-at="2025-03-20T15:19:55 IST" duration-ms="12841" status="PASS">
+        <test-method signature="validateremoveitem()[pri:11, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:31:34 IST" name="validateremoveitem" finished-at="2025-03-20T18:31:47 IST" duration-ms="12724" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateremoveitem -->
-        <test-method signature="vaidatesubtotalagain()[pri:12, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:19:55 IST" name="vaidatesubtotalagain" finished-at="2025-03-20T15:20:02 IST" duration-ms="6183" status="PASS">
+        <test-method signature="vaidatesubtotalagain()[pri:12, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:31:47 IST" name="vaidatesubtotalagain" finished-at="2025-03-20T18:31:53 IST" duration-ms="6215" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vaidatesubtotalagain -->
-        <test-method signature="validateprintcart()[pri:13, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:20:02 IST" name="validateprintcart" finished-at="2025-03-20T15:20:11 IST" duration-ms="9363" status="PASS">
+        <test-method signature="validateprintcart()[pri:13, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:31:53 IST" name="validateprintcart" finished-at="2025-03-20T18:32:03 IST" duration-ms="9104" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateprintcart -->
-        <test-method signature="securecheckout()[pri:14, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:20:11 IST" name="securecheckout" finished-at="2025-03-20T15:20:22 IST" duration-ms="10755" status="PASS">
+        <test-method signature="securecheckout()[pri:14, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:32:03 IST" name="securecheckout" finished-at="2025-03-20T18:32:12 IST" duration-ms="9681" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- securecheckout -->
-        <test-method signature="validatepagetitel()[pri:15, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:20:22 IST" name="validatepagetitel" finished-at="2025-03-20T15:20:24 IST" duration-ms="2093" status="PASS">
+        <test-method signature="validatepagetitel()[pri:15, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:32:12 IST" name="validatepagetitel" finished-at="2025-03-20T18:32:14 IST" duration-ms="2098" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validatepagetitel -->
-        <test-method signature="ordersummery()[pri:16, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:20:24 IST" name="ordersummery" finished-at="2025-03-20T15:20:28 IST" duration-ms="4432" status="PASS">
+        <test-method signature="ordersummery()[pri:16, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:32:14 IST" name="ordersummery" finished-at="2025-03-20T18:32:19 IST" duration-ms="4335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ordersummery -->
-        <test-method signature="selectshippingaddress()[pri:17, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:20:28 IST" name="selectshippingaddress" finished-at="2025-03-20T15:20:33 IST" duration-ms="4427" status="PASS">
+        <test-method signature="selectshippingaddress()[pri:17, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:32:19 IST" name="selectshippingaddress" finished-at="2025-03-20T18:32:23 IST" duration-ms="4367" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectshippingaddress -->
-        <test-method signature="verifynewaddressform()[pri:18, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:20:33 IST" name="verifynewaddressform" finished-at="2025-03-20T15:20:38 IST" duration-ms="5092" status="PASS">
+        <test-method signature="verifynewaddressform()[pri:18, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:32:23 IST" name="verifynewaddressform" finished-at="2025-03-20T18:32:28 IST" duration-ms="4561" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifynewaddressform -->
-        <test-method signature="selectshipingmethod()[pri:19, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:20:38 IST" name="selectshipingmethod" finished-at="2025-03-20T15:20:48 IST" duration-ms="10525" status="PASS">
+        <test-method signature="selectshipingmethod()[pri:19, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:32:28 IST" name="selectshipingmethod" finished-at="2025-03-20T18:32:38 IST" duration-ms="10203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectshipingmethod -->
-        <test-method signature="editponumber()[pri:20, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:20:48 IST" name="editponumber" finished-at="2025-03-20T15:21:04 IST" duration-ms="15597" status="PASS">
+        <test-method signature="editponumber()[pri:20, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:32:38 IST" name="editponumber" finished-at="2025-03-20T18:32:50 IST" duration-ms="11784" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editponumber -->
-        <test-method signature="validateinfinalcheckout()[pri:21, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:21:04 IST" name="validateinfinalcheckout" finished-at="2025-03-20T15:21:16 IST" duration-ms="12225" status="PASS">
+        <test-method signature="validateinfinalcheckout()[pri:21, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:32:50 IST" name="validateinfinalcheckout" finished-at="2025-03-20T18:33:02 IST" duration-ms="11994" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateinfinalcheckout -->
-        <test-method signature="finalcheckout()[pri:22, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:21:16 IST" name="finalcheckout" finished-at="2025-03-20T15:21:21 IST" duration-ms="4342" status="PASS">
+        <test-method signature="finalcheckout()[pri:22, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:33:02 IST" name="finalcheckout" finished-at="2025-03-20T18:33:06 IST" duration-ms="4296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finalcheckout -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.Checkout_Test@dc7df28]" started-at="2025-03-20T15:21:21 IST" name="teardown" finished-at="2025-03-20T15:21:21 IST" duration-ms="1" status="PASS">
+        <test-method signature="placeorder()[pri:23, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:33:06 IST" name="placeorder" finished-at="2025-03-20T18:33:10 IST" duration-ms="3997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeorder -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:globalview_test.Checkout_Test@30f842ca]" started-at="2025-03-20T18:33:10 IST" name="teardown" finished-at="2025-03-20T18:33:10 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

@@ -3,6 +3,7 @@ package applicationutility;
 import java.lang.reflect.Array;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -132,13 +133,6 @@ public class Applicationutility extends BaseLibrary
 	}
 	
 	
-	public static void dropdown(WebElement element, String visibleText)
-	{
-	
-		Select sell = new Select(element);
-		sell.selectByVisibleText(visibleText);
-	}
-	
 	
 	public static void selectDate() 
 	
@@ -148,7 +142,36 @@ public class Applicationutility extends BaseLibrary
         dateField.sendKeys("2024-12-31"); // Enter desired date in the required format
     }
 
+	public static void dropdown(WebElement element, String visibleText)
+	{
 	
+		Select sell = new Select(element);
+		sell.selectByVisibleText(visibleText);
+	}
+	
+	public static String getRandomTestCard() 
+	    {
+	        String[] testCards = 
+	            {
+	            "4242424242424242",  // Visa
+	            "5555555555554444",  // MasterCard
+	            "378282246310005",   // American Express
+	            "6011111111111117",   // Discover
+	            "8171999927660000",   // visa
+	            "4035501428146300",   
+	            "4360000001000005",
+	            "5127880999999990",
+	            "6703444444444449",
+	            "370000000000002"
+	             };
+	        Random random = new Random();
+	        return testCards[random.nextInt(testCards.length)];
+	    }
+
+	    public static void main(String[] args) 
+	    {
+	        System.out.println("Random Test Card: " + getRandomTestCard());
+	    }
 	
 	
 	

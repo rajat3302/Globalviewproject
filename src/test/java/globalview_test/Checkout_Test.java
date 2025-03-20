@@ -154,6 +154,11 @@ public class Checkout_Test extends BaseLibrary
 	{
 		ob3.finalcheckout();
 	}
+	@Test(priority = 23)
+	public void placeorder()
+	{
+		ob3.selectplaceorder();
+	}
 	
 	
 	
