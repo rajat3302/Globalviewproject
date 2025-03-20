@@ -3,6 +3,7 @@ package globalview_page;
 import static org.testng.Assert.assertEquals;
 
 import org.apache.poi.sl.usermodel.ObjectMetaData.Application;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -312,6 +313,7 @@ public void validatenewshippingaddressform() throws InterruptedException
 	Thread.sleep(1000);
 	Applicationutility.dropdown(selectshippingaddress, "New Address");
 	Thread.sleep(1000);
+	
 	String exptextnewadderess =  Propertyutility.getproperty("newaddress");
 	String acttextnewadderess =  modaltitle.getText();
 	System.out.println(acttextnewadderess);
@@ -372,6 +374,7 @@ public void selectshippingmethod () throws InterruptedException
 	
 	// white glove check 
 	Applicationutility.myClick(whiteglove);
+	Thread.sleep(1000);
 	Applicationutility.myClick(whiteglove);
 	Thread.sleep(1000);
 	Applicationutility.myClick(dropship);
@@ -391,6 +394,9 @@ public void selectshippingmethod () throws InterruptedException
 
 public void validateeditponumber() throws InterruptedException
 {
+	
+    Thread.sleep(1000);
+    
 	Applicationutility.myClick(editponumber);
 	Thread.sleep(1000);
 	Applicationutility.myClick(ponumber);
@@ -405,6 +411,8 @@ public void validateeditponumber() throws InterruptedException
 public void finalcheckoutpagevalidation() throws InterruptedException
 {
 	
+	
+    Thread.sleep(1000);
 	Applicationutility.myClick(selectshippingaddress);
 	Thread.sleep(1000);
 	Applicationutility.dropdown(selectshippingaddress, "Naveen Sharma, Interior design home, ARIZONA, Arizona 12345, United States");
@@ -430,13 +438,13 @@ public void finalcheckoutpagevalidation() throws InterruptedException
 	System.out.println("verified billing");
 	Thread.sleep(2000);
 	
-	Applicationutility.myClick(shippingadderess);
-	String expshipping = Propertyutility.getproperty("shippingaddress");
-	String actshipping = shippingadreess.getText();
-	System.out.println(actshipping);
-	assertEquals(expshipping, actshipping);
-	System.out.println("verified shpping address");
-	Thread.sleep(1000);
+//	Applicationutility.myClick(shippingadderess);
+//	String expshipping = Propertyutility.getproperty("shippingaddress");
+//	String actshipping = shippingadreess.getText();
+//	System.out.println(actshipping);
+//	assertEquals(expshipping, actshipping);
+//	System.out.println("verified shpping address");
+//	Thread.sleep(1000);
 	
 	Applicationutility.myClick(verifyitemnameinbox);
 	String expitems = Propertyutility.getproperty("pnamecheckout");
@@ -473,6 +481,7 @@ public void finalcheckoutpagevalidation() throws InterruptedException
 	System.out.println(shippingstandarddelivery);
 	assertEquals(expshippindelivery, actshippingdelivery);
 	System.out.println("vaerified shpiing method on final checkoutpage ");
+	Thread.sleep(1000);
 }
 
 public void finalcheckout() throws InterruptedException

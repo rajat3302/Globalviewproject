@@ -7,7 +7,8 @@
         <methods>
           <include name="teardown"/>
           <include name="getlanunchurl_globalview"/>
-          <include name="validateinfinalcheckout"/>
+          <include name="vaidatesubtotalagain"/>
+          <include name="validatecarttotal"/>
         </methods>
       </class> <!-- globalview_test.Checkout_Test -->
     </classes>

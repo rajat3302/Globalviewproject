@@ -44,7 +44,10 @@ public class BaseLibrary
 		System.setProperty("webdriver.chrome.driver", loc);
 		WebDriverManager.chromedriver().setup();
 	    ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
+	    options.addArguments("--disable-save-password-bubble");
+        options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-infobars");
+
 		driver= new ChromeDriver();
 		driver.get(url);
 		driver.manage().window().maximize();

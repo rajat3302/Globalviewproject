@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.util.Locale;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -553,6 +554,7 @@ public void removeproductoncart() throws InterruptedException
 
 public void verifysubtotalagainfirstitem() throws InterruptedException
 {
+	Thread.sleep(1000);
 	String priceText1 = pricefirstitem.getText().replace("$", "").trim(); // Remove '$' if present
     double price1 = Double.parseDouble(priceText1);
     System.out.println("Product Price: $" + price1);
@@ -649,7 +651,9 @@ public void securecheckout() throws InterruptedException
 	// click on checkout 
 	Thread.sleep(1000);
 	Applicationutility.myClick(checkout);
-	Thread.sleep(1000);
+	Thread.sleep(2000);
+	
+	
 }
 
 public void clearshopingcart() throws InterruptedException
